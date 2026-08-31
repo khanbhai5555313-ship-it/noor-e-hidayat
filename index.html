@@ -315,48 +315,40 @@ footer a{
 </section>
 
 <section id="quran">
+
   <h2 class="section-title">Quran</h2>
 
   <div class="info">
-    <h3>Learn From the Quran</h3>
+    <h3>Read the Holy Quran</h3>
     <p>
-      The Quran is the central scripture of Islam.
-      This section can be expanded with Surahs,
-      translations, explanations and lessons.
+      Select a Surah to read the Arabic Quran with English translation.
     </p>
   </div>
 
-  <div class="grid">
+  <div class="quran-reader">
 
-    <div class="card">
-      <span class="badge">Quran</span>
-      <h3>Surah Al-Fatihah</h3>
-      <p>
-        Learn about the meaning and lessons of
-        Surah Al-Fatihah.
-      </p>
+    <div class="quran-controls">
+      <label for="surahSelect">Select Surah</label>
+
+      <select id="surahSelect">
+        <option value="">Loading Surahs...</option>
+      </select>
     </div>
 
-    <div class="card">
-      <span class="badge">Quran</span>
-      <h3>Surah Al-Ikhlas</h3>
-      <p>
-        Explore the message of Tawheed and the
-        greatness of Allah.
-      </p>
+    <div id="surahInfo" class="surah-info">
+      Select a Surah to begin reading.
     </div>
 
-    <div class="card">
-      <span class="badge">Quran</span>
-      <h3>Quranic Lessons</h3>
-      <p>
-        Simple explanations of important Quranic
-        teachings and reminders.
-      </p>
+    <div id="quranLoading" class="quran-loading">
+      Loading Quran...
     </div>
+
+    <div id="ayahContainer"></div>
 
   </div>
+
 </section>
+        
 
 <section id="hadith">
   <h2 class="section-title">Hadith</h2>
@@ -493,6 +485,116 @@ footer a{
     <a href="#seerah">Seerah</a>
   </p>
 </footer>
+<script>
+const surahSelect = document.getElementById("surahSelect");
+const ayahContainer = document.getElementById("ayahContainer");
+const surahInfo = document.getElementById("surahInfo");
+const quranLoading = document.getElementById("quranLoading");
 
+async function loadSurahs() {
+  try {
+    const response = await fetch(
+      "https://api.alquran.cloud/v1/surah"
+    );
+
+    const data = await response.json();
+
+    surahSelect.innerHTML =
+      '<option value="">Select a Surah</option>';
+
+    data.data.forEach(surah => {
+      const option = document.createElement("option");
+
+      option.value = surah.number;
+      option.textContent =
+        surah.number + ". " +
+        surah.englishName +
+        " — " +
+        surah.name;
+
+      surahSelect.appendChild(option);
+    });
+
+  } catch (error) {
+    surahSelect.innerHTML =
+      '<option>Unable to load Surahs</option>';
+  }
+}
+
+async function loadSurah(number) {
+
+  if (!number) {
+    ayahContainer.innerHTML = "";
+    surahInfo.textContent =
+      "Select a Surah to begin reading.";
+    return;
+  }
+
+  quranLoading.style.display = "block";
+  ayahContainer.innerHTML = "";
+
+  try {
+
+    const response = await fetch(
+      "https://api.alquran.cloud/v1/surah/" +
+      number +
+      "/editions/quran-uthmani,en.sahih"
+    );
+
+    const result = await response.json();
+
+    const arabic = result.data[0];
+    const english = result.data[1];
+
+    surahInfo.innerHTML =
+      "<strong>" +
+      arabic.englishName +
+      "</strong><br>" +
+      arabic.name +
+      " • " +
+      arabic.numberOfAyahs +
+      " Ayahs";
+
+    arabic.ayahs.forEach((ayah, index) => {
+
+      const box = document.createElement("div");
+      box.className = "ayah";
+
+      box.innerHTML = `
+        <div class="ayah-number">
+          Ayah ${ayah.numberInSurah}
+        </div>
+
+        <div class="arabic">
+          ${ayah.text}
+        </div>
+
+        <div class="translation">
+          ${english.ayahs[index].text}
+        </div>
+      `;
+
+      ayahContainer.appendChild(box);
+    });
+
+  } catch (error) {
+
+    ayahContainer.innerHTML =
+      "<p>Quran load nahi ho saka. Internet connection check karein.</p>";
+
+  }
+
+  quranLoading.style.display = "none";
+}
+
+surahSelect.addEventListener(
+  "change",
+  function() {
+    loadSurah(this.value);
+  }
+);
+
+loadSurahs();
+</script>
 </body>
 </html>
