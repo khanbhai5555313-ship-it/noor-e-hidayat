@@ -348,29 +348,124 @@ footer a{
   </div>
 
 </section>
-        
 
-<section id="hadith">
+  <section id="hadith">
   <h2 class="section-title">Hadith</h2>
 
   <div class="info">
-    <h3>Learn From Authentic Hadith</h3>
+    <h3>📖 Authentic Hadith</h3>
     <p>
-      Explore lessons from the Sunnah of Prophet Muhammad ﷺ.
-      Hadith references should be checked carefully before
-      publishing.
+      Read Hadith from trusted classical collections with
+      Arabic text and English translation.
     </p>
   </div>
 
-  <div class="card">
-    <span class="badge">Hadith</span>
-    <h3>Understanding the Sunnah</h3>
-    <p>
-      Learn how the Sunnah helps Muslims understand
-      and practice Islam in daily life.
-    </p>
+  <div class="hadith-controls">
+    <label for="hadithBook">Select Collection</label>
+
+    <select id="hadithBook">
+      <option value="bukhari">Sahih al-Bukhari</option>
+      <option value="muslim">Sahih Muslim</option>
+      <option value="abudawud">Sunan Abu Dawud</option>
+      <option value="tirmidhi">Jami' at-Tirmidhi</option>
+      <option value="ibnmajah">Sunan Ibn Majah</option>
+    </select>
   </div>
+
+  <div id="hadithLoading">
+    Loading Hadith...
+  </div>
+
+  <div id="hadithContainer"></div>
 </section>
+
+<script>
+const hadithBook = document.getElementById("hadithBook");
+const hadithContainer = document.getElementById("hadithContainer");
+const hadithLoading = document.getElementById("hadithLoading");
+
+async function loadHadith(book) {
+
+  hadithLoading.style.display = "block";
+  hadithContainer.innerHTML = "";
+
+  try {
+
+    const arabicURL =
+      "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-" +
+      book + ".json";
+
+    const englishURL =
+      "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-" +
+      book + ".json";
+
+    const [arabicResponse, englishResponse] =
+      await Promise.all([
+        fetch(arabicURL),
+        fetch(englishURL)
+      ]);
+
+    const arabicData = await arabicResponse.json();
+    const englishData = await englishResponse.json();
+
+    const arabicHadiths = arabicData.hadiths || [];
+    const englishHadiths = englishData.hadiths || [];
+
+    const total = Math.min(
+      arabicHadiths.length,
+      englishHadiths.length
+    );
+
+    hadithLoading.style.display = "none";
+
+    for (let i = 0; i < total; i++) {
+
+      const arabic = arabicHadiths[i];
+      const english = englishHadiths[i];
+
+      const card = document.createElement("div");
+      card.className = "card hadith-card";
+
+      card.innerHTML = `
+        <span class="badge">
+          ${book.toUpperCase()}
+        </span>
+
+        <h3>Hadith ${english.hadithnumber || (i + 1)}</h3>
+
+        <div class="hadith-arabic">
+          ${arabic.text || ""}
+        </div>
+
+        <p class="hadith-translation">
+          ${english.text || ""}
+        </p>
+      `;
+
+      hadithContainer.appendChild(card);
+    }
+
+  } catch (error) {
+
+    hadithLoading.style.display = "none";
+
+    hadithContainer.innerHTML = `
+      <div class="info">
+        <h3>Hadith load nahi ho raha</h3>
+        <p>
+          Internet connection check karein aur dobara try karein.
+        </p>
+      </div>
+    `;
+  }
+}
+
+hadithBook.addEventListener("change", function () {
+  loadHadith(this.value);
+});
+
+loadHadith("bukhari");
+</script>
 
 <section id="duas">
   <h2 class="section-title">Daily Duas</h2>
