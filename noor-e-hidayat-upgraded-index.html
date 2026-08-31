@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Noor-e-Hidayat — Quran, Hadith, Duas, Seerah and Islamic Knowledge">
+<title>Noor-e-Hidayat | Islamic Knowledge</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--g:#075b4d;--g2:#087864;--bg:#f5f8f6;--t:#17221f;--gold:#d8b45a}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+header{background:linear-gradient(135deg,var(--g),#0b806d);color:#fff;text-align:center}
+.top{max-width:1150px;margin:auto;padding:30px 18px 24px}.logo{font-size:34px;font-weight:800}.tagline{font-size:16px;margin-top:5px}
+nav{background:#064f43;position:sticky;top:0;z-index:10;overflow-x:auto}.navinner{max-width:1150px;margin:auto;display:flex;justify-content:center;min-width:max-content}
+nav button{border:0;background:none;color:#fff;padding:15px 20px;font-size:16px;font-weight:700;cursor:pointer}
+nav button:hover,nav button.active{background:#0a705f}
+main{max-width:1150px;margin:auto;padding:22px 16px 50px}.page{display:none}.page.active{display:block}
+.hero{background:linear-gradient(135deg,#086b5a,#0b806d);color:#fff;border-radius:24px;padding:42px 24px;text-align:center;box-shadow:0 8px 25px #0001}
+.hero h1{font-size:38px;margin-bottom:12px}.hero p{font-size:18px;max-width:760px;margin:auto}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}.btn{display:inline-block;border:0;border-radius:12px;padding:13px 20px;font-weight:700;cursor:pointer;text-decoration:none}
+.btn.light{background:#fff;color:var(--g)}.btn.green{background:var(--g);color:#fff}
+.section-title{font-size:28px;color:var(--g);margin:28px 0 14px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card,.article{background:#fff;border-radius:18px;padding:20px;box-shadow:0 3px 15px #00000010;border:1px solid #e2e9e6}
+.card h3{color:var(--g);margin-bottom:8px}.card p{color:#46534f;margin-bottom:12px}
+.search{width:100%;padding:14px;border:1px solid #cfdad6;border-radius:12px;font-size:16px;margin-bottom:16px}
+.list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.surah{display:flex;justify-content:space-between;align-items:center;background:#fff;padding:15px 17px;border-radius:13px;border:1px solid #e2e9e6;cursor:pointer}
+.surah:hover{border-color:var(--g2)}.badge{font-size:12px;background:#e6f3ef;color:var(--g);padding:4px 8px;border-radius:20px}
+.article{margin-bottom:15px;border-left:4px solid var(--g)}.article h3{color:var(--g);margin-bottom:8px}
+.arabic{font-size:27px;text-align:right;direction:rtl;line-height:2.1;margin:15px 0}
+.note{background:#fff8e7;border-left:4px solid var(--gold);padding:14px;border-radius:10px;margin:15px 0}
+.small{font-size:13px;color:#64736e}footer{background:#063f36;color:#fff;text-align:center;padding:25px 15px}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}.list{grid-template-columns:1fr}.hero h1{font-size:30px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.top{padding:24px 12px}.logo{font-size:29px}nav button{padding:14px 16px}}
+</style>
+</head>
+<body>
+<header><div class="top"><div class="logo">☪ Noor-e-Hidayat</div><div class="tagline">Quran • Hadith • Duas • Seerah • Islamic Knowledge</div></div></header>
+<nav><div class="navinner">
+<button class="active" onclick="showPage('home',this)">Home</button>
+<button onclick="showPage('quran',this)">Quran</button>
+<button onclick="showPage('hadith',this)">Hadith</button>
+<button onclick="showPage('duas',this)">Duas</button>
+<button onclick="showPage('seerah',this)">Seerah</button>
+<button onclick="showPage('knowledge',this)">Knowledge</button>
+</div></nav>
+<main>
+<section id="home" class="page active">
+<div class="hero"><h1>Learn Islam With Ease</h1><p>Explore Quran, authentic Hadith, daily Duas, Seerah and Islamic knowledge in simple and easy-to-understand English.</p>
+<div class="actions"><button class="btn light" onclick="showPage('quran')">Explore Quran</button><button class="btn light" onclick="showPage('hadith')">Read Hadith</button></div></div>
+<h2 class="section-title">Explore Noor-e-Hidayat</h2>
+<div class="grid">
+<div class="card"><h3>📖 Quran</h3><p>Browse all 114 Surahs by name and number.</p><button class="btn green" onclick="showPage('quran')">Open Quran</button></div>
+<div class="card"><h3>📜 Hadith</h3><p>Read selected hadith with their source collections.</p><button class="btn green" onclick="showPage('hadith')">Open Hadith</button></div>
+<div class="card"><h3>🤲 Duas</h3><p>Useful daily supplications with Arabic and transliteration.</p><button class="btn green" onclick="showPage('duas')">Open Duas</button></div>
+<div class="card"><h3>🕌 Seerah</h3><p>Learn about the life and teachings of Prophet Muhammad ﷺ.</p><button class="btn green" onclick="showPage('seerah')">Open Seerah</button></div>
+<div class="card"><h3>💡 Knowledge</h3><p>Simple articles about worship, character and everyday Islam.</p><button class="btn green" onclick="showPage('knowledge')">Read Articles</button></div>
+<div class="card"><h3>🌙 Reminder</h3><p>Small consistent deeds are better than many deeds that are abandoned.</p></div>
+</div></section>
+
+<section id="quran" class="page"><h1 class="section-title">📖 Quran — 114 Surahs</h1>
+<input id="surahSearch" class="search" placeholder="Search Surah by name or number..." oninput="filterSurahs()">
+<div id="surahList" class="list"></div><div id="surahInfo" class="article" style="display:none;margin-top:18px"></div>
+<div class="note">This version provides the complete Surah directory. Full Arabic verses, translations and audio can be connected next using a verified Quran source.</div></section>
+
+<section id="hadith" class="page"><h1 class="section-title">📜 Selected Hadith</h1>
+<div class="article"><h3>Intentions</h3><p class="arabic">إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ</p><p>“Actions are judged by intentions.”</p><p class="small">Source: Sahih al-Bukhari and Sahih Muslim.</p></div>
+<div class="article"><h3>Mercy</h3><p>“Those who are merciful will be shown mercy by the Most Merciful.”</p><p class="small">Source: Jami‘ at-Tirmidhi.</p></div>
+<div class="note">Before publishing formal religious quotations, verify the Arabic wording, grading and reference with a reliable hadith source or qualified scholar.</div></section>
+
+<section id="duas" class="page"><h1 class="section-title">🤲 Daily Duas</h1>
+<div class="article"><h3>Dua for Knowledge</h3><p class="arabic">رَبِّ زِدْنِي عِلْمًا</p><p><b>Transliteration:</b> Rabbi zidni ilma.</p><p><b>Meaning:</b> My Lord, increase me in knowledge.</p><p class="small">Quran 20:114</p></div>
+<div class="article"><h3>Dua for Parents</h3><p class="arabic">رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا</p><p><b>Transliteration:</b> Rabbir hamhuma kama rabbayani sagheera.</p><p><b>Meaning:</b> My Lord, have mercy on them as they raised me when I was small.</p><p class="small">Quran 17:24</p></div>
+<div class="article"><h3>Dua for Good</h3><p class="arabic">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</p><p><b>Meaning:</b> Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.</p><p class="small">Quran 2:201</p></div></section>
+
+<section id="seerah" class="page"><h1 class="section-title">🕌 Seerah of Prophet Muhammad ﷺ</h1>
+<div class="article"><h3>Early Life</h3><p>Muhammad ﷺ was born in Makkah among Quraysh. Islamic sources describe his early life, family, honesty and trustworthy character.</p></div>
+<div class="article"><h3>Beginning of Revelation</h3><p>At the age of forty, the first revelation came to him in the Cave of Hira through Angel Jibril عليه السلام. The opening revelation is associated with Surah Al-‘Alaq.</p></div>
+<div class="article"><h3>Migration to Madinah</h3><p>The Hijrah from Makkah to Madinah became a major turning point in the history of the Muslim community and later marked the beginning of the Islamic calendar.</p></div>
+<div class="article"><h3>His Character</h3><p>The Quran describes the Prophet ﷺ as being upon a عظیم character (Quran 68:4). His life teaches mercy, patience, honesty, justice and worship of Allah.</p></div></section>
+
+<section id="knowledge" class="page"><h1 class="section-title">💡 Islamic Knowledge</h1>
+<div class="article"><h3>Why Is Salah Important?</h3><p>Salah is one of the central acts of worship in Islam. Muslims establish prayer to remember Allah, seek His help and maintain a regular connection with Him.</p></div>
+<div class="article"><h3>Good Character</h3><p>Islam places strong emphasis on honesty, kindness, patience, keeping promises, helping others and avoiding harm.</p></div>
+<div class="article"><h3>Seeking Beneficial Knowledge</h3><p>Learning the Quran and Sunnah, asking qualified scholars when unsure, and acting upon beneficial knowledge are important parts of a Muslim’s growth.</p></div>
+<div class="note">Religious rulings can differ by school and scholarly interpretation. For personal fatwa or complicated matters, consult a qualified and trusted scholar.</div></section>
+</main>
+<footer><p>© 2026 Noor-e-Hidayat — Quran • Hadith • Duas • Seerah</p><p class="small" style="color:#dbe9e5">Built for learning and beneficial Islamic content.</p></footer>
+<script>
+const surahs=[
+["1","Al-Fatihah"],["2","Al-Baqarah"],["3","Aal-E-Imran"],["4","An-Nisa"],["5","Al-Ma'idah"],["6","Al-An'am"],["7","Al-A'raf"],["8","Al-Anfal"],["9","At-Tawbah"],["10","Yunus"],["11","Hud"],["12","Yusuf"],["13","Ar-Ra'd"],["14","Ibrahim"],["15","Al-Hijr"],["16","An-Nahl"],["17","Al-Isra"],["18","Al-Kahf"],["19","Maryam"],["20","Ta-Ha"],["21","Al-Anbiya"],["22","Al-Hajj"],["23","Al-Mu'minun"],["24","An-Nur"],["25","Al-Furqan"],["26","Ash-Shu'ara"],["27","An-Naml"],["28","Al-Qasas"],["29","Al-Ankabut"],["30","Ar-Rum"],["31","Luqman"],["32","As-Sajdah"],["33","Al-Ahzab"],["34","Saba"],["35","Fatir"],["36","Ya-Sin"],["37","As-Saffat"],["38","Sad"],["39","Az-Zumar"],["40","Ghafir"],["41","Fussilat"],["42","Ash-Shura"],["43","Az-Zukhruf"],["44","Ad-Dukhan"],["45","Al-Jathiyah"],["46","Al-Ahqaf"],["47","Muhammad"],["48","Al-Fath"],["49","Al-Hujurat"],["50","Qaf"],["51","Adh-Dhariyat"],["52","At-Tur"],["53","An-Najm"],["54","Al-Qamar"],["55","Ar-Rahman"],["56","Al-Waqi'ah"],["57","Al-Hadid"],["58","Al-Mujadilah"],["59","Al-Hashr"],["60","Al-Mumtahanah"],["61","As-Saff"],["62","Al-Jumu'ah"],["63","Al-Munafiqun"],["64","At-Taghabun"],["65","At-Talaq"],["66","At-Tahrim"],["67","Al-Mulk"],["68","Al-Qalam"],["69","Al-Haqqah"],["70","Al-Ma'arij"],["71","Nuh"],["72","Al-Jinn"],["73","Al-Muzzammil"],["74","Al-Muddaththir"],["75","Al-Qiyamah"],["76","Al-Insan"],["77","Al-Mursalat"],["78","An-Naba"],["79","An-Nazi'at"],["80","Abasa"],["81","At-Takwir"],["82","Al-Infitar"],["83","Al-Mutaffifin"],["84","Al-Inshiqaq"],["85","Al-Buruj"],["86","At-Tariq"],["87","Al-A'la"],["88","Al-Ghashiyah"],["89","Al-Fajr"],["90","Al-Balad"],["91","Ash-Shams"],["92","Al-Layl"],["93","Ad-Duha"],["94","Ash-Sharh"],["95","At-Tin"],["96","Al-Alaq"],["97","Al-Qadr"],["98","Al-Bayyinah"],["99","Az-Zalzalah"],["100","Al-Adiyat"],["101","Al-Qari'ah"],["102","At-Takathur"],["103","Al-Asr"],["104","Al-Humazah"],["105","Al-Fil"],["106","Quraysh"],["107","Al-Ma'un"],["108","Al-Kawthar"],["109","Al-Kafirun"],["110","An-Nasr"],["111","Al-Masad"],["112","Al-Ikhlas"],["113","Al-Falaq"],["114","An-Nas"]
+];
+function showPage(id,btn){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+if(btn)btn.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});
+}
+function renderSurahs(items=surahs){
+document.getElementById('surahList').innerHTML=items.map(s=>'<div class="surah" onclick="showSurah('+s[0]+',\''+s[1].replace(/'/g,"\\'")+'\')"><b>'+s[0]+'. '+s[1]+'</b><span class="badge">Surah</span></div>').join('');
+}
+function filterSurahs(){const q=document.getElementById('surahSearch').value.toLowerCase().trim();renderSurahs(surahs.filter(s=>s[0]===q||s[1].toLowerCase().includes(q)));}
+function showSurah(num,name){const b=document.getElementById('surahInfo');b.style.display='block';b.innerHTML='<h2>'+num+'. '+name+'</h2><p style="margin-top:8px">You selected <b>Surah '+name+'</b>. Full verse text, translations and audio can be connected next using a verified Quran source.</p>';b.scrollIntoView({behavior:'smooth',block:'center'});}
+renderSurahs();
+</script>
+</body></html>
