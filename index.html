@@ -608,6 +608,51 @@ loadHadith("bukhari");
         block: "center"
     });
   }
+function showSeerah(type) {
+  let display = document.getElementById("seerahDisplay");
+
+  if (!display) {
+    display = document.createElement("div");
+    display.id = "seerahDisplay";
+    display.className = "card";
+    display.style.marginTop = "25px";
+
+    const section = document.getElementById("seerah");
+    section.appendChild(display);
+  }
+
+  const seerah = {
+    early: {
+      title: "Early Life of Prophet Muhammad ﷺ",
+      text: "Prophet Muhammad ﷺ was born in Makkah. He was known for his honesty and trustworthy character. Before prophethood, the people of Makkah respected him and called him Al-Amin, meaning the trustworthy."
+    },
+
+    prophethood: {
+      title: "Beginning of Prophethood",
+      text: "At the age of forty, Prophet Muhammad ﷺ received the first revelation through Angel Jibril عليه السلام in the Cave of Hira. This marked the beginning of his mission to call people towards the worship of Allah."
+    },
+
+    lessons: {
+      title: "Lessons From the Seerah",
+      text: "The Seerah teaches us patience, mercy, honesty, courage, forgiveness and trust in Allah. We should try to follow the beautiful character and teachings of Prophet Muhammad ﷺ in our daily lives."
+    }
+  };
+
+  const item = seerah[type];
+
+  if (!item) return;
+
+  display.innerHTML = `
+    <span class="badge">Seerah</span>
+    <h3>${item.title}</h3>
+    <p>${item.text}</p>
+  `;
+
+  display.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
 </script>
 
 
