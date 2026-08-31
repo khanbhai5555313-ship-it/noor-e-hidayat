@@ -230,6 +230,33 @@ footer a{
     font-size:30px;
   }
 }
+  .hadith-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0 30px;
+  flex-wrap: wrap;
+}
+
+.hadith-navigation button {
+  border: none;
+  background: #075b4d;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hadith-navigation button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.hadith-navigation span {
+  font-weight: bold;
+}
 </style>
 </head>
 
@@ -380,14 +407,20 @@ footer a{
 </section>
 
 <script>
+<script>
 const hadithBook = document.getElementById("hadithBook");
 const hadithContainer = document.getElementById("hadithContainer");
 const hadithLoading = document.getElementById("hadithLoading");
+
+let arabicHadiths = [];
+let englishHadiths = [];
+let currentHadith = 0;
 
 async function loadHadith(book) {
 
   hadithLoading.style.display = "block";
   hadithContainer.innerHTML = "";
+  currentHadith = 0;
 
   try {
 
@@ -408,42 +441,12 @@ async function loadHadith(book) {
     const arabicData = await arabicResponse.json();
     const englishData = await englishResponse.json();
 
-    const arabicHadiths = arabicData.hadiths || [];
-    const englishHadiths = englishData.hadiths || [];
-
-    const total = Math.min(
-      arabicHadiths.length,
-      englishHadiths.length
-    );
+    arabicHadiths = arabicData.hadiths || [];
+    englishHadiths = englishData.hadiths || [];
 
     hadithLoading.style.display = "none";
 
-    for (let i = 0; i < total; i++) {
-
-      const arabic = arabicHadiths[i];
-      const english = englishHadiths[i];
-
-      const card = document.createElement("div");
-      card.className = "card hadith-card";
-
-      card.innerHTML = `
-        <span class="badge">
-          ${book.toUpperCase()}
-        </span>
-
-        <h3>Hadith ${english.hadithnumber || (i + 1)}</h3>
-
-        <div class="hadith-arabic">
-          ${arabic.text || ""}
-        </div>
-
-        <p class="hadith-translation">
-          ${english.text || ""}
-        </p>
-      `;
-
-      hadithContainer.appendChild(card);
-    }
+    showHadith();
 
   } catch (error) {
 
@@ -452,19 +455,109 @@ async function loadHadith(book) {
     hadithContainer.innerHTML = `
       <div class="info">
         <h3>Hadith load nahi ho raha</h3>
-        <p>
-          Internet connection check karein aur dobara try karein.
-        </p>
+        <p>Internet connection check karein aur dobara try karein.</p>
       </div>
     `;
   }
 }
 
+
+function showHadith() {
+
+  if (!arabicHadiths.length || !englishHadiths.length) {
+
+    hadithContainer.innerHTML = `
+      <div class="info">
+        <h3>Hadith available nahi hai</h3>
+      </div>
+    `;
+
+    return;
+  }
+
+  const arabic = arabicHadiths[currentHadith];
+  const english = englishHadiths[currentHadith];
+
+  hadithContainer.innerHTML = `
+    <div class="card hadith-card">
+
+      <span class="badge">
+        ${hadithBook.value.toUpperCase()}
+      </span>
+
+      <h3>
+        Hadith ${english.hadithnumber || (currentHadith + 1)}
+      </h3>
+
+      <div class="hadith-arabic">
+        ${arabic.text || ""}
+      </div>
+
+      <p class="hadith-translation">
+        ${english.text || ""}
+      </p>
+
+    </div>
+
+    <div class="hadith-navigation">
+
+      <button
+        onclick="previousHadith()"
+        ${currentHadith === 0 ? "disabled" : ""}>
+        ← Previous
+      </button>
+
+      <span>
+        ${currentHadith + 1} / ${Math.min(
+          arabicHadiths.length,
+          englishHadiths.length
+        )}
+      </span>
+
+      <button
+        onclick="nextHadith()"
+        ${currentHadith >= Math.min(
+          arabicHadiths.length,
+          englishHadiths.length
+        ) - 1 ? "disabled" : ""}>
+        Next →
+      </button>
+
+    </div>
+  `;
+}
+
+
+function nextHadith() {
+
+  const total = Math.min(
+    arabicHadiths.length,
+    englishHadiths.length
+  );
+
+  if (currentHadith < total - 1) {
+    currentHadith++;
+    showHadith();
+  }
+}
+
+
+function previousHadith() {
+
+  if (currentHadith > 0) {
+    currentHadith--;
+    showHadith();
+  }
+}
+
+
 hadithBook.addEventListener("change", function () {
   loadHadith(this.value);
 });
 
+
 loadHadith("bukhari");
+</script>
 </script>
 
 <section id="duas">
