@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,266 +10,225 @@
 
 <style>
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#f6f8f5;
-    color:#17221f;
-    line-height:1.7;
+  font-family:Arial, sans-serif;
+  background:#f5f7f4;
+  color:#18352f;
+  line-height:1.7;
 }
 
-/* HEADER */
 header{
-    background:linear-gradient(135deg,#075b4d,#087866);
-    color:white;
-}
-
-.top{
-    max-width:1150px;
-    margin:auto;
-    padding:28px 20px;
-    text-align:center;
+  background:linear-gradient(135deg,#075b4d,#087866);
+  color:white;
+  text-align:center;
+  padding:35px 18px;
 }
 
 .logo{
-    font-size:32px;
-    font-weight:bold;
-    letter-spacing:.3px;
-}
-
-.logo span{
-    font-size:38px;
+  font-size:38px;
+  font-weight:800;
+  letter-spacing:1px;
 }
 
 .tagline{
-    margin-top:5px;
-    font-size:16px;
-    opacity:.95;
+  margin-top:8px;
+  font-size:17px;
+  opacity:.95;
 }
 
-/* NAVIGATION */
 nav{
-    background:#064d42;
-    overflow-x:auto;
-    white-space:nowrap;
+  background:#064d42;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
 .nav-inner{
-    max-width:1150px;
-    margin:auto;
-    display:flex;
-    justify-content:center;
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  overflow-x:auto;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    padding:16px 22px;
-    display:block;
-    font-weight:bold;
+  color:white;
+  text-decoration:none;
+  padding:16px 22px;
+  display:block;
+  font-weight:bold;
+  white-space:nowrap;
 }
 
 nav a:hover{
-    background:#087866;
+  background:#087866;
 }
 
-/* MAIN */
-main{
-    max-width:1150px;
-    margin:auto;
-    padding:25px 18px 50px;
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:25px 18px;
 }
 
-/* HERO */
 .hero{
-    background:linear-gradient(135deg,#075b4d,#0a806d);
-    color:white;
-    border-radius:20px;
-    padding:65px 25px;
-    text-align:center;
-    margin-bottom:25px;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
+  background:linear-gradient(135deg,#096957,#087866);
+  color:white;
+  border-radius:24px;
+  padding:55px 25px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.12);
 }
 
 .hero h1{
-    font-size:42px;
-    margin-bottom:12px;
+  font-size:42px;
+  margin-bottom:15px;
 }
 
 .hero p{
-    font-size:19px;
-    max-width:700px;
-    margin:auto;
+  font-size:19px;
+  max-width:750px;
+  margin:auto;
 }
 
-.hero-buttons{
-    margin-top:25px;
+.buttons{
+  margin-top:28px;
 }
 
 .btn{
-    display:inline-block;
-    background:white;
-    color:#075b4d;
-    padding:11px 20px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    margin:5px;
+  display:inline-block;
+  background:white;
+  color:#075b4d;
+  padding:13px 25px;
+  margin:6px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
 .btn:hover{
-    opacity:.9;
+  transform:translateY(-2px);
 }
 
-/* AD SPACE */
 .ad{
-    border:2px dashed #c5cec9;
-    background:white;
-    border-radius:15px;
-    text-align:center;
-    padding:28px 15px;
-    margin:25px 0;
-    color:#77817d;
+  margin:35px 0;
+  padding:35px 20px;
+  text-align:center;
+  border:2px dashed #c9d0cc;
+  border-radius:18px;
+  color:#69736f;
+  background:white;
 }
 
-/* SECTION */
 .section-title{
-    color:#075b4d;
-    font-size:30px;
-    margin:35px 0 18px;
+  font-size:30px;
+  color:#075b4d;
+  margin:35px 0 18px;
 }
 
-/* CARDS */
 .grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 .card{
-    background:white;
-    border-radius:15px;
-    padding:22px;
-    border:1px solid #e0e5e2;
-    box-shadow:0 4px 14px rgba(0,0,0,.06);
-    transition:.2s;
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+  border:1px solid #e4e9e5;
 }
 
 .card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
+  transform:translateY(-3px);
 }
 
 .badge{
-    display:inline-block;
-    background:#e5f4ef;
-    color:#087866;
-    padding:5px 10px;
-    border-radius:20px;
-    font-size:13px;
-    font-weight:bold;
-    margin-bottom:12px;
+  display:inline-block;
+  background:#e4f3ee;
+  color:#075b4d;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:14px;
+  margin-bottom:12px;
 }
 
 .card h3{
-    font-size:21px;
-    color:#17221f;
-    margin-bottom:8px;
+  color:#17342f;
+  margin-bottom:10px;
+  font-size:21px;
 }
 
 .card p{
-    color:#5d6864;
+  color:#5c6863;
 }
 
 .read{
-    display:inline-block;
-    margin-top:15px;
-    background:#075b4d;
-    color:white;
-    text-decoration:none;
-    padding:8px 14px;
-    border-radius:7px;
-    font-size:14px;
-    font-weight:bold;
+  display:inline-block;
+  margin-top:15px;
+  color:#075b4d;
+  font-weight:bold;
+  text-decoration:none;
 }
 
-/* ABOUT */
-.about{
-    background:white;
-    border-radius:15px;
-    padding:28px;
-    border:1px solid #e0e5e2;
+.info{
+  background:#eaf5f1;
+  border-left:5px solid #087866;
+  padding:22px;
+  border-radius:12px;
+  margin:20px 0;
 }
 
-.about p{
-    color:#56625e;
-    margin-bottom:12px;
-}
-
-/* FOOTER */
 footer{
-    background:#12352f;
-    color:#dce9e5;
-    text-align:center;
-    padding:30px 18px;
-}
-
-footer p{
-    margin:5px;
+  background:#063f37;
+  color:white;
+  text-align:center;
+  margin-top:50px;
+  padding:30px 18px;
 }
 
 footer a{
-    color:#fff;
-    text-decoration:none;
+  color:white;
+  text-decoration:none;
+  margin:0 8px;
 }
 
-/* MOBILE */
 @media(max-width:800px){
-    .grid{
-        grid-template-columns:1fr 1fr;
-    }
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
 
-    .hero h1{
-        font-size:34px;
-    }
+  .hero h1{
+    font-size:34px;
+  }
 }
 
 @media(max-width:550px){
-    .grid{
-        grid-template-columns:1fr;
-    }
+  .grid{
+    grid-template-columns:1fr;
+  }
 
-    .logo{
-        font-size:27px;
-    }
+  .logo{
+    font-size:30px;
+  }
 
-    .hero{
-        padding:45px 20px;
-    }
+  .hero{
+    padding:40px 18px;
+  }
 
-    .hero h1{
-        font-size:30px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .section-title{
-        font-size:26px;
-    }
-
-    .nav-inner{
-        justify-content:flex-start;
-    }
-
-    nav a{
-        padding:14px 18px;
-    }
+  .hero h1{
+    font-size:30px;
+  }
 }
 </style>
 </head>
@@ -278,279 +236,262 @@ footer a{
 <body>
 
 <header>
-
-<div class="top">
-    <div class="logo">
-        <span>☪</span> Noor-e-Hidayat
-    </div>
-
-    <div class="tagline">
-        Quran • Hadith • Duas • Seerah • Islamic Knowledge
-    </div>
-</div>
+  <div class="logo">☪ Noor-e-Hidayat</div>
+  <div class="tagline">
+    Quran • Hadith • Duas • Seerah • Islamic Knowledge
+  </div>
+</header>
 
 <nav>
-<div class="nav-inner">
+  <div class="nav-inner">
     <a href="#home">Home</a>
     <a href="#quran">Quran</a>
     <a href="#hadith">Hadith</a>
     <a href="#duas">Duas</a>
     <a href="#seerah">Seerah</a>
     <a href="#about">About</a>
-</div>
+  </div>
 </nav>
 
-</header>
+<main class="container">
 
+<section id="home" class="hero">
+  <h1>Learn Islam With Ease</h1>
 
-<main>
+  <p>
+    Explore Quran, authentic Hadith, daily Duas,
+    Seerah and Islamic knowledge in simple
+    and easy-to-understand English.
+  </p>
 
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-<h1>Learn Islam With Ease</h1>
-
-<p>
-Explore Quran, authentic Hadith, daily Duas, Seerah and
-Islamic knowledge in simple and easy-to-understand English.
-</p>
-
-<div class="hero-buttons">
-<a href="#quran" class="btn">Explore Quran</a>
-<a href="#articles" class="btn">Read Articles</a>
-</div>
-
+  <div class="buttons">
+    <a class="btn" href="#quran">Explore Quran</a>
+    <a class="btn" href="#articles">Read Articles</a>
+  </div>
 </section>
-
-
-<!-- AD -->
 
 <div class="ad">
-Advertisement Space — Google AdSense can be added here later.
+  Advertisement Space — Google AdSense can be added here later.
 </div>
 
+<section id="articles">
+  <h2 class="section-title">Latest Islamic Articles</h2>
 
-<!-- ARTICLES -->
+  <div class="grid">
 
-<h2 class="section-title" id="articles">
-Latest Islamic Articles
-</h2>
+    <article class="card">
+      <span class="badge">Islamic Knowledge</span>
+      <h3>Why Is Salah Important?</h3>
+      <p>
+        Salah is one of the fundamental acts of worship in Islam.
+        Learn about its importance and how it helps develop
+        discipline and remembrance of Allah.
+      </p>
+      <a class="read" href="#about">Read More →</a>
+    </article>
 
-<section class="grid">
+    <article class="card">
+      <span class="badge">Quran</span>
+      <h3>How Can We Seek Guidance From the Quran?</h3>
+      <p>
+        The Quran is a source of guidance for Muslims.
+        Learn simple ways to build a stronger connection
+        with the Book of Allah.
+      </p>
+      <a class="read" href="#quran">Read More →</a>
+    </article>
 
-<article class="card">
-<span class="badge">Islamic Knowledge</span>
+    <article class="card">
+      <span class="badge">Duas</span>
+      <h3>The Importance of Daily Duas</h3>
+      <p>
+        Discover why Muslims make Dua and how remembering
+        Allah throughout the day can strengthen our faith.
+      </p>
+      <a class="read" href="#duas">Read More →</a>
+    </article>
 
-<h3>Why Is Salah Important?</h3>
-
-<p>
-Salah is one of the most important acts of worship in Islam.
-Learn why prayer is essential in the life of a Muslim.
-</p>
-
-<a href="#" class="read">Read Article</a>
-</article>
-
-
-<article class="card">
-<span class="badge">Quran</span>
-
-<h3>How Can We Seek Guidance From the Quran?</h3>
-
-<p>
-The Quran provides guidance for every part of life.
-Discover simple ways to connect with the Book of Allah.
-</p>
-
-<a href="#quran" class="read">Read More</a>
-</article>
-
-
-<article class="card">
-<span class="badge">Hadith</span>
-
-<h3>The Importance of Authentic Hadith</h3>
-
-<p>
-Learn why Hadith is important for understanding the teachings
-and Sunnah of Prophet Muhammad ﷺ.
-</p>
-
-<a href="#hadith" class="read">Read More</a>
-</article>
-
-
-<article class="card" id="duas">
-<span class="badge">Duas</span>
-
-<h3>Daily Duas</h3>
-
-<p>
-Discover useful Duas for morning, evening, eating, sleeping,
-travel and everyday situations.
-</p>
-
-<a href="#" class="read">View Duas</a>
-</article>
-
-
-<article class="card" id="seerah">
-<span class="badge">Seerah</span>
-
-<h3>Life of Prophet Muhammad ﷺ</h3>
-
-<p>
-Learn about the beautiful life, character and teachings of
-Prophet Muhammad ﷺ.
-</p>
-
-<a href="#" class="read">Read Seerah</a>
-</article>
-
-
-<article class="card">
-<span class="badge">Character</span>
-
-<h3>The Virtue of Good Character</h3>
-
-<p>
-Islam teaches Muslims to show kindness, patience, honesty,
-mercy and good manners.
-</p>
-
-<a href="#" class="read">Read Article</a>
-</article>
-
+  </div>
 </section>
 
+<section id="quran">
+  <h2 class="section-title">Quran</h2>
 
-<!-- QURAN -->
+  <div class="info">
+    <h3>Learn From the Quran</h3>
+    <p>
+      The Quran is the central scripture of Islam.
+      This section can be expanded with Surahs,
+      translations, explanations and lessons.
+    </p>
+  </div>
 
-<h2 class="section-title" id="quran">
-Quran
-</h2>
+  <div class="grid">
 
-<section class="grid">
+    <div class="card">
+      <span class="badge">Quran</span>
+      <h3>Surah Al-Fatihah</h3>
+      <p>
+        Learn about the meaning and lessons of
+        Surah Al-Fatihah.
+      </p>
+    </div>
 
-<div class="card">
-<span class="badge">Quran</span>
-<h3>Understanding the Quran</h3>
-<p>
-Explore the message and guidance of the Quran in simple English.
-</p>
-<a href="#" class="read">Explore</a>
-</div>
+    <div class="card">
+      <span class="badge">Quran</span>
+      <h3>Surah Al-Ikhlas</h3>
+      <p>
+        Explore the message of Tawheed and the
+        greatness of Allah.
+      </p>
+    </div>
 
-<div class="card">
-<span class="badge">Quran</span>
-<h3>Surah Al-Fatihah</h3>
-<p>
-Learn about the meaning and importance of the opening Surah of the Quran.
-</p>
-<a href="#" class="read">Read More</a>
-</div>
+    <div class="card">
+      <span class="badge">Quran</span>
+      <h3>Quranic Lessons</h3>
+      <p>
+        Simple explanations of important Quranic
+        teachings and reminders.
+      </p>
+    </div>
 
-<div class="card">
-<span class="badge">Quran</span>
-<h3>Quranic Guidance</h3>
-<p>
-Discover important lessons and reminders from the Quran.
-</p>
-<a href="#" class="read">Learn More</a>
-</div>
-
+  </div>
 </section>
 
+<section id="hadith">
+  <h2 class="section-title">Hadith</h2>
 
-<!-- HADITH -->
+  <div class="info">
+    <h3>Learn From Authentic Hadith</h3>
+    <p>
+      Explore lessons from the Sunnah of Prophet Muhammad ﷺ.
+      Hadith references should be checked carefully before
+      publishing.
+    </p>
+  </div>
 
-<h2 class="section-title" id="hadith">
-Hadith
-</h2>
-
-<section class="grid">
-
-<div class="card">
-<span class="badge">Hadith</span>
-<h3>What Is Hadith?</h3>
-<p>
-Understand what Hadith means and why it is important in Islam.
-</p>
-<a href="#" class="read">Learn More</a>
-</div>
-
-<div class="card">
-<span class="badge">Sunnah</span>
-<h3>Following the Sunnah</h3>
-<p>
-Learn about the importance of following the Sunnah of Prophet Muhammad ﷺ.
-</p>
-<a href="#" class="read">Read More</a>
-</div>
-
-<div class="card">
-<span class="badge">Knowledge</span>
-<h3>Authentic Sources</h3>
-<p>
-Islamic information should be based on reliable and trustworthy sources.
-</p>
-<a href="#" class="read">Learn More</a>
-</div>
-
+  <div class="card">
+    <span class="badge">Hadith</span>
+    <h3>Understanding the Sunnah</h3>
+    <p>
+      Learn how the Sunnah helps Muslims understand
+      and practice Islam in daily life.
+    </p>
+  </div>
 </section>
 
+<section id="duas">
+  <h2 class="section-title">Daily Duas</h2>
 
-<!-- ABOUT -->
+  <div class="grid">
 
-<h2 class="section-title" id="about">
-About Noor-e-Hidayat
-</h2>
+    <div class="card">
+      <span class="badge">Dua</span>
+      <h3>Morning & Evening</h3>
+      <p>
+        A collection of daily remembrance and
+        supplications.
+      </p>
+    </div>
 
-<div class="about">
+    <div class="card">
+      <span class="badge">Dua</span>
+      <h3>Dua Before Sleeping</h3>
+      <p>
+        Learn authentic supplications and
+        remembrance before going to sleep.
+      </p>
+    </div>
 
-<p>
-<strong>Noor-e-Hidayat</strong> is an Islamic knowledge website
-created to present Quran, Hadith, Duas, Seerah and useful Islamic
-reminders in simple English.
-</p>
+    <div class="card">
+      <span class="badge">Dua</span>
+      <h3>Dua for Guidance</h3>
+      <p>
+        Supplications asking Allah for guidance,
+        goodness and steadfastness.
+      </p>
+    </div>
 
-<p>
-Our goal is to make beneficial Islamic knowledge easy to understand
-and accessible to everyone.
-</p>
+  </div>
+</section>
 
-<p>
-Readers should always verify religious information with qualified
-scholars and authentic Islamic sources.
-</p>
+<section id="seerah">
+  <h2 class="section-title">Seerah</h2>
 
-</div>
+  <div class="info">
+    <h3>Life of Prophet Muhammad ﷺ</h3>
+    <p>
+      Explore important events, lessons and teachings
+      from the life of Prophet Muhammad ﷺ.
+    </p>
+  </div>
 
+  <div class="grid">
 
-<!-- AD -->
+    <div class="card">
+      <span class="badge">Seerah</span>
+      <h3>Early Life</h3>
+      <p>
+        Learn about the early life of Prophet Muhammad ﷺ
+        and the society of Makkah.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="badge">Seerah</span>
+      <h3>Beginning of Prophethood</h3>
+      <p>
+        Learn about the beginning of revelation and
+        the message of Islam.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="badge">Seerah</span>
+      <h3>Lessons From the Seerah</h3>
+      <p>
+        Discover valuable lessons about patience,
+        mercy, character and faith.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About Noor-e-Hidayat</h2>
+
+  <div class="card">
+    <p>
+      Noor-e-Hidayat is an Islamic knowledge website created
+      to present Quran, Hadith, Duas, Seerah and Islamic
+      reminders in a simple and understandable way.
+    </p>
+
+    <p style="margin-top:12px;">
+      Our goal is to make beneficial Islamic knowledge
+      easier to explore while encouraging readers to
+      verify religious information from reliable sources.
+    </p>
+  </div>
+</section>
 
 <div class="ad">
-Advertisement Space — Google AdSense can be added here later.
+  Advertisement Space — Google AdSense can be added here later.
 </div>
 
 </main>
 
-
 <footer>
+  <p>© 2026 Noor-e-Hidayat — All Rights Reserved.</p>
 
-<p>
-© 2026 Noor-e-Hidayat — All rights reserved.
-</p>
-
-<p>
-<a href="#">Privacy Policy</a>
-&nbsp; | &nbsp;
-<a href="#">Disclaimer</a>
-&nbsp; | &nbsp;
-<a href="#">Contact</a>
-</p>
-
+  <p style="margin-top:10px;">
+    <a href="#home">Home</a> |
+    <a href="#quran">Quran</a> |
+    <a href="#hadith">Hadith</a> |
+    <a href="#duas">Duas</a> |
+    <a href="#seerah">Seerah</a>
+  </p>
 </footer>
 
 </body>
