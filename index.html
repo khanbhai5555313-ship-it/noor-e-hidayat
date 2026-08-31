@@ -595,6 +595,109 @@ surahSelect.addEventListener(
 );
 
 loadSurahs();
+  /* ===== QURAN READING CONTROLS ===== */
+
+const readingControls = document.createElement("div");
+
+readingControls.innerHTML = `
+  <div class="reading-controls">
+    <button id="darkModeBtn">🌙 Dark Mode</button>
+    <button id="fontMinus">A−</button>
+    <button id="fontPlus">A+</button>
+  </div>
+`;
+
+document.body.insertBefore(readingControls, document.querySelector("footer"));
+
+const controlStyle = document.createElement("style");
+
+controlStyle.innerHTML = `
+  .reading-controls {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    padding:15px;
+    margin:15px 0;
+    background:#ffffff;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    position:sticky;
+    top:55px;
+    z-index:90;
+  }
+
+  .reading-controls button {
+    border:none;
+    background:#075b4d;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+  }
+
+  .arabic {
+    font-size:28px;
+    line-height:2;
+    direction:rtl;
+    text-align:right;
+  }
+
+  body.dark-mode {
+    background:#101817;
+    color:#eeeeee;
+  }
+
+  body.dark-mode .card,
+  body.dark-mode .info,
+  body.dark-mode .reading-controls {
+    background:#1b2725;
+    color:#eeeeee;
+  }
+
+  body.dark-mode .translation {
+    color:#d5e8e3;
+  }
+
+  body.dark-mode .arabic {
+    color:#ffffff;
+  }
+
+  body.dark-mode .reading-controls button {
+    background:#0b806d;
+  }
+`;
+
+document.head.appendChild(controlStyle);
+
+let arabicFontSize = 28;
+
+document.getElementById("fontPlus").onclick = function () {
+  arabicFontSize += 2;
+  document.querySelectorAll(".arabic").forEach(el => {
+    el.style.fontSize = arabicFontSize + "px";
+  });
+};
+
+document.getElementById("fontMinus").onclick = function () {
+  if (arabicFontSize > 18) {
+    arabicFontSize -= 2;
+    document.querySelectorAll(".arabic").forEach(el => {
+      el.style.fontSize = arabicFontSize + "px";
+    });
+  }
+};
+
+document.getElementById("darkModeBtn").onclick = function () {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    this.textContent = "☀️ Light Mode";
+  } else {
+    this.textContent = "🌙 Dark Mode";
+  }
+};
 </script>
 </body>
 </html>
