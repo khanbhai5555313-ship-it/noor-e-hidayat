@@ -5,13 +5,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Holy Quran – Read Quran with English Translation | Noor-e-Hidayat</title>
+  <title>Holy Quran – Read Quran with English & Hindi Translation | Noor-e-Hidayat</title>
 
   <meta name="description"
-        content="Read the Holy Quran online in Arabic with English translation. Select any Surah and read its Ayahs with Noor-e-Hidayat.">
+        content="Read the Holy Quran online in Arabic with English and Hindi translations. Select any Surah and read its Ayahs with Noor-e-Hidayat.">
 
   <meta name="keywords"
-        content="Quran online, read Quran, Holy Quran, Quran English translation, Surah, Quran Arabic">
+        content="Quran online, read Quran, Holy Quran, Quran English translation, Quran Hindi translation, Surah, Quran Arabic">
 
   <link rel="canonical"
         href="https://khanbhai5555313-ship-it.github.io/noor-e-hidayat/quran.html">
@@ -161,6 +161,17 @@
       font-size: 17px;
       line-height: 1.8;
       color: #344f49;
+      margin-bottom: 18px;
+    }
+
+    .translation strong {
+      color: #075b4d;
+      font-size: 16px;
+    }
+
+    .hindi-translation {
+      border-top: 1px solid #dfe9e6;
+      padding-top: 15px;
     }
 
     .reading-controls {
@@ -187,6 +198,10 @@
       border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    .reading-controls button:hover {
+      opacity: 0.9;
     }
 
     footer {
@@ -226,11 +241,19 @@
       color: #d5e8e3;
     }
 
+    body.dark-mode .translation strong {
+      color: #ffffff;
+    }
+
     body.dark-mode .arabic {
       color: #ffffff;
     }
 
     body.dark-mode .ayah {
+      border-color: #40504d;
+    }
+
+    body.dark-mode .hindi-translation {
       border-color: #40504d;
     }
 
@@ -241,6 +264,7 @@
     }
 
     @media (max-width: 600px) {
+
       .logo {
         font-size: 23px;
       }
@@ -256,6 +280,7 @@
       .container {
         padding: 20px 10px 40px;
       }
+
     }
   </style>
 </head>
@@ -263,50 +288,82 @@
 <body>
 
 <header>
-  <div class="logo">☪ Noor-e-Hidayat</div>
+
+  <div class="logo">
+    ☪ Noor-e-Hidayat
+  </div>
 
   <div class="tagline">
     Quran • Hadith • Duas • Seerah • Islamic Knowledge
   </div>
+
 </header>
 
+
 <nav>
+
   <div class="nav-inner">
+
     <a href="index.html">Home</a>
+
     <a href="quran.html">Quran</a>
+
     <a href="index.html#hadith">Hadith</a>
+
     <a href="index.html#duas">Duas</a>
+
     <a href="index.html#seerah">Seerah</a>
+
     <a href="index.html#articles">Articles</a>
+
     <a href="index.html#about">About</a>
+
   </div>
+
 </nav>
+
 
 <main class="container">
 
   <h1 class="section-title">
-    Holy Quran – Read Quran with English Translation
+    Holy Quran – Read Quran with English & Hindi Translation
   </h1>
 
+
   <div class="info">
+
     <h2>Read the Holy Quran Online</h2>
 
     <p>
-      Read the Holy Quran online in Arabic with English translation.
-      Select a Surah to read its verses and learn the message of the Quran.
+      Read the Holy Quran online in Arabic with English and Hindi
+      translations. Select any Surah to read its Ayahs and learn
+      the message of the Quran.
     </p>
 
     <p>
-      Hindi translation will be added after verifying a reliable Quran
-      translation edition.
+      The Hindi translation is provided by
+      <strong>Suhel Farooq Khan and Saifur Rahman Nadwi</strong>.
     </p>
+
   </div>
 
+
   <div class="reading-controls">
-    <button id="darkModeBtn">🌙 Dark Mode</button>
-    <button id="fontMinus">A−</button>
-    <button id="fontPlus">A+</button>
+
+    <button id="darkModeBtn">
+      🌙 Dark Mode
+    </button>
+
+    <button id="fontMinus">
+      A−
+    </button>
+
+    <button id="fontPlus">
+      A+
+    </button>
+
   </div>
+
 
   <div class="quran-reader">
 
@@ -317,20 +374,25 @@
       </label>
 
       <select id="surahSelect">
+
         <option value="">
           Loading Surahs...
         </option>
+
       </select>
 
     </div>
+
 
     <div id="surahInfo" class="surah-info">
       Select a Surah to begin reading.
     </div>
 
+
     <div id="quranLoading" class="quran-loading">
       Loading Quran...
     </div>
+
 
     <div id="ayahContainer"></div>
 
@@ -338,9 +400,13 @@
 
 </main>
 
+
 <footer>
+
   © 2026 Noor-e-Hidayat — Islamic Knowledge in Simple English
+
 </footer>
+
 
 <script>
 
@@ -356,6 +422,8 @@ const surahInfo =
 const quranLoading =
   document.getElementById("quranLoading");
 
+
+/* ===== LOAD SURAH LIST ===== */
 
 async function loadSurahs() {
 
@@ -401,6 +469,8 @@ async function loadSurahs() {
 }
 
 
+/* ===== LOAD QURAN ===== */
+
 async function loadSurah(number) {
 
   if (!number) {
@@ -414,11 +484,13 @@ async function loadSurah(number) {
 
   }
 
+
   quranLoading.style.display =
     "block";
 
   ayahContainer.innerHTML =
     "";
+
 
   try {
 
@@ -426,17 +498,23 @@ async function loadSurah(number) {
       await fetch(
         "https://api.alquran.cloud/v1/surah/" +
         number +
-        "/editions/quran-uthmani,en.sahih"
+        "/editions/quran-uthmani,en.sahih,hi.hindi"
       );
+
 
     const result =
       await response.json();
+
 
     const arabic =
       result.data[0];
 
     const english =
       result.data[1];
+
+    const hindi =
+      result.data[2];
+
 
     surahInfo.innerHTML =
       "<strong>" +
@@ -447,6 +525,7 @@ async function loadSurah(number) {
       arabic.numberOfAyahs +
       " Ayahs";
 
+
     arabic.ayahs.forEach(
       (ayah, index) => {
 
@@ -456,39 +535,62 @@ async function loadSurah(number) {
         box.className =
           "ayah";
 
+
         box.innerHTML = `
 
           <div class="ayah-number">
             Ayah ${ayah.numberInSurah}
           </div>
 
+
           <div class="arabic">
             ${ayah.text}
           </div>
 
+
           <div class="translation">
+
+            <strong>English:</strong><br>
+
             ${english.ayahs[index].text}
+
+          </div>
+
+
+          <div class="translation hindi-translation">
+
+            <strong>Hindi:</strong><br>
+
+            ${hindi.ayahs[index].text}
+
           </div>
 
         `;
+
 
         ayahContainer.appendChild(box);
 
       }
     );
 
+
   } catch (error) {
+
+    console.error(error);
 
     ayahContainer.innerHTML =
       "<p>Quran load nahi ho saka. Internet connection check karein.</p>";
 
   }
 
+
   quranLoading.style.display =
     "none";
 
 }
 
+
+/* ===== SURAH SELECT ===== */
 
 surahSelect.addEventListener(
   "change",
@@ -499,6 +601,8 @@ surahSelect.addEventListener(
   }
 );
 
+
+/* ===== START ===== */
 
 loadSurahs();
 
@@ -513,6 +617,7 @@ document.getElementById(
 ).onclick = function() {
 
   arabicFontSize += 2;
+
 
   document
     .querySelectorAll(".arabic")
@@ -533,6 +638,7 @@ document.getElementById(
   if (arabicFontSize > 18) {
 
     arabicFontSize -= 2;
+
 
     document
       .querySelectorAll(".arabic")
@@ -557,6 +663,7 @@ document.getElementById(
   document.body.classList.toggle(
     "dark-mode"
   );
+
 
   if (
     document.body.classList.contains(
