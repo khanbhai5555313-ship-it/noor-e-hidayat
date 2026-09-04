@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Holy Quran – Read Quran with English Translation | Noor-e-Hidayat</title>
+
+  <meta name="description"
+        content="Read the Holy Quran online in Arabic with English translation. Select any Surah and read its Ayahs with Noor-e-Hidayat.">
+
+  <meta name="keywords"
+        content="Quran online, read Quran, Holy Quran, Quran English translation, Surah, Quran Arabic">
+
+  <link rel="canonical"
+        href="https://khanbhai5555313-ship-it.github.io/noor-e-hidayat/quran.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f8f6;
+      color: #173b35;
+    }
+
+    header {
+      background: linear-gradient(135deg, #075b4d, #0b806d);
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .tagline {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    nav {
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #075b4d;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 7px;
+    }
+
+    nav a:hover {
+      background: #e8f4f0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px 15px 50px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #075b4d;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.07);
+    }
+
+    .quran-reader {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.07);
+    }
+
+    .quran-controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .quran-controls label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    #surahSelect {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .surah-info {
+      text-align: center;
+      background: #edf7f4;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .quran-loading {
+      display: none;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+    }
+
+    .ayah {
+      padding: 25px 10px;
+      border-bottom: 1px solid #dfe9e6;
+    }
+
+    .ayah-number {
+      font-size: 14px;
+      font-weight: bold;
+      color: #075b4d;
+      margin-bottom: 12px;
+    }
+
+    .arabic {
+      font-size: 30px;
+      line-height: 2;
+      direction: rtl;
+      text-align: right;
+      margin-bottom: 18px;
+    }
+
+    .translation {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #344f49;
+    }
+
+    .reading-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 15px;
+      margin: 20px 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+      position: sticky;
+      top: 55px;
+      z-index: 90;
+    }
+
+    .reading-controls button {
+      border: none;
+      background: #075b4d;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #075b4d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    body.dark-mode {
+      background: #101817;
+      color: #eeeeee;
+    }
+
+    body.dark-mode nav,
+    body.dark-mode .info,
+    body.dark-mode .quran-reader,
+    body.dark-mode .reading-controls {
+      background: #1b2725;
+      color: #eeeeee;
+    }
+
+    body.dark-mode nav a {
+      color: #ffffff;
+    }
+
+    body.dark-mode .section-title {
+      color: #ffffff;
+    }
+
+    body.dark-mode .surah-info {
+      background: #263a36;
+    }
+
+    body.dark-mode .translation {
+      color: #d5e8e3;
+    }
+
+    body.dark-mode .arabic {
+      color: #ffffff;
+    }
+
+    body.dark-mode .ayah {
+      border-color: #40504d;
+    }
+
+    body.dark-mode #surahSelect {
+      background: #1b2725;
+      color: white;
+      border-color: #536560;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 23px;
+      }
+
+      .arabic {
+        font-size: 26px;
+      }
+
+      .translation {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 20px 10px 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">☪ Noor-e-Hidayat</div>
+
+  <div class="tagline">
+    Quran • Hadith • Duas • Seerah • Islamic Knowledge
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html">Home</a>
+    <a href="quran.html">Quran</a>
+    <a href="index.html#hadith">Hadith</a>
+    <a href="index.html#duas">Duas</a>
+    <a href="index.html#seerah">Seerah</a>
+    <a href="index.html#articles">Articles</a>
+    <a href="index.html#about">About</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <h1 class="section-title">
+    Holy Quran – Read Quran with English Translation
+  </h1>
+
+  <div class="info">
+    <h2>Read the Holy Quran Online</h2>
+
+    <p>
+      Read the Holy Quran online in Arabic with English translation.
+      Select a Surah to read its verses and learn the message of the Quran.
+    </p>
+
+    <p>
+      Hindi translation will be added after verifying a reliable Quran
+      translation edition.
+    </p>
+  </div>
+
+  <div class="reading-controls">
+    <button id="darkModeBtn">🌙 Dark Mode</button>
+    <button id="fontMinus">A−</button>
+    <button id="fontPlus">A+</button>
+  </div>
+
+  <div class="quran-reader">
+
+    <div class="quran-controls">
+
+      <label for="surahSelect">
+        Select Surah
+      </label>
+
+      <select id="surahSelect">
+        <option value="">
+          Loading Surahs...
+        </option>
+      </select>
+
+    </div>
+
+    <div id="surahInfo" class="surah-info">
+      Select a Surah to begin reading.
+    </div>
+
+    <div id="quranLoading" class="quran-loading">
+      Loading Quran...
+    </div>
+
+    <div id="ayahContainer"></div>
+
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Noor-e-Hidayat — Islamic Knowledge in Simple English
+</footer>
+
+<script>
+
+const surahSelect =
+  document.getElementById("surahSelect");
+
+const ayahContainer =
+  document.getElementById("ayahContainer");
+
+const surahInfo =
+  document.getElementById("surahInfo");
+
+const quranLoading =
+  document.getElementById("quranLoading");
+
+
+async function loadSurahs() {
+
+  try {
+
+    const response =
+      await fetch(
+        "https://api.alquran.cloud/v1/surah"
+      );
+
+    const data =
+      await response.json();
+
+    surahSelect.innerHTML =
+      '<option value="">Select a Surah</option>';
+
+    data.data.forEach(surah => {
+
+      const option =
+        document.createElement("option");
+
+      option.value =
+        surah.number;
+
+      option.textContent =
+        surah.number +
+        ". " +
+        surah.englishName +
+        " — " +
+        surah.name;
+
+      surahSelect.appendChild(option);
+
+    });
+
+  } catch (error) {
+
+    surahSelect.innerHTML =
+      '<option value="">Unable to load Surahs</option>';
+
+  }
+
+}
+
+
+async function loadSurah(number) {
+
+  if (!number) {
+
+    ayahContainer.innerHTML = "";
+
+    surahInfo.textContent =
+      "Select a Surah to begin reading.";
+
+    return;
+
+  }
+
+  quranLoading.style.display =
+    "block";
+
+  ayahContainer.innerHTML =
+    "";
+
+  try {
+
+    const response =
+      await fetch(
+        "https://api.alquran.cloud/v1/surah/" +
+        number +
+        "/editions/quran-uthmani,en.sahih"
+      );
+
+    const result =
+      await response.json();
+
+    const arabic =
+      result.data[0];
+
+    const english =
+      result.data[1];
+
+    surahInfo.innerHTML =
+      "<strong>" +
+      arabic.englishName +
+      "</strong><br>" +
+      arabic.name +
+      " • " +
+      arabic.numberOfAyahs +
+      " Ayahs";
+
+    arabic.ayahs.forEach(
+      (ayah, index) => {
+
+        const box =
+          document.createElement("div");
+
+        box.className =
+          "ayah";
+
+        box.innerHTML = `
+
+          <div class="ayah-number">
+            Ayah ${ayah.numberInSurah}
+          </div>
+
+          <div class="arabic">
+            ${ayah.text}
+          </div>
+
+          <div class="translation">
+            ${english.ayahs[index].text}
+          </div>
+
+        `;
+
+        ayahContainer.appendChild(box);
+
+      }
+    );
+
+  } catch (error) {
+
+    ayahContainer.innerHTML =
+      "<p>Quran load nahi ho saka. Internet connection check karein.</p>";
+
+  }
+
+  quranLoading.style.display =
+    "none";
+
+}
+
+
+surahSelect.addEventListener(
+  "change",
+  function() {
+
+    loadSurah(this.value);
+
+  }
+);
+
+
+loadSurahs();
+
+
+/* ===== FONT CONTROLS ===== */
+
+let arabicFontSize = 30;
+
+
+document.getElementById(
+  "fontPlus"
+).onclick = function() {
+
+  arabicFontSize += 2;
+
+  document
+    .querySelectorAll(".arabic")
+    .forEach(el => {
+
+      el.style.fontSize =
+        arabicFontSize + "px";
+
+    });
+
+};
+
+
+document.getElementById(
+  "fontMinus"
+).onclick = function() {
+
+  if (arabicFontSize > 18) {
+
+    arabicFontSize -= 2;
+
+    document
+      .querySelectorAll(".arabic")
+      .forEach(el => {
+
+        el.style.fontSize =
+          arabicFontSize + "px";
+
+      });
+
+  }
+
+};
+
+
+/* ===== DARK MODE ===== */
+
+document.getElementById(
+  "darkModeBtn"
+).onclick = function() {
+
+  document.body.classList.toggle(
+    "dark-mode"
+  );
+
+  if (
+    document.body.classList.contains(
+      "dark-mode"
+    )
+  ) {
+
+    this.textContent =
+      "☀️ Light Mode";
+
+  } else {
+
+    this.textContent =
+      "🌙 Dark Mode";
+
+  }
+
+};
+
+</script>
+
+</body>
+</html>
