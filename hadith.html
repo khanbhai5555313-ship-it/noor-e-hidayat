@@ -1654,8 +1654,6 @@ body.arabic-large .hadith-urdu {
 
 </footer>
 
-
-
 <script>
 
 /* =====================================================
@@ -1710,29 +1708,23 @@ let currentHadith = 0;
 
 const collectionNames = {
 
-  bukhari:
-    "Sahih al-Bukhari",
+  bukhari: "Sahih al-Bukhari",
 
-  muslim:
-    "Sahih Muslim",
+  muslim: "Sahih Muslim",
 
-  abudawud:
-    "Sunan Abi Dawud",
+  abudawud: "Sunan Abi Dawud",
 
-  tirmidhi:
-    "Jami' at-Tirmidhi",
+  tirmidhi: "Jami' at-Tirmidhi",
 
-  nasai:
-    "Sunan an-Nasa'i",
+  nasai: "Sunan an-Nasa'i",
 
-  ibnmajah:
-    "Sunan Ibn Majah"
+  ibnmajah: "Sunan Ibn Majah"
 
 };
 
 
 /* =====================================================
-   GET BOOK NUMBER
+   BOOK NUMBER
 ===================================================== */
 
 function getBookNumber(book) {
@@ -1752,7 +1744,7 @@ function getBookNumber(book) {
 
 
 /* =====================================================
-   GET BOOK NAME
+   BOOK NAME
 ===================================================== */
 
 function getBookName(book) {
@@ -1761,10 +1753,39 @@ function getBookName(book) {
     return "";
   }
 
+  if (typeof book.name === "string") {
+    return book.name;
+  }
+
+  if (
+    book.name &&
+    typeof book.name === "object"
+  ) {
+
+    return (
+      book.name.en ||
+      book.name.ar ||
+      ""
+    );
+
+  }
+
+  if (
+    book.title &&
+    typeof book.title === "object"
+  ) {
+
+    return (
+      book.title.en ||
+      book.title.ar ||
+      ""
+    );
+
+  }
+
   return (
-    book.name ??
-    book.title ??
-    book.bookName ??
+    book.title ||
+    book.bookName ||
     ""
   );
 
@@ -1781,6 +1802,7 @@ async function selectCollection(collection) {
 
   hadithBook.value = collection;
 
+
   document
     .querySelectorAll(".collection-card")
     .forEach(card => {
@@ -1792,12 +1814,14 @@ async function selectCollection(collection) {
 
     });
 
+
   document
     .getElementById("reader")
     .scrollIntoView({
       behavior: "smooth",
       block: "start"
     });
+
 
   await loadBooks(collection);
 
@@ -1817,9 +1841,11 @@ async function loadBooks(collection) {
     collectionNames[collection] +
     "...";
 
+
   hadithContainer.innerHTML = "";
 
   loadMoreBtn.style.display = "none";
+
 
   books = [];
 
@@ -1861,16 +1887,11 @@ async function loadBooks(collection) {
       await response.json();
 
 
-    /*
-       API normally returns:
+    console.log(
+      "BOOKS RESPONSE:",
+      result
+    );
 
-       {
-         data: [...]
-       }
-
-       But we support a few possible
-       response shapes as well.
-    */
 
     if (Array.isArray(result.data)) {
 
@@ -1887,7 +1908,9 @@ async function loadBooks(collection) {
 
     }
 
-    else if (Array.isArray(result.books)) {
+    else if (
+      Array.isArray(result.books)
+    ) {
 
       books = result.books;
 
@@ -1897,7 +1920,7 @@ async function loadBooks(collection) {
     if (!books.length) {
 
       throw new Error(
-        "No books found."
+        "No books found"
       );
 
     }
@@ -1919,10 +1942,12 @@ async function loadBooks(collection) {
     );
 
 
-  } catch (error) {
+  }
+
+  catch (error) {
 
     console.error(
-      "Books API Error:",
+      "BOOK ERROR:",
       error
     );
 
@@ -1936,7 +1961,7 @@ async function loadBooks(collection) {
       <div class="hadith-card">
 
         <h3>
-          Hadith collection load nahi ho rahi
+          Collection load nahi ho rahi
         </h3>
 
         <p>
@@ -1944,16 +1969,75 @@ async function loadBooks(collection) {
           aur dobara try karein.
         </p>
 
-        <p>
-          Collection:
-          ${collectionNames[collection]}
-        </p>
-
       </div>
 
     `;
 
   }
+
+}
+
+
+/* =====================================================
+   NORMALIZE HADITH API RESPONSE
+===================================================== */
+
+function normalizeHadithData(result) {
+
+  let rows = [];
+
+
+  /*
+     Current Islamic.app response:
+
+     data: [
+       {
+         collection,
+         bookNumber,
+         chapterId,
+         hadithNumber,
+         hadith: [
+           {
+             lang: "en",
+             body: "..."
+           },
+           {
+             lang: "ar",
+             body: "..."
+           }
+         ]
+       }
+     ]
+  */
+
+
+  if (Array.isArray(result.data)) {
+
+    rows = result.data;
+
+  }
+
+  else if (
+    result.data &&
+    Array.isArray(result.data.hadiths)
+  ) {
+
+    rows =
+      result.data.hadiths;
+
+  }
+
+  else if (
+    Array.isArray(result.hadiths)
+  ) {
+
+    rows =
+      result.hadiths;
+
+  }
+
+
+  return rows;
 
 }
 
@@ -1992,7 +2076,7 @@ async function loadHadiths(
 
 
     console.log(
-      "Hadith API URL:",
+      "HADITH URL:",
       url
     );
 
@@ -2016,75 +2100,25 @@ async function loadHadiths(
 
 
     console.log(
-      "Hadith API Response:",
+      "HADITH RESPONSE:",
       result
     );
 
 
-    let newHadiths = [];
+    const newHadiths =
+      normalizeHadithData(result);
 
-
-    /*
-       Support several response shapes.
-    */
-
-    if (Array.isArray(result.data)) {
-
-      newHadiths =
-        result.data;
-
-    }
-
-    else if (
-      result.data &&
-      Array.isArray(result.data.hadiths)
-    ) {
-
-      newHadiths =
-        result.data.hadiths;
-
-    }
-
-    else if (
-      result.data &&
-      Array.isArray(result.data.items)
-    ) {
-
-      newHadiths =
-        result.data.items;
-
-    }
-
-    else if (
-      Array.isArray(result.hadiths)
-    ) {
-
-      newHadiths =
-        result.hadiths;
-
-    }
-
-    else if (
-      Array.isArray(result.items)
-    ) {
-
-      newHadiths =
-        result.items;
-
-    }
-
-
-    /*
-       If no Hadith was found in this book,
-       move to next book only when another
-       book exists.
-    */
 
     if (!newHadiths.length) {
 
       hadithLoading.style.display =
         "none";
 
+
+      /*
+         Automatically move to next book
+         if current book is empty.
+      */
 
       if (
         currentBookIndex <
@@ -2093,18 +2127,22 @@ async function loadHadiths(
 
         currentBookIndex++;
 
+
         currentBookNumber =
           getBookNumber(
             books[currentBookIndex]
           );
 
+
         currentOffset = 0;
+
 
         await loadHadiths(
           currentCollection,
           currentBookNumber,
           0
         );
+
 
         return;
 
@@ -2120,12 +2158,8 @@ async function loadHadiths(
           </h3>
 
           <p>
-            Is collection ke Hadith abhi
-            load nahi ho pa rahe.
-          </p>
-
-          <p>
-            Please thodi der baad dobara try karein.
+            Is collection ke Hadith
+            abhi load nahi ho pa rahe.
           </p>
 
         </div>
@@ -2146,15 +2180,9 @@ async function loadHadiths(
       hadiths =
         newHadiths;
 
-      currentOffset = 0;
-
       currentHadith = 0;
 
     }
-
-    /*
-       Load More
-    */
 
     else {
 
@@ -2178,11 +2206,6 @@ async function loadHadiths(
     showHadith();
 
 
-    /*
-       Show Load More if
-       full page was returned.
-    */
-
     if (
       newHadiths.length >=
       currentLimit
@@ -2200,11 +2223,12 @@ async function loadHadiths(
 
     }
 
+  }
 
-  } catch (error) {
+  catch (error) {
 
     console.error(
-      "Hadith API Error:",
+      "HADITH ERROR:",
       error
     );
 
@@ -2227,12 +2251,10 @@ async function loadHadiths(
         </p>
 
         <p style="
-          margin-top:10px;
           font-size:13px;
           color:#806f5c;
         ">
 
-          API response error.
           Please try again.
 
         </p>
@@ -2247,12 +2269,12 @@ async function loadHadiths(
 
 
 /* =====================================================
-   GET HADITH FIELD
+   GET LANGUAGE TEXT
 ===================================================== */
 
-function getHadithText(
+function getLanguageText(
   hadith,
-  fields
+  language
 ) {
 
   if (!hadith) {
@@ -2260,22 +2282,82 @@ function getHadithText(
   }
 
 
-  for (
-    let i = 0;
-    i < fields.length;
-    i++
+  /*
+     Main API structure
+  */
+
+  if (
+    Array.isArray(hadith.hadith)
   ) {
 
-    const value =
-      hadith[fields[i]];
+    const item =
+      hadith.hadith.find(
+        x =>
+          x &&
+          String(x.lang).toLowerCase() ===
+          language
+      );
 
+
+    if (item) {
+
+      return (
+        item.body ||
+        item.text ||
+        ""
+      );
+
+    }
+
+  }
+
+
+  /*
+     Alternate structures
+  */
+
+  const possibleFields = {
+
+    ar: [
+      "body_ar",
+      "arabic",
+      "text_ar",
+      "arabicText"
+    ],
+
+    en: [
+      "body_en",
+      "english",
+      "text_en",
+      "englishText"
+    ],
+
+    ur: [
+      "body_ur",
+      "urdu",
+      "text_ur",
+      "urduText"
+    ]
+
+  };
+
+
+  const fields =
+    possibleFields[language] ||
+    [];
+
+
+  for (
+    const field of fields
+  ) {
 
     if (
-      typeof value === "string" &&
-      value.trim()
+      typeof hadith[field] ===
+      "string" &&
+      hadith[field].trim()
     ) {
 
-      return value;
+      return hadith[field];
 
     }
 
@@ -2283,6 +2365,26 @@ function getHadithText(
 
 
   return "";
+
+}
+
+
+/* =====================================================
+   REMOVE UNSAFE / UNWANTED HTML
+===================================================== */
+
+function cleanHadithHTML(text) {
+
+  if (!text) {
+    return "";
+  }
+
+
+  return String(text)
+    .replace(
+      /<script[\s\S]*?<\/script>/gi,
+      ""
+    );
 
 }
 
@@ -2316,94 +2418,32 @@ function showHadith() {
     hadiths[currentHadith];
 
 
-  /*
-     Arabic fields
-  */
-
   const arabic =
-    getHadithText(
-      hadith,
-      [
-        "body_ar",
-        "bodyArabic",
-        "arabic",
-        "text_ar",
-        "arabicText",
-        "matn_ar",
-        "text"
-      ]
+    cleanHadithHTML(
+      getLanguageText(
+        hadith,
+        "ar"
+      )
     );
 
-
-  /*
-     English fields
-  */
 
   const english =
-    getHadithText(
-      hadith,
-      [
-        "body_en",
-        "bodyEnglish",
-        "english",
-        "text_en",
-        "englishText",
-        "translation_en"
-      ]
+    cleanHadithHTML(
+      getLanguageText(
+        hadith,
+        "en"
+      )
     );
 
-
-  /*
-     Urdu fields
-  */
 
   const urdu =
-    getHadithText(
-      hadith,
-      [
-        "body_ur",
-        "bodyUrdu",
-        "urdu",
-        "text_ur",
-        "urduText",
-        "translation_ur"
-      ]
+    cleanHadithHTML(
+      getLanguageText(
+        hadith,
+        "ur"
+      )
     );
 
-
-  /*
-     Reference
-  */
-
-  const reference =
-    getHadithText(
-      hadith,
-      [
-        "reference",
-        "hadithReference",
-        "ref"
-      ]
-    );
-
-
-  /*
-     Grade
-  */
-
-  const grade =
-    getHadithText(
-      hadith,
-      [
-        "grade",
-        "grading",
-        "status"
-      ]
-    );
-
-
-  /*
-     Hadith number
-  */
 
   const hadithNumber =
     hadith.hadithNumber ??
@@ -2413,36 +2453,37 @@ function showHadith() {
     (currentHadith + 1);
 
 
-  /*
-     Book title
-  */
-
   const bookTitle =
     getBookName(
       books[currentBookIndex]
     );
 
 
-  /*
-     Safe display helpers
-  */
-
-  const arabicHTML =
-    arabic
-      ? arabic
-      : "Arabic text unavailable";
+  const chapterTitle =
+    hadith.chapterTitle;
 
 
-  const englishHTML =
-    english
-      ? english
-      : "English translation unavailable";
+  let chapterName = "";
 
 
-  const urduHTML =
-    urdu
-      ? urdu
-      : "Urdu translation unavailable";
+  if (
+    chapterTitle &&
+    typeof chapterTitle === "object"
+  ) {
+
+    chapterName =
+      chapterTitle.en ||
+      chapterTitle.ar ||
+      "";
+
+  }
+
+  else {
+
+    chapterName =
+      chapterTitle || "";
+
+  }
 
 
   hadithContainer.innerHTML = `
@@ -2453,8 +2494,11 @@ function showHadith() {
       <div class="hadith-top">
 
         <span class="badge">
+
           ${collectionNames[currentCollection]}
+
         </span>
+
 
         <span class="hadith-reference">
 
@@ -2466,6 +2510,24 @@ function showHadith() {
       </div>
 
 
+      ${
+        chapterName
+        ? `
+          <div style="
+            margin-bottom:15px;
+            color:#806039;
+            font-size:14px;
+            font-weight:bold;
+          ">
+
+            ${chapterName}
+
+          </div>
+        `
+        : ""
+      }
+
+
       <h3>
         Hadith ${hadithNumber}
       </h3>
@@ -2473,49 +2535,46 @@ function showHadith() {
 
       <div class="hadith-arabic">
 
-        ${arabicHTML}
+        ${
+          arabic ||
+          "Arabic text unavailable"
+        }
 
       </div>
 
 
       <div class="hadith-language-title">
+
         English Translation
+
       </div>
+
 
       <p class="hadith-translation">
-        ${englishHTML}
+
+        ${
+          english ||
+          "English translation unavailable"
+        }
+
       </p>
 
 
       <div class="hadith-language-title">
+
         Urdu Translation
+
       </div>
 
+
       <p class="hadith-urdu">
-        ${urduHTML}
+
+        ${
+          urdu ||
+          "Urdu translation is not available in this API response yet."
+        }
+
       </p>
-
-
-      ${
-        reference
-        ? `
-          <div class="grade">
-            ${reference}
-          </div>
-        `
-        : ""
-      }
-
-
-      ${
-        grade
-        ? `
-          <div class="grade">
-            Grade: ${grade}
-          </div>
-        `
-        : ""
-      }
 
 
     </div>
@@ -2562,6 +2621,29 @@ function showHadith() {
 
     </div>
 
+
+    ${
+      currentBookIndex <
+      books.length - 1
+      ? `
+        <div style="
+          text-align:center;
+          margin-top:10px;
+        ">
+
+          <button
+            onclick="nextBook()"
+            class="load-more">
+
+            Next Book →
+            
+          </button>
+
+        </div>
+      `
+      : ""
+    }
+
   `;
 
 }
@@ -2581,33 +2663,6 @@ function nextHadith() {
     currentHadith++;
 
     showHadith();
-
-    window.scrollTo({
-      top:
-        document.getElementById(
-          "reader"
-        ).offsetTop - 20,
-
-      behavior: "smooth"
-    });
-
-  }
-
-  else {
-
-    /*
-       Try loading next page
-       when user reaches end.
-    */
-
-    if (
-      loadMoreBtn.style.display !==
-      "none"
-    ) {
-
-      loadMoreHadiths();
-
-    }
 
   }
 
@@ -2634,6 +2689,56 @@ function previousHadith() {
 
 
 /* =====================================================
+   NEXT BOOK
+===================================================== */
+
+async function nextBook() {
+
+  if (
+    currentBookIndex >=
+    books.length - 1
+  ) {
+
+    return;
+
+  }
+
+
+  currentBookIndex++;
+
+
+  currentBookNumber =
+    getBookNumber(
+      books[currentBookIndex]
+    );
+
+
+  currentOffset = 0;
+
+  currentHadith = 0;
+
+
+  hadiths = [];
+
+
+  await loadHadiths(
+    currentCollection,
+    currentBookNumber,
+    0
+  );
+
+
+  document
+    .getElementById("reader")
+    .scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+}
+
+
+/* =====================================================
    LOAD MORE
 ===================================================== */
 
@@ -2649,7 +2754,7 @@ async function loadMoreHadiths() {
 
 
 /* =====================================================
-   COLLECTION DROPDOWN
+   DROPDOWN
 ===================================================== */
 
 hadithBook.addEventListener(
@@ -2734,15 +2839,19 @@ if (
 
 
 /* =====================================================
-   INITIAL LOAD
+   START
 ===================================================== */
 
 selectCollection(
   "bukhari"
 );
 
-</script>
+          </script>
 
+
+
+
+                  
 
 </body>
 </html>
