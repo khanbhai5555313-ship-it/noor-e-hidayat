@@ -10,1066 +10,1578 @@
 
   <meta
     name="description"
-    content="Learn the Seerah of Prophet Muhammad ﷺ in simple English and Hindi with important events, lessons, and guidance."
+    content="Learn the Seerah of Prophet Muhammad ﷺ through important events, lessons, character and guidance in simple English and Hindi."
   >
+
+  <link rel="canonical" href="https://khanbhai5555313-ship-it.github.io/noor-e-hidayat/seerah.html">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3XQEKHHTP"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'G-F3XQEKHHTP');
   </script>
-<style>
-  * {
-    box-sizing: border-box;
-  }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    background:
-      radial-gradient(circle at top left, rgba(214, 168, 79, 0.14), transparent 35%),
-      linear-gradient(180deg, #f8f0dd 0%, #f4e6c8 50%, #fffaf0 100%);
-    color: #2d2519;
-    line-height: 1.75;
-  }
-
-  header {
-    background: linear-gradient(135deg, #0d3024, #1d5942);
-    color: white;
-    padding: 20px 15px;
-    text-align: center;
-    border-bottom: 3px solid #d6a84f;
-  }
-
-  header h1 {
-    margin: 0 0 4px;
-    font-size: 30px;
-    letter-spacing: 0.5px;
-  }
-
-  header p {
-    margin: 0;
-    opacity: 0.9;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-  }
-
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(10, 38, 29, 0.97);
-    padding: 12px 8px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    transition: color 0.2s ease;
-  }
-
-  nav a:hover {
-    color: #f1d58b;
-  }
-
-  /* HERO */
-
-  .hero {
-    min-height: 570px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 70px 18px;
-    color: white;
-    position: relative;
-    overflow: hidden;
-
-    background:
-      linear-gradient(
-        rgba(8, 34, 26, 0.48),
-        rgba(48, 31, 14, 0.76)
-      ),
-      url("https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=1800&q=85");
-
-    background-size: cover;
-    background-position: center;
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background:
-      radial-gradient(
-        circle at center,
-        rgba(255, 221, 140, 0.10),
-        transparent 48%
-      );
-
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 160px;
-
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(244, 230, 200, 0.95)
-    );
-
-    pointer-events: none;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-
-    max-width: 920px;
-    padding: 42px 32px;
-
-    border-radius: 24px;
-
-    background: rgba(5, 25, 19, 0.48);
-
-    border: 1px solid rgba(241, 213, 139, 0.45);
-
-    box-shadow:
-      0 25px 70px rgba(0, 0, 0, 0.38),
-      inset 0 0 40px rgba(255, 220, 140, 0.04);
-
-    backdrop-filter: blur(3px);
-  }
-
-  .badge {
-    display: inline-block;
-
-    background: rgba(214, 168, 79, 0.18);
-
-    border: 1px solid #e6c36a;
-
-    color: #ffe9a6;
-
-    padding: 7px 18px;
-
-    border-radius: 999px;
-
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-
-    margin-bottom: 18px;
-
-    letter-spacing: 0.4px;
-  }
-
-  .hero h2 {
-    font-size: 50px;
-    line-height: 1.2;
-
-    margin: 0 0 20px;
-
-    color: #fffdf6;
-
-    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
-  }
-
-  .hero p {
-    font-family: Arial, sans-serif;
-
-    font-size: 18px;
-
-    margin: 11px auto;
-
-    max-width: 780px;
-
-    color: #fffdf5;
-  }
-
-  .hero .hindi {
-    color: #ffeab0;
-    font-size: 17px;
-  }
-
-  .hero-buttons {
-    margin-top: 30px;
-  }
-
-  .hero-buttons a {
-    display: inline-block;
-
-    text-decoration: none;
-
-    background: linear-gradient(135deg, #e5b94f, #c99732);
-
-    color: #241907;
-
-    padding: 13px 27px;
-
-    border-radius: 999px;
-
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-
-    margin: 6px;
-
-    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.30);
-
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-
-  .hero-buttons a:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 13px 28px rgba(0, 0, 0, 0.38);
-  }
-
-  .hero-buttons a.secondary {
-    background: rgba(255, 255, 255, 0.06);
-
-    color: white;
-
-    border: 1px solid rgba(241, 213, 139, 0.8);
-
-    box-shadow: none;
-  }
-
-  /* MAIN */
-
-  main {
-    max-width: 1180px;
-
-    margin: auto;
-
-    padding: 55px 18px;
-  }
-
-  .intro {
-    background: rgba(255, 255, 255, 0.94);
-
-    border-radius: 24px;
-
-    padding: 34px;
-
-    margin-bottom: 48px;
-
-    border: 1px solid rgba(214, 168, 79, 0.28);
-
-    box-shadow:
-      0 15px 35px rgba(66, 45, 16, 0.11);
-  }
-
-  .intro h2 {
-    color: #12372a;
-
-    margin-top: 0;
-
-    font-size: 31px;
-  }
-
-  .intro p {
-    font-family: Arial, sans-serif;
-  }
-
-  .section-title {
-    text-align: center;
-
-    color: #12372a;
-
-    font-size: 36px;
-
-    margin: 50px 0 10px;
-  }
-
-  .section-subtitle {
-    text-align: center;
-
-    max-width: 760px;
-
-    margin: 0 auto 35px;
-
-    color: #66553d;
-
-    font-family: Arial, sans-serif;
-  }
-
-  /* SEERAH CARDS */
-
-  .timeline {
-    display: grid;
-
-    grid-template-columns:
-      repeat(auto-fit, minmax(270px, 1fr));
-
-    gap: 24px;
-  }
-
-  .seerah-card {
-    background:
-      linear-gradient(
-        145deg,
-        rgba(255,255,255,0.98),
-        rgba(252,246,232,0.98)
-      );
-
-    border-radius: 20px;
-
-    padding: 27px;
-
-    box-shadow:
-      0 12px 30px rgba(66, 45, 16, 0.12);
-
-    border: 1px solid rgba(214, 168, 79, 0.32);
-
-    position: relative;
-
-    overflow: hidden;
-
-    transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease;
-  }
-
-  .seerah-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 5px;
-
-    background:
-      linear-gradient(
-        90deg,
-        #12372a,
-        #d6a84f,
-        #12372a
-      );
-  }
-
-  .seerah-card::after {
-    content: "✦";
-
-    position: absolute;
-
-    right: 17px;
-    bottom: 10px;
-
-    font-size: 38px;
-
-    color: rgba(214, 168, 79, 0.10);
-  }
-
-  .seerah-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-      0 20px 40px rgba(66, 45, 16, 0.18);
-  }
-
-  .icon {
-    width: 56px;
-    height: 56px;
-
-    border-radius: 17px;
-
-    background:
-      linear-gradient(
-        145deg,
-        #f5e5bd,
-        #ead19a
-      );
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 26px;
-
-    margin-bottom: 17px;
-
-    box-shadow:
-      inset 0 0 0 1px rgba(138, 99, 35, 0.12);
-  }
-
-  .seerah-card h3 {
-    color: #12372a;
-
-    margin: 0 0 8px;
-
-    font-size: 22px;
-  }
-
-  .seerah-card .urdu-title {
-    color: #98702b;
-
-    font-weight: bold;
-
-    margin-bottom: 13px;
-
-    font-family: Arial, sans-serif;
-  }
-
-  .seerah-card p {
-    margin: 9px 0;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 15px;
-  }
-
-  .hindi {
-    color: #6b5a42;
-  }
-
-  /* FEATURES */
-
-  .features {
-    display: grid;
-
-    grid-template-columns:
-      repeat(auto-fit, minmax(220px, 1fr));
-
-    gap: 20px;
-
-    margin-top: 50px;
-  }
-
-  .feature {
-    background:
-      linear-gradient(
-        145deg,
-        #12372a,
-        #1e5943
-      );
-
-    color: white;
-
-    border-radius: 20px;
-
-    padding: 27px 20px;
-
-    text-align: center;
-
-    box-shadow:
-      0 12px 28px rgba(18, 55, 42, 0.22);
-
-    border: 1px solid rgba(214, 168, 79, 0.35);
-  }
-
-  .feature div {
-    font-size: 27px;
-  }
-
-  .feature h3 {
-    margin: 8px 0;
-
-    color: #f1d58b;
-  }
-
-  .feature p {
-    font-family: Arial, sans-serif;
-
-    font-size: 14px;
-
-    margin-bottom: 0;
-  }
-
-  /* QUOTE */
-
-  .quote {
-    margin: 55px auto 10px;
-
-    max-width: 900px;
-
-    background:
-      linear-gradient(
-        135deg,
-        #103529,
-        #245f49
-      );
-
-    color: white;
-
-    border-radius: 24px;
-
-    padding: 40px 28px;
-
-    text-align: center;
-
-    border: 2px solid #d6a84f;
-
-    box-shadow:
-      0 18px 40px rgba(18,55,42,0.25);
-  }
-
-  .quote h2 {
-    margin-top: 0;
-
-    color: #f1d58b;
-
-    font-size: 28px;
-  }
-
-  .quote p {
-    font-family: Arial, sans-serif;
-
-    font-size: 18px;
-
-    max-width: 760px;
-
-    margin: 12px auto;
-  }
-
-  /* BACK HOME */
-
-  .back-home {
-    text-align: center;
-
-    margin: 38px 0 5px;
-  }
-
-  .back-home a {
-    display: inline-block;
-
-    text-decoration: none;
-
-    background: #12372a;
-
-    color: white;
-
-    padding: 13px 26px;
-
-    border-radius: 999px;
-
-    font-family: Arial, sans-serif;
-
-    font-weight: bold;
-
-    border: 1px solid #d6a84f;
-  }
-
-  /* FOOTER */
-
-  footer {
-    background: #12372a;
-
-    color: white;
-
-    text-align: center;
-
-    padding: 30px 15px;
-
-    margin-top: 40px;
-
-    border-top: 3px solid #d6a84f;
-  }
-
-  footer p {
-    margin: 5px 0;
-
-    font-family: Arial, sans-serif;
-  }
-
-  /* MOBILE */
-
-  @media (max-width: 700px) {
-
-    header h1 {
-      font-size: 25px;
+  <style>
+
+    /* =========================
+       RESET
+    ========================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(214, 168, 79, 0.14),
+          transparent 35%
+        ),
+        linear-gradient(
+          180deg,
+          #f8f1df 0%,
+          #fffaf0 45%,
+          #f1e5c8 100%
+        );
+      color: #24352f;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background:
+        linear-gradient(
+          135deg,
+          #092c25,
+          #0d493c,
+          #11604d
+        );
+      color: white;
+      padding: 18px 20px;
+      border-bottom: 3px solid #d5aa55;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.18);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #d7b15c;
+      color: #12372e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      box-shadow: 0 0 0 4px rgba(215, 177, 92, 0.15);
     }
 
     nav {
-      padding: 10px 5px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
-      display: inline-block;
-
-      margin: 4px 5px;
-
-      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #f9f5e9;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      transition: 0.25s ease;
     }
 
-    .hero {
-      min-height: 540px;
+    nav a:hover,
+    nav a.active {
+      background: rgba(255, 255, 255, 0.14);
+      color: #f0cf82;
+    }
 
-      padding: 40px 14px;
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 28, 23, 0.92) 0%,
+          rgba(8, 48, 39, 0.72) 45%,
+          rgba(8, 48, 39, 0.32) 100%
+        ),
+        url("https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=1800&q=85")
+        center center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 75% 30%,
+          rgba(222, 181, 92, 0.22),
+          transparent 25%
+        );
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 25px;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-content {
-      padding: 30px 17px;
-
-      border-radius: 20px;
+      max-width: 720px;
+      color: white;
     }
 
-    .hero h2 {
-      font-size: 32px;
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 17px;
+      border: 1px solid rgba(235, 202, 127, 0.7);
+      background: rgba(12, 45, 36, 0.65);
+      color: #f1d28a;
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(5px);
     }
 
-    .hero p {
-      font-size: 15px;
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.08;
+      margin-bottom: 20px;
+      color: #fffaf0;
+      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.4);
     }
 
-    .hero .hindi {
-      font-size: 15px;
+    .hero h1 span {
+      color: #e8c774;
     }
 
-    .intro {
-      padding: 24px 19px;
+    .hero-subtitle {
+      font-size: 20px;
+      color: #f3ead4;
+      margin-bottom: 18px;
+      max-width: 650px;
     }
 
-    .intro h2 {
-      font-size: 27px;
+    .hero-hindi {
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+      color: #eadfca;
+      margin-bottom: 30px;
+      max-width: 650px;
     }
 
-    .section-title {
-      font-size: 29px;
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 23px;
+      background: #d4aa54;
+      color: #18362e;
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      transition: 0.25s ease;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
     }
 
-    .timeline {
-      grid-template-columns: 1fr;
+    .hero-button:hover {
+      transform: translateY(-3px);
+      background: #e5c477;
+    }
+
+
+    /* =========================
+       DECORATIVE DIVIDER
+    ========================== */
+
+    .ornament {
+      text-align: center;
+      color: #b28a3c;
+      font-size: 24px;
+      margin: 35px auto 10px;
+      letter-spacing: 8px;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "────";
+      margin: 0 10px;
+      opacity: 0.6;
+    }
+
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 20px 70px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin: 35px auto 45px;
+      max-width: 750px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      color: #164c3d;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      font-family: Arial, sans-serif;
+      color: #59665f;
+      font-size: 16px;
+    }
+
+    .section-heading .hindi {
+      margin-top: 8px;
+      color: #766b58;
+    }
+
+
+    /* =========================
+       SEERAH CARDS
+    ========================== */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
     }
 
     .seerah-card {
-      padding: 24px;
-    }
-
-    .features {
-      grid-template-columns: 1fr;
-    }
-
-    .quote {
-      padding: 32px 20px;
-    }
-
-    .quote p {
-      font-size: 16px;
-    }
-  }
-</style>
-  
-      border-radius: 999px;
-      font-weight: bold;
-      margin: 6px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-    }
-
-    .hero-buttons a.secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid #f1d58b;
-    }
-
-    main {
-      max-width: 1150px;
-      margin: auto;
-      padding: 45px 18px;
-    }
-
-    .intro {
-      background: white;
-      border-radius: 22px;
-      padding: 30px;
-
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(249, 240, 217, 0.95)
+        );
+      border: 1px solid rgba(181, 143, 63, 0.28);
+      border-radius: 18px;
+      padding: 25px 21px;
+      min-height: 250px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 10px 30px rgba(68, 57, 35, 0.09),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
     }
 
     .seerah-card::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      height: 5px;
-      width: 100%;
-      background: linear-gradient(90deg, #12372a, #d6a84f);
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      right: -30px;
+      top: -30px;
+      background: rgba(201, 159, 73, 0.11);
     }
 
-    .icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
-      background: #f3e3bc;
+    .seerah-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(181, 143, 63, 0.65);
+      box-shadow:
+        0 18px 40px rgba(55, 54, 36, 0.15);
+    }
+
+    .card-number {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #a17a32;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px;
+      background: #f0e1bb;
+      color: #18503f;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
-      margin-bottom: 15px;
+      font-size: 25px;
+      margin-bottom: 16px;
     }
 
     .seerah-card h3 {
-      color: #12372a;
-      margin: 0 0 10px;
-      font-size: 22px;
+      color: #174c3d;
+      font-size: 21px;
+      line-height: 1.3;
+      margin-bottom: 8px;
     }
 
-    .seerah-card .urdu-title {
-      color: #8a6323;
-      font-weight: bold;
-      margin-bottom: 12px;
+    .seerah-card .hindi-title {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #806f50;
+      margin-bottom: 10px;
     }
 
     .seerah-card p {
-      margin: 8px 0;
+      font-family: Arial, sans-serif;
+      color: #626b65;
+      font-size: 14px;
+      line-height: 1.65;
     }
 
-    .hindi {
-      color: #6b5a42;
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      color: #a17a32;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       DETAIL BOX
+    ========================== */
+
+    #seerahDisplay {
+      margin-top: 45px;
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .detail-box {
+      background:
+        linear-gradient(
+          135deg,
+          #fffdf6,
+          #f4e9cc
+        );
+      border: 1px solid #d5b66e;
+      border-radius: 22px;
+      padding: 35px;
+      box-shadow: 0 15px 40px rgba(59, 49, 28, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .detail-box::after {
+      content: "☪";
+      position: absolute;
+      right: 25px;
+      top: 15px;
+      font-size: 90px;
+      color: rgba(172, 132, 54, 0.07);
+    }
+
+    .detail-label {
+      display: inline-block;
+      background: #174c3d;
+      color: #f3d68f;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .detail-box h2 {
+      color: #174c3d;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .detail-hindi {
+      font-family: Arial, sans-serif;
+      color: #8a713f;
+      margin-bottom: 22px;
+      font-size: 16px;
+    }
+
+    .detail-box p {
+      font-family: Arial, sans-serif;
+      color: #46534d;
+      font-size: 16px;
+      margin-bottom: 16px;
+      max-width: 900px;
+    }
+
+    .close-detail {
+      border: none;
+      background: #e6d4a7;
+      color: #244b3d;
+      padding: 8px 15px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+
+    /* =========================
+       FEATURES
+    ========================== */
+
+    .features-section {
+      margin-top: 75px;
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 35px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
     .feature {
-      background: #12372a;
-      color: white;
-      border-radius: 18px;
-      padding: 24px;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(18,55,42,0.22);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(182, 144, 65, 0.22);
+      border-radius: 17px;
+      padding: 25px 17px;
+      box-shadow: 0 8px 25px rgba(64, 55, 35, 0.06);
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ead8aa;
+      color: #17503f;
+      font-size: 23px;
     }
 
     .feature h3 {
-      margin: 8px 0;
-      color: #f1d58b;
-    }
-
-    .quote {
-      margin: 45px auto 10px;
-      max-width: 900px;
-      background: linear-gradient(135deg, #12372a, #245f49);
-      color: white;
-      border-radius: 22px;
-      padding: 35px 28px;
-      text-align: center;
-      border: 2px solid #d6a84f;
-      box-shadow: 0 15px 35px rgba(18,55,42,0.25);
-    }
-
-    .quote h2 {
-      margin-top: 0;
-      color: #f1d58b;
-    }
-
-    .quote p {
+      color: #1a4d3f;
       font-size: 18px;
-      max-width: 760px;
-      margin: 12px auto;
+      margin-bottom: 6px;
     }
 
-    .back-home {
+    .feature p {
+      font-family: Arial, sans-serif;
+      color: #69716b;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+
+    /* =========================
+       QUOTE
+    ========================== */
+
+    .quote-section {
+      margin-top: 75px;
+    }
+
+    .quote-box {
+      max-width: 900px;
+      margin: auto;
       text-align: center;
-      margin: 35px 0 5px;
+      background:
+        linear-gradient(
+          135deg,
+          #123e32,
+          #185847
+        );
+      color: white;
+      padding: 48px 35px;
+      border-radius: 25px;
+      border: 1px solid #c6a151;
+      box-shadow: 0 18px 45px rgba(18, 62, 50, 0.22);
+      position: relative;
+      overflow: hidden;
     }
 
-    .back-home a {
-      display: inline-block;
-      text-decoration: none;
-      background: #12372a;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 999px;
+    .quote-box::before {
+      content: "❝";
+      position: absolute;
+      left: 22px;
+      top: 0;
+      font-size: 100px;
+      color: rgba(225, 193, 111, 0.13);
+    }
+
+    .quote-arabic {
+      font-size: 23px;
+      color: #f0d58f;
+      margin-bottom: 22px;
+    }
+
+    .quote-box p {
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #f5f1e6;
+    }
+
+    .quote-reference {
+      margin-top: 18px;
+      color: #e0c478;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       NOTE
+    ========================== */
+
+    .note {
+      margin: 55px auto 0;
+      max-width: 900px;
+      background: rgba(255, 251, 237, 0.85);
+      border-left: 4px solid #b58a3b;
+      padding: 22px 25px;
+      border-radius: 10px;
+      font-family: Arial, sans-serif;
+      color: #5e655f;
+      font-size: 14px;
+    }
+
+    .note strong {
+      color: #184d3e;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background:
+        linear-gradient(
+          135deg,
+          #082b24,
+          #0d4336
+        );
+      color: #e9e2d2;
+      padding: 45px 20px 25px;
+      border-top: 3px solid #caa453;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-size: 25px;
+      color: #f1d48b;
+      margin-bottom: 8px;
       font-weight: bold;
     }
 
-    footer {
-      background: #12372a;
-      color: white;
-      text-align: center;
-      padding: 28px 15px;
-      margin-top: 35px;
+    footer p {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #c9d0ca;
+      margin-bottom: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 20px 0;
+    }
+
+    .footer-links a {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #e2d6b8;
+    }
+
+    .footer-links a:hover {
+      color: #f1d48b;
+    }
+
+    .copyright {
+      margin-top: 25px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 12px;
+      color: #aab5ae;
+    }
+
+
+    /* =========================
+       ANIMATION
+    ========================== */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media (max-width: 1000px) {
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .header-inner {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 650px) {
+
+      header {
+        position: relative;
+        padding: 15px 12px;
+      }
+
+      .brand {
+        font-size: 21px;
+      }
+
+      .brand-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+
+      nav {
+        gap: 3px;
+      }
+
+      nav a {
+        font-size: 12px;
+        padding: 7px 8px;
+      }
+
+      .hero {
+        min-height: 560px;
+      }
+
+      .hero-inner {
+        padding: 70px 20px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero-subtitle {
+        font-size: 17px;
+      }
+
+      .hero-hindi {
+        font-size: 15px;
+      }
+
+      main {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .seerah-card {
+        min-height: auto;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-box {
+        padding: 25px 20px;
+      }
+
+      .detail-box h2 {
+        font-size: 27px;
+      }
+
+      .quote-box {
+        padding: 35px 22px;
+      }
+
+      .quote-arabic {
+        font-size: 19px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
+
 <body>
 
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
-    <h1>Noor-e-Hidayat</h1>
-    <p>Quran • Hadith • Duas • Seerah • Islamic Knowledge</p>
+
+    <div class="header-inner">
+
+      <a href="index.html" class="brand">
+
+        <div class="brand-icon">☪</div>
+
+        <span>Noor-e-Hidayat</span>
+
+      </a>
+
+
+      <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="quran.html">Quran</a>
+
+        <a href="hadith.html">Hadith</a>
+
+        <a href="duas.html">Duas</a>
+
+        <a href="seerah.html" class="active">Seerah</a>
+
+        <a href="index.html#articles">Articles</a>
+
+        <a href="index.html#about">About</a>
+
+      </nav>
+
+    </div>
+
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="quran.html">Quran</a>
-    <a href="hadith.html">Hadith</a>
-    <a href="duas.html">Duas</a>
-    <a href="seerah.html">Seerah</a>
-    <a href="index.html#articles">Articles</a>
-    <a href="index.html#about">About</a>
-  </nav>
+
+  <!-- =========================
+       HERO
+  ========================== -->
 
   <section class="hero">
-    <div class="hero-content">
-      <span class="badge">The Blessed Seerah</span>
 
-      <h2>Seerah — Life of Prophet Muhammad ﷺ</h2>
+    <div class="hero-inner">
 
-      <p>
-        Discover the blessed life of Prophet Muhammad ﷺ through important
-        events, beautiful manners, timeless lessons and guidance for daily life.
-      </p>
+      <div class="hero-content">
 
-      <p class="hindi">
-        पैग़म्बर मुहम्मद ﷺ की मुबारक ज़िंदगी, उनकी सीरत, अख़लाक़ और
-        रोज़मर्रा की ज़िंदगी के लिए मिलने वाली सीख को आसान भाषा में जानें।
-      </p>
+        <div class="hero-badge">
+          ISLAMIC HISTORY • SEERAH
+        </div>
 
-      <div class="hero-buttons">
-        <a href="#explore">Explore the Seerah</a>
-        <a href="index.html" class="secondary">Back to Home</a>
+        <h1>
+          Seerah — Life of
+          <span>Prophet Muhammad ﷺ</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Learn about the remarkable life, character,
+          struggles, mercy and guidance of Prophet Muhammad ﷺ.
+        </p>
+
+        <p class="hero-hindi">
+          Nabi ﷺ ki zindagi ke aham waqiat, unki sabr,
+          rehmat, akhlaaq aur hamare liye milne wali
+          hidayat ko aasaan alfaaz mein samjhein.
+        </p>
+
+        <a href="#explore" class="hero-button">
+          Explore the Seerah
+          <span>↓</span>
+        </a>
+
       </div>
+
     </div>
+
   </section>
 
-  <main>
 
-    <section class="intro">
-      <h2>Why Study the Seerah?</h2>
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main id="explore">
+
+
+    <div class="ornament">
+      ✦
+    </div>
+
+
+    <div class="section-heading">
+
+      <h2>
+        Journey Through the Seerah
+      </h2>
 
       <p>
-        The Seerah is the study of the life of Prophet Muhammad ﷺ. It teaches us
-        how to worship Allah, how to deal with people, how to be patient in
-        difficulty, and how to live with mercy, honesty and wisdom.
+        Explore the important stages and lessons
+        from the life of Prophet Muhammad ﷺ.
       </p>
 
       <p class="hindi">
-        सीरत पढ़ने से हमें नबी ﷺ की ज़िंदगी से सब्र, रहमत, सच्चाई,
-        इंसाफ़ और अल्लाह पर भरोसा करने की सीख मिलती है।
-      </p>
-    </section>
-
-    <h2 class="section-title" id="explore">Explore the Seerah</h2>
-
-    <p class="section-subtitle">
-      Important chapters from the life of Prophet Muhammad ﷺ, explained in a
-      simple and respectful way.
-    </p>
-
-    <section class="timeline">
-
-      <div class="seerah-card">
-        <div class="icon">🌙</div>
-
-        <h3>Early Life</h3>
-        <div class="urdu-title">प्रारंभिक जीवन</div>
-
-        <p>
-          Prophet Muhammad ﷺ was born in Makkah. From a young age, he was known
-          for honesty, good character and trustworthiness.
-        </p>
-
-        <p class="hindi">
-          बचपन से ही आप ﷺ अपनी सच्चाई, अमानतदारी और अच्छे अख़लाक़ के लिए
-          पहचाने जाते थे।
-        </p>
-      </div>
-
-      <div class="seerah-card">
-        <div class="icon">📜</div>
-
-        <h3>Beginning of Prophethood</h3>
-        <div class="urdu-title">नुबुव्वत की शुरुआत</div>
-
-        <p>
-          At the age of forty, the first revelation came through Angel Jibril
-          عليه السلام in the Cave of Hira.
-        </p>
-
-        <p class="hindi">
-          चालीस साल की उम्र में ग़ार-ए-हिरा में पहली वह़ी आई और नुबुव्वत
-          की शुरुआत हुई।
-        </p>
-      </div>
-
-      <div class="seerah-card">
-        <div class="icon">🏜️</div>
-
-        <h3>Makkah Period</h3>
-        <div class="urdu-title">मक्का का दौर</div>
-
-        <p>
-          In Makkah, the Prophet ﷺ and the early Muslims faced hardship, but
-          they remained patient and firm upon faith.
-        </p>
-
-        <p class="hindi">
-          मक्का के दौर में मुश्किलें आईं, मगर मुसलमानों ने सब्र और ईमान
-          के साथ दीन पर क़ायम रहना सीखा।
-        </p>
-      </div>
-
-      <div class="seerah-card">
-        <div class="icon">🐪</div>
-
-        <h3>Hijrah to Madinah</h3>
-        <div class="urdu-title">हिजरत मदीना की ओर</div>
-
-        <p>
-          The Hijrah was a turning point in Islamic history, showing sacrifice,
-          trust in Allah and brotherhood.
-        </p>
-
-        <p class="hindi">
-          हिजरत हमें क़ुर्बानी, अल्लाह पर भरोसा और भाईचारे की बड़ी सीख
-          देती है।
-        </p>
-      </div>
-
-      <div class="seerah-card">
-        <div class="icon">🕌</div>
-
-        <h3>Madinah Period</h3>
-        <div class="urdu-title">मदीना का दौर</div>
-
-        <p>
-          In Madinah, the Muslim community grew. The Prophet ﷺ taught justice,
-          mercy, unity and responsibility.
-        </p>
-
-        <p class="hindi">
-          मदीना में इस्लामी समाज की बुनियाद रखी गई, जहाँ इंसाफ़, रहमत और
-          एकता की शिक्षा मिली।
-        </p>
-      </div>
-
-      <div class="seerah-card">
-        <div class="icon">🕋</div>
-
-        <h3>Conquest of Makkah</h3>
-        <div class="urdu-title">मक्का की फ़तह</div>
-
-        <p>
-          The conquest of Makkah showed the Prophet's ﷺ mercy and forgiveness,
-          even towards those who had opposed him.
-        </p>
-
-        <p class="hindi">
-          मक्का की फ़तह के समय नबी ﷺ ने माफ़ी और रहमत का बेहतरीन नमूना
-          पेश किया।
-        </p>
-      </div>
-
-      <div class="seerah-card">
-        <div class="icon">🤲</div>
-
-        <h3>Final Sermon</h3>
-        <div class="urdu-title">आख़िरी ख़ुतबा</div>
-
-        <p>
-          The Farewell Sermon contains important guidance about equality,
-          justice, rights, responsibility and fearing Allah.
-        </p>
-
-        <p class="hindi">
-          आख़िरी ख़ुतबे में इंसाफ़, बराबरी, हक़ूक़ और अल्लाह से डरने की
-          अहम नसीहतें मौजूद हैं।
-        </p>
-      </div>
-
-      <div class="seerah-card">
-        <div class="icon">⭐</div>
-
-        <h3>Lessons from the Seerah</h3>
-        <div class="urdu-title">सीरत से सीख</div>
-
-        <p>
-          The Seerah teaches patience, mercy, honesty, forgiveness, courage,
-          humility and trust in Allah.
-        </p>
-
-        <p class="hindi">
-          सीरत हमें सब्र, रहमत, ईमानदारी, माफ़ी, हिम्मत और अल्लाह पर
-          भरोसा करना सिखाती है।
-        </p>
-      </div>
-
-    </section>
-
-    <section class="features">
-
-      <div class="feature">
-        <div>📚</div>
-        <h3>Authentic Sources</h3>
-        <p>Learn Seerah with respect and care.</p>
-      </div>
-
-      <div class="feature">
-        <div>💡</div>
-        <h3>Easy to Understand</h3>
-        <p>Simple English with Hindi explanation.</p>
-      </div>
-
-      <div class="feature">
-        <div>🌿</div>
-        <h3>Learn & Implement</h3>
-        <p>Practical lessons for daily life.</p>
-      </div>
-
-      <div class="feature">
-        <div>✨</div>
-        <h3>Best Role Model</h3>
-        <p>The best example for mankind.</p>
-      </div>
-
-    </section>
-
-    <section class="quote">
-      <h2>Beautiful Reminder</h2>
-
-      <p>
-        “Indeed, in the Messenger of Allah you have an excellent example...”
+        Seerah ke mukhtalif marahil aur unse milne wali
+        zindagi ki khoobsurat seekhein.
       </p>
 
-      <p>
-        Surah Al-Ahzab 33:21
-      </p>
+    </div>
 
-      <p class="hindi">
-        हमारे लिए सबसे बेहतरीन नमूना पैग़म्बर मुहम्मद ﷺ की सीरत है।
-      </p>
+
+    <!-- =========================
+         CARDS
+    ========================== -->
+
+    <div class="cards">
+
+
+      <!-- 1 -->
+
+      <article
+        class="seerah-card"
+        onclick="showSeerah('early')"
+      >
+
+        <div class="card-number">
+          01 • EARLY LIFE
+        </div>
+
+        <div class="card-icon">
+          🏜️
+        </div>
+
+        <h3>
+          Early Life
+        </h3>
+
+        <div class="hindi-title">
+          प्रारंभिक जीवन
+        </div>
+
+        <p>
+          Learn about the early years in Makkah
+          and the qualities that made him known
+          for truthfulness and trustworthiness.
+        </p>
+
+        <span class="read-more">
+          Read Story →
+        </span>
+
+      </article>
+
+
+      <!-- 2 -->
+
+      <article
+        class="seerah-card"
+        onclick="showSeerah('prophethood')"
+      >
+
+        <div class="card-number">
+          02 • REVELATION
+        </div>
+
+        <div class="card-icon">
+          🌙
+        </div>
+
+        <h3>
+          Beginning of Prophethood
+        </h3>
+
+        <div class="hindi-title">
+          नुबुव्वत की शुरुआत
+        </div>
+
+        <p>
+          Discover how the first revelation came
+          and how the mission of calling humanity
+          towards Allah began.
+        </p>
+
+        <span class="read-more">
+          Read Story →
+        </span>
+
+      </article>
+
+
+      <!-- 3 -->
+
+      <article
+        class="seerah-card"
+        onclick="showSeerah('makkah')"
+      >
+
+        <div class="card-number">
+          03 • MAKKAH
+        </div>
+
+        <div class="card-icon">
+          🕋
+        </div>
+
+        <h3>
+          Makkah Period
+        </h3>
+
+        <div class="hindi-title">
+          मक्का का दौर
+        </div>
+
+        <p>
+          A period of patience, hardship,
+          steadfastness and calling people
+          towards the worship of Allah.
+        </p>
+
+        <span class="read-more">
+          Read Story →
+        </span>
+
+      </article>
+
+
+      <!-- 4 -->
+
+      <article
+        class="seerah-card"
+        onclick="showSeerah('hijrah')"
+      >
+
+        <div class="card-number">
+          04 • HIJRAH
+        </div>
+
+        <div class="card-icon">
+          🐪
+        </div>
+
+        <h3>
+          Hijrah to Madinah
+        </h3>
+
+        <div class="hindi-title">
+          हिजरत मदीना की ओर
+        </div>
+
+        <p>
+          Learn about the historic migration
+          and the trust, sacrifice and reliance
+          upon Allah behind it.
+        </p>
+
+        <span class="read-more">
+          Read Story →
+        </span>
+
+      </article>
+
+
+      <!-- 5 -->
+
+      <article
+        class="seerah-card"
+        onclick="showSeerah('madinah')"
+      >
+
+        <div class="card-number">
+          05 • MADINAH
+        </div>
+
+        <div class="card-icon">
+          🕌
+        </div>
+
+        <h3>
+          Madinah Period
+        </h3>
+
+        <div class="hindi-title">
+          मदीना का दौर
+        </div>
+
+        <p>
+          Explore the building of the Muslim
+          community and the Prophet's ﷺ leadership,
+          mercy and justice.
+        </p>
+
+        <span class="read-more">
+          Read Story →
+        </span>
+
+      </article>
+
+
+      <!-- 6 -->
+
+      <article
+        class="seerah-card"
+        onclick="showSeerah('conquest')"
+      >
+
+        <div class="card-number">
+          06 • MAKKAH RETURNS
+        </div>
+
+        <div class="card-icon">
+          🏛️
+        </div>
+
+        <h3>
+          Conquest of Makkah
+        </h3>
+
+        <div class="hindi-title">
+          मक्का की फ़तह
+        </div>
+
+        <p>
+          Understand the peaceful return to Makkah
+          and the remarkable example of forgiveness
+          shown to former enemies.
+        </p>
+
+        <span class="read-more">
+          Read Story →
+        </span>
+
+      </article>
+
+
+      <!-- 7 -->
+
+      <article
+        class="seerah-card"
+        onclick="showSeerah('sermon')"
+      >
+
+        <div class="card-number">
+          07 • FINAL SERMON
+        </div>
+
+        <div class="card-icon">
+          📜
+        </div>
+
+        <h3>
+          Final Sermon
+        </h3>
+
+        <div class="hindi-title">
+          आख़िरी ख़ुतबा
+        </div>
+
+        <p>
+          Reflect on important principles of justice,
+          responsibility, human dignity and faith.
+        </p>
+
+        <span class="read-more">
+          Read Story →
+        </span>
+
+      </article>
+
+
+      <!-- 8 -->
+
+      <article
+        class="seerah-card"
+        onclick="showSeerah('lessons')"
+      >
+
+        <div class="card-number">
+          08 • LESSONS
+        </div>
+
+        <div class="card-icon">
+          ❤️
+        </div>
+
+        <h3>
+          Lessons from the Seerah
+        </h3>
+
+        <div class="hindi-title">
+          सीरत से सीख
+        </div>
+
+        <p>
+          Discover practical lessons of patience,
+          mercy, honesty, courage, forgiveness
+          and trust in Allah.
+        </p>
+
+        <span class="read-more">
+          Read Story →
+        </span>
+
+      </article>
+
+    </div>
+
+
+    <!-- =========================
+         DETAIL DISPLAY
+    ========================== -->
+
+    <div id="seerahDisplay"></div>
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section class="features-section">
+
+      <div class="section-heading">
+
+        <h2>
+          Learn the Seerah
+        </h2>
+
+        <p>
+          Simple, meaningful and practical Islamic learning.
+        </p>
+
+      </div>
+
+
+      <div class="features">
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            📚
+          </div>
+
+          <h3>
+            Authentic Sources
+          </h3>
+
+          <p>
+            Learn through established Islamic
+            sources and well-known Seerah events.
+          </p>
+
+        </div>
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            💡
+          </div>
+
+          <h3>
+            Easy to Understand
+          </h3>
+
+          <p>
+            Complex historical events explained
+            in simple and clear language.
+          </p>
+
+        </div>
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            🌱
+          </div>
+
+          <h3>
+            Learn & Implement
+          </h3>
+
+          <p>
+            Turn the lessons of the Seerah
+            into positive actions in daily life.
+          </p>
+
+        </div>
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            ⭐
+          </div>
+
+          <h3>
+            Best Role Model
+          </h3>
+
+          <p>
+            Reflect on the beautiful character
+            and guidance of Prophet Muhammad ﷺ.
+          </p>
+
+        </div>
+
+      </div>
+
     </section>
 
-    <div class="back-home">
-      <a href="index.html">← Back to Noor-e-Hidayat Home</a>
+
+    <!-- =========================
+         QURAN QUOTE
+    ========================== -->
+
+    <section class="quote-section">
+
+      <div class="quote-box">
+
+        <div class="quote-arabic">
+          لَّقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ
+        </div>
+
+        <p>
+          “Indeed, in the Messenger of Allah you have
+          an excellent example for whoever has hope
+          in Allah and the Last Day and remembers
+          Allah often.”
+        </p>
+
+        <div class="quote-reference">
+          Qur'an — Surah Al-Ahzab 33:21
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         NOTE
+    ========================== -->
+
+    <div class="note">
+
+      <strong>Important:</strong>
+      The Seerah should be studied with respect,
+      reliable sources and scholarly guidance.
+      This page is intended as a simple introduction
+      to important events and lessons.
+
     </div>
 
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
-    <p><strong>Noor-e-Hidayat</strong></p>
-    <p>Learn • Reflect • Practice</p>
-    <p>© 2026 Noor-e-Hidayat</p>
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        Noor-e-Hidayat
+      </div>
+
+      <p>
+        Learn Quran, Hadith, Duas, Seerah
+        and Islamic knowledge in simple English.
+      </p>
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="quran.html">
+          Quran
+        </a>
+
+        <a href="hadith.html">
+          Hadith
+        </a>
+
+        <a href="duas.html">
+          Duas
+        </a>
+
+        <a href="seerah.html">
+          Seerah
+        </a>
+
+        <a href="index.html#articles">
+          Articles
+        </a>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 Noor-e-Hidayat. All rights reserved.
+      </div>
+
+    </div>
+
   </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    const seerahData = {
+
+      early: {
+        title: "Early Life of Prophet Muhammad ﷺ",
+        hindi: "प्रारंभिक जीवन",
+        text:
+          "Prophet Muhammad ﷺ was born in Makkah. From his early life, he was known for noble character, honesty and trustworthiness. The people of Makkah respected him and later called him Al-Amin, meaning the trustworthy."
+      },
+
+      prophethood: {
+        title: "Beginning of Prophethood",
+        hindi: "नुबुव्वत की शुरुआत",
+        text:
+          "At the age of forty, Prophet Muhammad ﷺ received the first revelation through Angel Jibril عليه السلام in the Cave of Hira. The revelation began with the command to read and marked the beginning of his mission as the Messenger of Allah."
+      },
+
+      makkah: {
+        title: "The Makkah Period",
+        hindi: "मक्का का दौर",
+        text:
+          "The Makkah period was marked by patience, perseverance and steadfastness. The Prophet ﷺ called people towards Tawheed, the worship of Allah alone. Muslims faced opposition and hardship, yet the message continued with wisdom and patience."
+      },
+
+      hijrah: {
+        title: "Hijrah to Madinah",
+        hindi: "हिजरत मदीना की ओर",
+        text:
+          "The Hijrah from Makkah to Madinah was a major turning point in Islamic history. It teaches believers about sacrifice, planning, courage, trust in Allah and remaining firm upon faith during difficult circumstances."
+      },
+
+      madinah: {
+        title: "The Madinah Period",
+        hindi: "मदीना का दौर",
+        text:
+          "In Madinah, the Prophet ﷺ helped establish a community based on faith, brotherhood, justice and responsibility. His leadership demonstrated mercy, consultation, patience and concern for the well-being of people."
+      },
+
+      conquest: {
+        title: "The Conquest of Makkah",
+        hindi: "मक्का की फ़तह",
+        text:
+          "The return to Makkah was one of the great moments of the Seerah. Instead of seeking personal revenge, the Prophet ﷺ demonstrated remarkable forgiveness and mercy. The event provides powerful lessons about humility, forgiveness and victory with responsibility."
+      },
+
+      sermon: {
+        title: "The Final Sermon",
+        hindi: "आख़िरी ख़ुतबा",
+        text:
+          "The Final Sermon contains important reminders about human dignity, justice, responsibility, family rights and holding firmly to the guidance of Islam. It remains an important source for reflecting on the principles taught by the Prophet ﷺ."
+      },
+
+      lessons: {
+        title: "Lessons From the Seerah",
+        hindi: "सीरत से सीख",
+        text:
+          "The Seerah teaches us patience during hardship, mercy towards others, honesty in every situation, courage when facing difficulty, forgiveness after gaining strength and complete trust in Allah. The goal of studying Seerah is not only to know history, but to improve our character and actions."
+      }
+
+    };
+
+
+    function showSeerah(type) {
+
+      const display =
+        document.getElementById("seerahDisplay");
+
+      const item =
+        seerahData[type];
+
+      if (!item) {
+        return;
+      }
+
+
+      display.innerHTML = `
+
+        <div class="detail-box">
+
+          <div class="detail-label">
+            SEERAH
+          </div>
+
+          <h2>
+            ${item.title}
+          </h2>
+
+          <div class="detail-hindi">
+            ${item.hindi}
+          </div>
+
+          <p>
+            ${item.text}
+          </p>
+
+          <button
+            class="close-detail"
+            onclick="closeSeerah()"
+          >
+            Close
+          </button>
+
+        </div>
+
+      `;
+
+
+      display.style.display = "block";
+
+
+      display.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    }
+
+
+    function closeSeerah() {
+
+      const display =
+        document.getElementById("seerahDisplay");
+
+      display.style.display = "none";
+
+      display.innerHTML = "";
+
+    }
+
+  </script>
+
 
 </body>
 
