@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +10,7 @@
 <title>Hadith Collection – Noor-e-Hidayat</title>
 
 <meta name="description"
-content="Read authentic Hadith from Sahih Bukhari, Sahih Muslim, Abu Dawud, Tirmidhi, Nasa'i and Ibn Majah with Arabic, Urdu, Hindi and English translations.">
+content="Read Hadith from Sahih Bukhari, Sahih Muslim, Abu Dawud, Tirmidhi, Nasa'i and Ibn Majah with Arabic, Urdu, Hindi and English translations.">
 
 <link rel="canonical"
 href="https://khanbhai5555313-ship-it.github.io/noor-e-hidayat/hadith.html">
@@ -27,318 +29,568 @@ body {
   line-height: 1.7;
 }
 
+
+/* ================= HEADER ================= */
+
 header {
+
   background:
-    linear-gradient(rgba(20,15,10,.80), rgba(20,15,10,.90)),
+    linear-gradient(
+      rgba(15, 12, 8, 0.82),
+      rgba(15, 12, 8, 0.92)
+    ),
     url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Hadith_al-Bukhari_manuscript.jpg")
     center/cover;
-  color: #f4d58a;
+
+  color: #f3d48a;
+
   text-align: center;
+
   padding: 75px 20px;
+
   border-bottom: 4px solid #c99a3d;
 }
 
 header h1 {
+
   margin: 0;
+
   font-family: Georgia, serif;
+
   font-size: 48px;
+
   letter-spacing: 1px;
 }
 
 header p {
+
   max-width: 800px;
+
   margin: 15px auto 0;
+
   color: #f7ead0;
-  font-size: 18px;
+
+  font-size: 19px;
 }
 
 .hero-sub {
+
   margin-top: 8px;
+
+  color: #d9bb70;
+
   font-size: 16px;
-  color: #d7b96e;
 }
 
+
+/* ================= NAV ================= */
+
 nav {
+
   position: sticky;
+
   top: 0;
+
   z-index: 1000;
+
   background: #075b4d;
+
   padding: 12px;
+
   text-align: center;
+
   box-shadow: 0 3px 12px rgba(0,0,0,.15);
 }
 
 nav a {
+
   color: white;
+
   text-decoration: none;
+
   margin: 0 9px;
+
   font-weight: bold;
 }
 
 nav a:hover {
+
   color: #f2cc75;
 }
 
+
+/* ================= CONTAINER ================= */
+
 .container {
+
   width: min(1100px, 94%);
+
   margin: auto;
 }
 
+
+/* ================= TITLES ================= */
+
 .section-title {
+
   text-align: center;
+
   font-family: Georgia, serif;
+
   color: #805d22;
+
   margin: 45px 0 25px;
+
   font-size: 32px;
 }
 
 .section-title::after {
+
   content: " ✦ ";
+
   display: block;
+
   color: #c99a3d;
+
   font-size: 20px;
+
   margin-top: 5px;
 }
 
+
+/* ================= INTRO ================= */
+
 .intro {
+
   background: white;
+
   padding: 25px;
+
   border-radius: 14px;
+
   border-left: 5px solid #c99a3d;
+
   box-shadow: 0 5px 18px rgba(0,0,0,.08);
+
   text-align: center;
+
+  margin-bottom: 30px;
 }
 
+
+/* ================= COLLECTION CARDS ================= */
+
 .collection-grid {
+
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 20px;
+
   margin-top: 30px;
 }
 
 .collection-card {
+
   background:
-    linear-gradient(rgba(15,40,34,.88), rgba(15,40,34,.94)),
+    linear-gradient(
+      rgba(10, 38, 32, .88),
+      rgba(10, 38, 32, .95)
+    ),
     url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Hadith_al-Bukhari_manuscript.jpg")
     center/cover;
 
   color: white;
+
   padding: 28px 20px;
+
   border-radius: 15px;
+
   border: 1px solid #c99a3d;
+
   text-align: center;
+
   cursor: pointer;
+
   transition: .25s;
 }
 
 .collection-card:hover {
+
   transform: translateY(-5px);
+
   box-shadow: 0 12px 28px rgba(0,0,0,.20);
 }
 
 .collection-card.active {
-  box-shadow: 0 0 0 3px #e0b85c, 0 12px 30px rgba(0,0,0,.25);
+
+  box-shadow:
+    0 0 0 3px #e0b85c,
+    0 12px 30px rgba(0,0,0,.25);
 }
 
 .collection-card h3 {
+
   margin: 0 0 8px;
+
   color: #f1d28a;
+
   font-family: Georgia, serif;
+
   font-size: 21px;
 }
 
 .collection-card p {
+
   margin: 0;
-  font-size: 14px;
+
   color: #f4ead4;
+
+  font-size: 14px;
 }
 
+
+/* ================= CONTROLS ================= */
+
 .controls {
+
   margin: 35px 0 20px;
+
   background: white;
+
   padding: 20px;
+
   border-radius: 14px;
+
   box-shadow: 0 5px 18px rgba(0,0,0,.08);
+
   text-align: center;
 }
 
 .controls label {
+
   display: block;
+
   font-weight: bold;
+
   margin-bottom: 8px;
+
   color: #075b4d;
 }
 
 select {
+
   width: min(600px, 100%);
+
   padding: 13px;
+
   border: 2px solid #c99a3d;
+
   border-radius: 9px;
+
   background: white;
+
   font-size: 16px;
 }
 
-.reader {
-  margin-top: 25px;
-}
+
+/* ================= LOADING ================= */
 
 .loading,
 .error {
+
   background: white;
+
   padding: 25px;
+
   border-radius: 14px;
+
   text-align: center;
+
   box-shadow: 0 5px 18px rgba(0,0,0,.08);
+
+  margin: 20px 0;
 }
 
+
+/* ================= HADITH CARD ================= */
+
 .hadith-card {
+
   background: white;
+
   border-radius: 16px;
+
   padding: 30px;
-  margin-bottom: 20px;
+
+  margin: 25px 0 20px;
+
   box-shadow: 0 7px 25px rgba(0,0,0,.10);
+
   border-top: 4px solid #c99a3d;
 }
 
 .badge {
+
   display: inline-block;
+
   background: #075b4d;
+
   color: white;
+
   padding: 6px 12px;
+
   border-radius: 20px;
+
   font-size: 12px;
+
   font-weight: bold;
 }
 
 .hadith-number {
+
   font-family: Georgia, serif;
+
   color: #805d22;
+
   margin-top: 15px;
 }
 
+
+/* ================= LANGUAGE TITLE ================= */
+
 .language-title {
+
   font-weight: bold;
+
   color: #075b4d;
-  margin-bottom: 8px;
+
+  margin: 20px 0 8px;
+
+  font-size: 16px;
 }
+
+
+/* ================= ARABIC ================= */
 
 .hadith-arabic {
+
   direction: rtl;
+
   text-align: right;
-  font-family: "Times New Roman", serif;
+
+  font-family:
+    "Times New Roman",
+    serif;
+
   font-size: 25px;
-  line-height: 2.1;
+
+  line-height: 2.15;
+
   padding: 22px;
-  margin: 15px 0 25px;
+
+  margin-bottom: 25px;
+
   background: #faf6ec;
+
   border-right: 5px solid #c99a3d;
+
   border-radius: 10px;
 }
+
+
+/* ================= URDU ================= */
 
 .hadith-urdu {
+
   direction: rtl;
+
   text-align: right;
-  font-family: "Noto Nastaliq Urdu", "Noto Naskh Arabic", serif;
+
+  font-family:
+    "Noto Nastaliq Urdu",
+    "Noto Naskh Arabic",
+    "Times New Roman",
+    serif;
+
   font-size: 21px;
-  line-height: 2.1;
+
+  line-height: 2.2;
+
   background: #f7f2e8;
+
   padding: 20px;
+
   border-right: 4px solid #075b4d;
+
   border-radius: 10px;
-  margin-bottom: 22px;
+
+  margin-bottom: 25px;
 }
+
+
+/* ================= HINDI ================= */
 
 .hadith-hindi {
+
   direction: ltr;
+
   text-align: left;
+
   font-size: 18px;
+
   line-height: 1.9;
+
   background: #f7f2e8;
+
   padding: 20px;
+
   border-left: 4px solid #075b4d;
+
   border-radius: 10px;
-  margin-bottom: 22px;
+
+  margin-bottom: 25px;
 }
+
+
+/* ================= ENGLISH ================= */
 
 .hadith-english {
+
   font-size: 18px;
+
   line-height: 1.9;
+
   background: #f7f2e8;
+
   padding: 20px;
+
   border-left: 4px solid #c99a3d;
+
   border-radius: 10px;
-  margin-bottom: 22px;
+
+  margin-bottom: 25px;
 }
 
+
+/* ================= REFERENCE ================= */
+
 .reference {
+
   font-size: 14px;
+
   color: #666;
+
   border-top: 1px solid #ddd;
+
   padding-top: 15px;
 }
 
+
+/* ================= NAVIGATION ================= */
+
 .navigation {
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   gap: 15px;
+
   flex-wrap: wrap;
-  margin: 25px 0;
+
+  margin: 25px 0 40px;
 }
 
 button {
+
   border: none;
+
   background: #075b4d;
+
   color: white;
+
   padding: 12px 18px;
+
   border-radius: 8px;
+
   font-weight: bold;
+
   cursor: pointer;
 }
 
 button:hover {
+
   background: #064c40;
 }
 
 button:disabled {
+
   opacity: .45;
+
   cursor: not-allowed;
 }
 
-.load-more {
-  display: block;
-  margin: 20px auto 40px;
-}
+
+/* ================= INFO ================= */
 
 .info-grid {
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
   gap: 20px;
+
   margin-bottom: 50px;
 }
 
 .info-card {
+
   background: white;
+
   padding: 25px;
+
   border-radius: 14px;
-  box-shadow: 0 5px 18px rgba(0,0,0,.08);
+
+  box-shadow:
+    0 5px 18px rgba(0,0,0,.08);
 }
 
 .info-card h3 {
+
   color: #805d22;
+
   font-family: Georgia, serif;
 }
 
+
+/* ================= FOOTER ================= */
+
 footer {
+
   background: #092d27;
+
   color: #ddd;
+
   text-align: center;
+
   padding: 35px 20px;
+
   margin-top: 50px;
 }
 
+
+/* ================= DARK MODE ================= */
+
 .dark-mode {
+
   background: #111;
+
   color: #eee;
 }
 
@@ -348,7 +600,9 @@ footer {
 .dark-mode .loading,
 .dark-mode .error,
 .dark-mode .info-card {
+
   background: #1c1c1c;
+
   color: #eee;
 }
 
@@ -356,307 +610,449 @@ footer {
 .dark-mode .hadith-urdu,
 .dark-mode .hadith-hindi,
 .dark-mode .hadith-english {
+
   background: #252525;
 }
 
 .dark-mode .section-title,
 .dark-mode .hadith-number {
+
   color: #e0bb68;
 }
 
 .dark-mode .reference {
+
   color: #aaa;
 }
 
-@media(max-width: 800px) {
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
 
   header h1 {
+
     font-size: 38px;
   }
 
   .collection-grid {
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
   .info-grid {
+
     grid-template-columns: 1fr;
   }
+
 }
 
-@media(max-width: 550px) {
+
+@media (max-width: 550px) {
 
   header {
+
     padding: 55px 15px;
   }
 
   header h1 {
+
     font-size: 32px;
   }
 
   header p {
+
     font-size: 16px;
   }
 
   nav a {
+
     display: inline-block;
+
     margin: 4px 6px;
   }
 
   .collection-grid {
+
     grid-template-columns: 1fr;
   }
 
   .hadith-card {
+
     padding: 20px;
   }
 
   .hadith-arabic {
+
     font-size: 21px;
   }
 
   .hadith-urdu {
+
     font-size: 19px;
   }
 
   .hadith-hindi,
   .hadith-english {
+
     font-size: 17px;
   }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- ================= HEADER ================= -->
+
 <header>
 
-  <h1>Hadith Collection</h1>
+  <h1>
+    Hadith Collection
+  </h1>
 
   <p>
     The Sayings of Prophet Muhammad ﷺ
   </p>
 
   <div class="hero-sub">
-    Arabic • Urdu • Hindi • English
+    Arabic • اردو • हिन्दी • English
   </div>
 
 </header>
 
+
+<!-- ================= NAVIGATION ================= -->
+
 <nav>
 
-  <a href="index.html">Home</a>
-  <a href="quran.html">Quran</a>
-  <a href="hadith.html">Hadith</a>
-  <a href="duas.html">Duas</a>
-  <a href="seerah.html">Seerah</a>
-  <a href="index.html#articles">Articles</a>
-  <a href="index.html#about">About</a>
+  <a href="index.html">
+    Home
+  </a>
+
+  <a href="quran.html">
+    Quran
+  </a>
+
+  <a href="hadith.html">
+    Hadith
+  </a>
+
+  <a href="duas.html">
+    Duas
+  </a>
+
+  <a href="seerah.html">
+    Seerah
+  </a>
+
+  <a href="index.html#articles">
+    Articles
+  </a>
+
+  <a href="index.html#about">
+    About
+  </a>
 
 </nav>
 
+
 <main class="container">
 
-  <h2 class="section-title">
-    The Six Major Hadith Collections
-  </h2>
 
-  <div class="intro">
+<!-- ================= INTRO ================= -->
+
+<h2 class="section-title">
+  The Six Major Hadith Collections
+</h2>
+
+
+<div class="intro">
+
+  <p>
+
+    Read Hadith from the major classical
+    collections with
+
+    <strong>
+      Arabic, Urdu, Hindi and English
+    </strong>
+
+    translations.
+
+  </p>
+
+  <p>
+
+    ہمارا مقصد مستند احادیث کو آسان انداز میں پیش کرنا ہے۔
+
+  </p>
+
+</div>
+
+
+<!-- ================= COLLECTIONS ================= -->
+
+<div class="collection-grid">
+
+
+  <div
+    class="collection-card active"
+    data-collection="bukhari"
+    onclick="selectCollection('bukhari')">
+
+    <h3>
+      Sahih al-Bukhari
+    </h3>
 
     <p>
-      Read Hadith from the major classical collections with
-      <strong>Arabic, Urdu, Hindi and English</strong> translations.
+      صحیح البخاری
+    </p>
+
+  </div>
+
+
+  <div
+    class="collection-card"
+    data-collection="muslim"
+    onclick="selectCollection('muslim')">
+
+    <h3>
+      Sahih Muslim
+    </h3>
+
+    <p>
+      صحیح مسلم
+    </p>
+
+  </div>
+
+
+  <div
+    class="collection-card"
+    data-collection="abudawud"
+    onclick="selectCollection('abudawud')">
+
+    <h3>
+      Sunan Abu Dawud
+    </h3>
+
+    <p>
+      سنن ابی داؤد
+    </p>
+
+  </div>
+
+
+  <div
+    class="collection-card"
+    data-collection="tirmidhi"
+    onclick="selectCollection('tirmidhi')">
+
+    <h3>
+      Jami' at-Tirmidhi
+    </h3>
+
+    <p>
+      جامع الترمذی
+    </p>
+
+  </div>
+
+
+  <div
+    class="collection-card"
+    data-collection="nasai"
+    onclick="selectCollection('nasai')">
+
+    <h3>
+      Sunan an-Nasa'i
+    </h3>
+
+    <p>
+      سنن النسائی
+    </p>
+
+  </div>
+
+
+  <div
+    class="collection-card"
+    data-collection="ibnmajah"
+    onclick="selectCollection('ibnmajah')">
+
+    <h3>
+      Sunan Ibn Majah
+    </h3>
+
+    <p>
+      سنن ابن ماجہ
+    </p>
+
+  </div>
+
+
+</div>
+
+
+<!-- ================= SELECT ================= -->
+
+<div class="controls">
+
+  <label for="hadithBook">
+
+    Select Hadith Collection
+
+  </label>
+
+
+  <select id="hadithBook">
+
+    <option value="bukhari">
+      Sahih al-Bukhari
+    </option>
+
+    <option value="muslim">
+      Sahih Muslim
+    </option>
+
+    <option value="abudawud">
+      Sunan Abu Dawud
+    </option>
+
+    <option value="tirmidhi">
+      Jami' at-Tirmidhi
+    </option>
+
+    <option value="nasai">
+      Sunan an-Nasa'i
+    </option>
+
+    <option value="ibnmajah">
+      Sunan Ibn Majah
+    </option>
+
+  </select>
+
+</div>
+
+
+<!-- ================= LOADING ================= -->
+
+<div
+  id="hadithLoading"
+  class="loading">
+
+  Loading Hadith...
+
+</div>
+
+
+<!-- ================= HADITH ================= -->
+
+<div
+  id="hadithContainer">
+
+</div>
+
+
+<!-- ================= TASHREEH ================= -->
+
+<h2 class="section-title">
+
+  Tashreeh & Masail
+
+</h2>
+
+
+<div class="info-grid">
+
+
+  <div class="info-card">
+
+    <h3>
+      📖 Hadith Tashreeh
+    </h3>
+
+    <p>
+
+      Detailed explanation of the Hadith
+      will be added here with reliable
+      scholarly references.
+
     </p>
 
     <p>
-      ہمارا مقصد مستند احادیث کو آسان انداز میں پیش کرنا ہے۔
+
+      حدیث کی تشریح مستند حوالوں
+      کے ساتھ پیش کی جائے گی۔
+
     </p>
 
   </div>
 
 
-  <div class="collection-grid">
+  <div class="info-card">
 
-    <div class="collection-card active"
-         data-collection="bukhari"
-         onclick="selectCollection('bukhari')">
+    <h3>
+      ⚖️ Masail
+    </h3>
 
-      <h3>Sahih al-Bukhari</h3>
-      <p>صحیح البخاری</p>
+    <p>
 
-    </div>
+      Relevant Islamic rulings and
+      scholarly positions will be
+      presented carefully and respectfully.
 
+    </p>
 
-    <div class="collection-card"
-         data-collection="muslim"
-         onclick="selectCollection('muslim')">
+    <p>
 
-      <h3>Sahih Muslim</h3>
-      <p>صحیح مسلم</p>
+      مختلف فقہی آراء کو غیر جانب دار
+      انداز میں پیش کیا جائے گا۔
 
-    </div>
-
-
-    <div class="collection-card"
-         data-collection="abudawud"
-         onclick="selectCollection('abudawud')">
-
-      <h3>Sunan Abu Dawud</h3>
-      <p>سنن ابی داؤد</p>
-
-    </div>
-
-
-    <div class="collection-card"
-         data-collection="tirmidhi"
-         onclick="selectCollection('tirmidhi')">
-
-      <h3>Jami' at-Tirmidhi</h3>
-      <p>جامع الترمذی</p>
-
-    </div>
-
-
-    <div class="collection-card"
-         data-collection="nasai"
-         onclick="selectCollection('nasai')">
-
-      <h3>Sunan an-Nasa'i</h3>
-      <p>سنن النسائی</p>
-
-    </div>
-
-
-    <div class="collection-card"
-         data-collection="ibnmajah"
-         onclick="selectCollection('ibnmajah')">
-
-      <h3>Sunan Ibn Majah</h3>
-      <p>سنن ابن ماجہ</p>
-
-    </div>
+    </p>
 
   </div>
 
 
-  <div class="controls">
+  <div class="info-card">
 
-    <label for="hadithBook">
-      Select Hadith Collection
-    </label>
+    <h3>
+      🔎 Dalail
+    </h3>
 
-    <select id="hadithBook">
+    <p>
 
-      <option value="bukhari">
-        Sahih al-Bukhari
-      </option>
+      Evidence and references from
+      authentic Hadith and classical
+      sources will be provided.
 
-      <option value="muslim">
-        Sahih Muslim
-      </option>
+    </p>
 
-      <option value="abudawud">
-        Sunan Abu Dawud
-      </option>
+    <p>
 
-      <option value="tirmidhi">
-        Jami' at-Tirmidhi
-      </option>
+      دلائل اور حوالہ جات مستند مصادر
+      سے پیش کیے جائیں گے۔
 
-      <option value="nasai">
-        Sunan an-Nasa'i
-      </option>
-
-      <option value="ibnmajah">
-        Sunan Ibn Majah
-      </option>
-
-    </select>
+    </p>
 
   </div>
 
 
-  <div id="hadithLoading"
-       class="loading">
+</div>
 
-    Loading Hadith...
-
-  </div>
-
-
-  <div id="hadithContainer"
-       class="reader">
-  </div>
-
-
-  <button id="loadMoreButton"
-          class="load-more"
-          onclick="loadMoreHadiths()"
-          style="display:none;">
-
-    Load More Hadith
-
-  </button>
-
-
-  <h2 class="section-title">
-    Tashreeh & Masail
-  </h2>
-
-
-  <div class="info-grid">
-
-    <div class="info-card">
-
-      <h3>📖 Hadith Tashreeh</h3>
-
-      <p>
-        Detailed explanation of the Hadith will be added here
-        with reliable scholarly references.
-      </p>
-
-      <p>
-        حدیث کی تشریح مستند حوالوں کے ساتھ پیش کی جائے گی۔
-      </p>
-
-    </div>
-
-
-    <div class="info-card">
-
-      <h3>⚖️ Masail</h3>
-
-      <p>
-        Relevant Islamic rulings and scholarly positions
-        will be presented carefully and respectfully.
-      </p>
-
-      <p>
-        مختلف فقہی آراء کو غیر جانب دار انداز میں پیش کیا جائے گا۔
-      </p>
-
-    </div>
-
-
-    <div class="info-card">
-
-      <h3>🔎 Dalail</h3>
-
-      <p>
-        Evidence and references from authentic Hadith
-        and classical sources will be provided.
-      </p>
-
-      <p>
-        دلائل اور حوالہ جات مستند مصادر سے پیش کیے جائیں گے۔
-      </p>
-
-    </div>
-
-  </div>
 
 </main>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -673,6 +1069,11 @@ footer {
 
 <script>
 
+
+/* =====================================================
+   API SETTINGS
+===================================================== */
+
 const API_BASE =
   "https://api.islamic.app/v1/hadith/collections";
 
@@ -681,7 +1082,74 @@ const URDU_BASE =
   "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/";
 
 
-let currentCollection = "bukhari";
+/*
+   200 is the maximum supported
+   Hadith API page size.
+
+   If a book has more than 200,
+   the code automatically requests
+   the next batch.
+*/
+
+const PAGE_SIZE = 200;
+
+
+/* =====================================================
+   COLLECTION DATA
+===================================================== */
+
+const collectionNames = {
+
+  bukhari:
+    "Sahih al-Bukhari",
+
+  muslim:
+    "Sahih Muslim",
+
+  abudawud:
+    "Sunan Abu Dawud",
+
+  tirmidhi:
+    "Jami' at-Tirmidhi",
+
+  nasai:
+    "Sunan an-Nasa'i",
+
+  ibnmajah:
+    "Sunan Ibn Majah"
+
+};
+
+
+const urduEditions = {
+
+  bukhari:
+    "urd-bukhari",
+
+  muslim:
+    "urd-muslim",
+
+  abudawud:
+    "urd-abudawud",
+
+  tirmidhi:
+    "urd-tirmidhi",
+
+  nasai:
+    "urd-nasai",
+
+  ibnmajah:
+    "urd-ibnmajah"
+
+};
+
+
+/* =====================================================
+   STATE
+===================================================== */
+
+let currentCollection =
+  "bukhari";
 
 let books = [];
 
@@ -691,105 +1159,86 @@ let hadiths = [];
 
 let currentHadithIndex = 0;
 
-let currentOffset = 0;
-
 let totalHadiths = 0;
 
-const PAGE_SIZE = 20;
 
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
 const hadithBook =
-  document.getElementById("hadithBook");
+  document.getElementById(
+    "hadithBook"
+  );
+
 
 const hadithContainer =
-  document.getElementById("hadithContainer");
+  document.getElementById(
+    "hadithContainer"
+  );
+
 
 const hadithLoading =
-  document.getElementById("hadithLoading");
-
-const loadMoreButton =
-  document.getElementById("loadMoreButton");
-
-
-/* --------------------------------------------------
-   COLLECTION NAMES
--------------------------------------------------- */
-
-const collectionNames = {
-
-  bukhari: "Sahih al-Bukhari",
-
-  muslim: "Sahih Muslim",
-
-  abudawud: "Sunan Abu Dawud",
-
-  tirmidhi: "Jami' at-Tirmidhi",
-
-  nasai: "Sunan an-Nasa'i",
-
-  ibnmajah: "Sunan Ibn Majah"
-
-};
+  document.getElementById(
+    "hadithLoading"
+  );
 
 
-/* --------------------------------------------------
-   URDU EDITION NAMES
--------------------------------------------------- */
-
-const urduEditions = {
-
-  bukhari: "urd-bukhari",
-
-  muslim: "urd-muslim",
-
-  abudawud: "urd-abudawud",
-
-  tirmidhi: "urd-tirmidhi",
-
-  nasai: "urd-nasai",
-
-  ibnmajah: "urd-ibnmajah"
-
-};
-
-
-/* --------------------------------------------------
+/* =====================================================
    SELECT COLLECTION
--------------------------------------------------- */
+===================================================== */
 
-function selectCollection(collection) {
+function selectCollection(
+  collection
+) {
 
-  currentCollection = collection;
+  currentCollection =
+    collection;
 
-  hadithBook.value = collection;
+
+  hadithBook.value =
+    collection;
+
 
   document
-    .querySelectorAll(".collection-card")
+    .querySelectorAll(
+      ".collection-card"
+    )
     .forEach(card => {
 
       card.classList.toggle(
         "active",
-        card.dataset.collection === collection
+        card.dataset.collection ===
+        collection
       );
 
     });
+
 
   loadBooks(collection);
 
 }
 
 
-/* --------------------------------------------------
+/* =====================================================
    LOAD BOOKS
--------------------------------------------------- */
+===================================================== */
 
-async function loadBooks(collection) {
+async function loadBooks(
+  collection
+) {
 
-  hadithLoading.style.display = "block";
+  hadithLoading.style.display =
+    "block";
 
-  hadithContainer.innerHTML = "";
 
-  loadMoreButton.style.display = "none";
+  hadithLoading.innerHTML =
+    "Loading books...";
+
+
+  hadithContainer.innerHTML =
+    "";
+
 
   books = [];
 
@@ -798,8 +1247,6 @@ async function loadBooks(collection) {
   hadiths = [];
 
   currentHadithIndex = 0;
-
-  currentOffset = 0;
 
   totalHadiths = 0;
 
@@ -813,9 +1260,12 @@ async function loadBooks(collection) {
 
 
     if (!response.ok) {
+
       throw new Error(
-        "Books API error: " + response.status
+        "Books API error: " +
+        response.status
       );
+
     }
 
 
@@ -838,9 +1288,11 @@ async function loadBooks(collection) {
     }
 
 
-    hadithLoading.style.display = "none";
+    hadithLoading.style.display =
+      "none";
 
-    await loadHadiths();
+
+    await loadCurrentBook();
 
   }
 
@@ -848,21 +1300,26 @@ async function loadBooks(collection) {
 
     console.error(error);
 
-    hadithLoading.style.display = "none";
+
+    hadithLoading.style.display =
+      "none";
+
 
     hadithContainer.innerHTML = `
 
       <div class="error">
 
-        <h3>Hadith load nahi ho rahi</h3>
+        <h3>
+          Hadith load nahi ho rahi
+        </h3>
 
         <p>
-          Collection ke books load nahi ho sake.
+          Books load nahi ho sake.
         </p>
 
         <p>
-          Please internet connection check karein
-          aur dobara try karein.
+          Internet connection check
+          karein aur dobara try karein.
         </p>
 
       </div>
@@ -874,11 +1331,13 @@ async function loadBooks(collection) {
 }
 
 
-/* --------------------------------------------------
-   GET BOOK NUMBER
--------------------------------------------------- */
+/* =====================================================
+   BOOK NUMBER
+===================================================== */
 
-function getBookNumber(book) {
+function getBookNumber(
+  book
+) {
 
   return String(
     book.bookNumber ??
@@ -889,28 +1348,36 @@ function getBookNumber(book) {
 }
 
 
-/* --------------------------------------------------
-   GET BOOK NAME
--------------------------------------------------- */
+/* =====================================================
+   BOOK NAME
+===================================================== */
 
-function getBookName(book) {
+function getBookName(
+  book
+) {
 
   return (
+
     book.name?.en ||
+
     book.title?.en ||
+
     book.name ||
+
     book.title ||
+
     `Book ${getBookNumber(book)}`
+
   );
 
 }
 
 
-/* --------------------------------------------------
-   LOAD HADITHS
--------------------------------------------------- */
+/* =====================================================
+   LOAD CURRENT BOOK
+===================================================== */
 
-async function loadHadiths() {
+async function loadCurrentBook() {
 
   if (!books.length) {
     return;
@@ -927,36 +1394,139 @@ async function loadHadiths() {
 
   if (!bookNumber) {
 
-    hadithContainer.innerHTML = `
-
-      <div class="error">
-
-        Book number available nahi hai.
-
-      </div>
-
-    `;
+    await moveToNextBook();
 
     return;
 
   }
 
 
-  hadithLoading.style.display = "block";
-
-  hadithContainer.innerHTML = "";
-
-  currentOffset = 0;
+  hadiths = [];
 
   currentHadithIndex = 0;
 
-  hadiths = [];
+  totalHadiths = 0;
+
+
+  hadithLoading.style.display =
+    "block";
+
+
+  hadithLoading.innerHTML = `
+
+    <strong>
+      ${getBookName(book)}
+    </strong>
+
+    <br>
+
+    Loading all Hadith...
+
+  `;
+
+
+  hadithContainer.innerHTML =
+    "";
 
 
   try {
 
+    await loadAllHadiths(
+      bookNumber
+    );
+
+
+    if (!hadiths.length) {
+
+      await moveToNextBook();
+
+      return;
+
+    }
+
+
+    hadithLoading.innerHTML = `
+
+      <strong>
+        ${hadiths.length}
+      </strong>
+
+      Hadith loaded
+
+      <br>
+
+      Loading Urdu translation...
+
+    `;
+
+
+    await loadUrduTranslations();
+
+
+    hadithLoading.style.display =
+      "none";
+
+
+    showHadith();
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+
+    hadithLoading.style.display =
+      "none";
+
+
+    hadithContainer.innerHTML = `
+
+      <div class="error">
+
+        <h3>
+          Hadith load nahi ho rahi
+        </h3>
+
+        <p>
+          Is book ka data load karne
+          mein problem aa rahi hai.
+        </p>
+
+        <button
+          onclick="loadCurrentBook()">
+
+          Try Again
+
+        </button>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+/* =====================================================
+   LOAD ALL HADITH AUTOMATICALLY
+===================================================== */
+
+async function loadAllHadiths(
+  bookNumber
+) {
+
+  let offset = 0;
+
+  let firstRequest = true;
+
+
+  while (true) {
+
     const url =
-      `${API_BASE}/${currentCollection}/books/${encodeURIComponent(bookNumber)}/hadiths?limit=${PAGE_SIZE}&offset=0`;
+
+      `${API_BASE}/${currentCollection}/books/${encodeURIComponent(bookNumber)}/hadiths?limit=${PAGE_SIZE}&offset=${offset}`;
 
 
     const response =
@@ -977,84 +1547,122 @@ async function loadHadiths() {
       await response.json();
 
 
-    if (
-      !result.data ||
-      !Array.isArray(result.data.hadiths)
-    ) {
+    const data =
+      result.data || {};
 
-      throw new Error(
-        "Invalid Hadith response"
-      );
 
+    const newHadiths =
+      Array.isArray(
+        data.hadiths
+      )
+        ? data.hadiths
+        : [];
+
+
+    if (firstRequest) {
+
+      totalHadiths =
+        Number(
+          data.total ||
+          0
+        );
+
+      firstRequest = false;
+
+    }
+
+
+    if (!newHadiths.length) {
+      break;
     }
 
 
     hadiths =
-      result.data.hadiths;
+      hadiths.concat(
+        newHadiths
+      );
 
 
-    totalHadiths =
-      Number(result.data.total || hadiths.length);
+    /*
+      Show loading progress.
+    */
+
+    hadithLoading.innerHTML = `
+
+      <strong>
+        ${getBookName(
+          books[currentBookIndex]
+        )}
+      </strong>
+
+      <br><br>
+
+      Loading all Hadith...
+
+      <br>
+
+      <strong>
+        ${hadiths.length}
+      </strong>
+
+      ${
+        totalHadiths
+          ? ` / ${totalHadiths}`
+          : ""
+      }
+
+    `;
 
 
-    hadithLoading.style.display = "none";
+    /*
+      If total is known and
+      everything is loaded.
+    */
 
+    if (
+      totalHadiths &&
+      hadiths.length >=
+      totalHadiths
+    ) {
 
-    if (!hadiths.length) {
-
-      await moveToNextBook();
-
-      return;
+      break;
 
     }
 
 
-    await loadUrduTranslations();
+    /*
+      If fewer than PAGE_SIZE
+      came back, there is no
+      more data.
+    */
 
-    showHadith();
+    if (
+      newHadiths.length <
+      PAGE_SIZE
+    ) {
+
+      break;
+
+    }
 
 
-    updateLoadMoreButton();
-
-  }
-
-  catch (error) {
-
-    console.error(error);
-
-    hadithLoading.style.display = "none";
-
-    hadithContainer.innerHTML = `
-
-      <div class="error">
-
-        <h3>Hadith load nahi ho rahi</h3>
-
-        <p>
-          API response mein problem aa rahi hai.
-        </p>
-
-        <p>
-          Please thodi der baad dobara try karein.
-        </p>
-
-      </div>
-
-    `;
+    offset += PAGE_SIZE;
 
   }
 
 }
 
 
-/* --------------------------------------------------
-   URDU TRANSLATIONS
--------------------------------------------------- */
+/* =====================================================
+   LOAD URDU
+===================================================== */
 
 async function loadUrduTranslations() {
 
   const edition =
-    urduEditions[currentCollection];
+    urduEditions[
+      currentCollection
+    ];
 
 
   if (!edition) {
@@ -1071,7 +1679,14 @@ async function loadUrduTranslations() {
 
 
     if (!response.ok) {
+
+      console.warn(
+        "Urdu edition unavailable:",
+        edition
+      );
+
       return;
+
     }
 
 
@@ -1080,53 +1695,71 @@ async function loadUrduTranslations() {
 
 
     const urduHadiths =
-      Array.isArray(data.hadiths)
+      Array.isArray(
+        data.hadiths
+      )
         ? data.hadiths
         : [];
 
 
-    /*
-      Match Urdu Hadith with API Hadith
-      using hadith number.
-    */
-
-    hadiths.forEach(hadith => {
-
-      const number =
-        String(
-          hadith.hadithNumber || ""
-        );
+    const urduMap = {};
 
 
-      const match =
-        urduHadiths.find(item => {
+    urduHadiths.forEach(
+      item => {
 
-          return String(
+        const number =
+          String(
             item.hadithnumber ||
             item.hadithNumber ||
             ""
-          ) === number;
-
-        });
+          );
 
 
-      if (match) {
+        if (number) {
 
-        hadith.urduText =
-          match.text ||
-          match.body ||
-          "";
+          urduMap[number] =
+
+            item.text ||
+
+            item.body ||
+
+            "";
+
+        }
 
       }
+    );
 
-    });
+
+    hadiths.forEach(
+      hadith => {
+
+        const number =
+          String(
+            hadith.hadithNumber ||
+            ""
+          );
+
+
+        if (
+          urduMap[number]
+        ) {
+
+          hadith.urduText =
+            urduMap[number];
+
+        }
+
+      }
+    );
 
   }
 
   catch (error) {
 
     console.warn(
-      "Urdu translation unavailable:",
+      "Urdu loading failed:",
       error
     );
 
@@ -1135,38 +1768,44 @@ async function loadUrduTranslations() {
 }
 
 
-/* --------------------------------------------------
-   HINDI TRANSLATION
--------------------------------------------------- */
+/* =====================================================
+   HINDI
+===================================================== */
 
-function getHindiTranslation(hadith) {
+function getHindiTranslation(
+  hadith
+) {
 
   /*
-    The current official API does not provide
-    Hindi translation.
+    Hindi translation is intentionally
+    not machine-generated.
 
-    Therefore we DO NOT invent a Hindi translation.
-
-    For now, show a clear placeholder.
+    This prevents incorrect Hadith
+    translations from appearing
+    on the website.
   */
 
   return `
+
     <p>
-      Hindi translation is being prepared
-      from a reliable Hadith translation source.
+      Hindi translation will be added
+      from a reliable Hadith translation
+      source.
     </p>
 
     <p>
-      हिन्दी अनुवाद विश्वसनीय स्रोत से जोड़ा जाएगा।
+      हिन्दी अनुवाद विश्वसनीय हदीस स्रोत
+      से जोड़ा जाएगा।
     </p>
+
   `;
 
 }
 
 
-/* --------------------------------------------------
-   SHOW HADITH
--------------------------------------------------- */
+/* =====================================================
+   DISPLAY HADITH
+===================================================== */
 
 function showHadith() {
 
@@ -1176,33 +1815,37 @@ function showHadith() {
 
 
   const hadith =
-    hadiths[currentHadithIndex];
+    hadiths[
+      currentHadithIndex
+    ];
 
 
   const arabic =
     hadith.ar?.text ||
-    hadith.ar?.body ||
     "";
 
 
   const english =
     hadith.en?.text ||
-    hadith.en?.body ||
     "";
 
 
   const urdu =
     hadith.urduText ||
-    "اس حدیث کا اردو ترجمہ دستیاب نہیں ہو سکا۔";
+    "اس حدیث کا اردو ترجمہ دستیاب نہیں ہے۔";
 
 
   const hindi =
-    getHindiTranslation(hadith);
+    getHindiTranslation(
+      hadith
+    );
 
 
   const hadithNumber =
     hadith.hadithNumber ||
-    (currentHadithIndex + 1);
+    (
+      currentHadithIndex + 1
+    );
 
 
   const chapterTitle =
@@ -1210,12 +1853,27 @@ function showHadith() {
     "";
 
 
+  const book =
+    books[
+      currentBookIndex
+    ];
+
+
+  const bookNumber =
+    getBookNumber(book);
+
+
   hadithContainer.innerHTML = `
 
     <div class="hadith-card">
 
+
       <span class="badge">
-        ${collectionNames[currentCollection]}
+
+        ${collectionNames[
+          currentCollection
+        ]}
+
       </span>
 
 
@@ -1226,38 +1884,69 @@ function showHadith() {
       </h2>
 
 
+      <p>
+
+        <strong>
+          Book:
+        </strong>
+
+        ${getBookName(book)}
+
+      </p>
+
+
       ${
         chapterTitle
           ? `
+
             <p>
-              <strong>Chapter:</strong>
+
+              <strong>
+                Chapter:
+              </strong>
+
               ${chapterTitle}
+
             </p>
+
           `
           : ""
       }
 
 
+      <!-- ARABIC -->
+
       <div>
 
         <div class="language-title">
+
           Arabic — عربی
+
         </div>
+
 
         <div class="hadith-arabic">
 
-          ${arabic || "Arabic text unavailable."}
+          ${
+            arabic ||
+            "Arabic text unavailable."
+          }
 
         </div>
 
       </div>
 
 
+      <!-- URDU -->
+
       <div>
 
         <div class="language-title">
+
           Urdu — اردو ترجمہ
+
         </div>
+
 
         <div class="hadith-urdu">
 
@@ -1268,11 +1957,16 @@ function showHadith() {
       </div>
 
 
+      <!-- HINDI -->
+
       <div>
 
         <div class="language-title">
+
           Hindi — हिन्दी अनुवाद
+
         </div>
+
 
         <div class="hadith-hindi">
 
@@ -1283,41 +1977,65 @@ function showHadith() {
       </div>
 
 
+      <!-- ENGLISH -->
+
       <div>
 
         <div class="language-title">
+
           English Translation
+
         </div>
+
 
         <div class="hadith-english">
 
-          ${english || "English translation unavailable."}
+          ${
+            english ||
+            "English translation unavailable."
+          }
 
         </div>
 
       </div>
 
 
+      <!-- REFERENCE -->
+
       <div class="reference">
 
-        <strong>Reference:</strong>
+        <strong>
+          Reference:
+        </strong>
 
-        ${collectionNames[currentCollection]}
+        ${collectionNames[
+          currentCollection
+        ]}
 
-        — Book ${getBookNumber(books[currentBookIndex])}
+        — Book ${bookNumber}
 
         — Hadith ${hadithNumber}
 
       </div>
 
+
     </div>
 
 
+    <!-- NAVIGATION -->
+
     <div class="navigation">
 
+
       <button
+
         onclick="previousHadith()"
-        ${currentHadithIndex === 0 ? "disabled" : ""}>
+
+        ${
+          currentHadithIndex === 0
+            ? "disabled"
+            : ""
+        }>
 
         ← Previous
 
@@ -1327,37 +2045,51 @@ function showHadith() {
       <span>
 
         Hadith
+
         ${currentHadithIndex + 1}
-        of
+
+        /
+
         ${hadiths.length}
 
       </span>
 
 
       <button
+
         onclick="nextHadith()"
-        ${currentHadithIndex >= hadiths.length - 1 ? "disabled" : ""}>
+
+        ${
+          currentHadithIndex >=
+          hadiths.length - 1
+            ? "disabled"
+            : ""
+        }>
 
         Next →
 
       </button>
 
+
     </div>
 
   `;
 
+
 }
 
 
-/* --------------------------------------------------
+/* =====================================================
    NEXT HADITH
--------------------------------------------------- */
+===================================================== */
 
 function nextHadith() {
 
   if (
+
     currentHadithIndex <
     hadiths.length - 1
+
   ) {
 
     currentHadithIndex++;
@@ -1365,9 +2097,14 @@ function nextHadith() {
     showHadith();
 
     window.scrollTo({
+
       top:
-        hadithContainer.offsetTop - 90,
-      behavior: "smooth"
+        hadithContainer
+          .offsetTop - 80,
+
+      behavior:
+        "smooth"
+
     });
 
   }
@@ -1375,22 +2112,29 @@ function nextHadith() {
 }
 
 
-/* --------------------------------------------------
+/* =====================================================
    PREVIOUS HADITH
--------------------------------------------------- */
+===================================================== */
 
 function previousHadith() {
 
-  if (currentHadithIndex > 0) {
+  if (
+    currentHadithIndex > 0
+  ) {
 
     currentHadithIndex--;
 
     showHadith();
 
     window.scrollTo({
+
       top:
-        hadithContainer.offsetTop - 90,
-      behavior: "smooth"
+        hadithContainer
+          .offsetTop - 80,
+
+      behavior:
+        "smooth"
+
     });
 
   }
@@ -1398,24 +2142,30 @@ function previousHadith() {
 }
 
 
-/* --------------------------------------------------
+/* =====================================================
    NEXT BOOK
--------------------------------------------------- */
+===================================================== */
 
 async function moveToNextBook() {
 
   if (
+
     currentBookIndex <
     books.length - 1
+
   ) {
 
     currentBookIndex++;
 
-    await loadHadiths();
+    await loadCurrentBook();
 
     return;
 
   }
+
+
+  hadithLoading.style.display =
+    "none";
 
 
   hadithContainer.innerHTML = `
@@ -1423,12 +2173,24 @@ async function moveToNextBook() {
     <div class="error">
 
       <h3>
-        Collection ke books complete ho gaye.
+        Collection Complete
       </h3>
 
       <p>
-        Dusri collection select karke
-        Hadith padh sakte hain.
+
+        ${collectionNames[
+          currentCollection
+        ]}
+
+        ke saare books load ho gaye hain.
+
+      </p>
+
+      <p>
+
+        Dusri collection select
+        karke Hadith padh sakte hain.
+
       </p>
 
     </div>
@@ -1438,117 +2200,9 @@ async function moveToNextBook() {
 }
 
 
-/* --------------------------------------------------
-   LOAD MORE
--------------------------------------------------- */
-
-async function loadMoreHadiths() {
-
-  if (
-    hadiths.length >= totalHadiths
-  ) {
-
-    loadMoreButton.style.display =
-      "none";
-
-    return;
-
-  }
-
-
-  const book =
-    books[currentBookIndex];
-
-
-  const bookNumber =
-    getBookNumber(book);
-
-
-  currentOffset += PAGE_SIZE;
-
-
-  try {
-
-    loadMoreButton.disabled = true;
-
-    loadMoreButton.textContent =
-      "Loading...";
-
-
-    const response =
-      await fetch(
-        `${API_BASE}/${currentCollection}/books/${encodeURIComponent(bookNumber)}/hadiths?limit=${PAGE_SIZE}&offset=${currentOffset}`
-      );
-
-
-    const result =
-      await response.json();
-
-
-    const newHadiths =
-      result.data?.hadiths || [];
-
-
-    hadiths =
-      hadiths.concat(newHadiths);
-
-
-    await loadUrduTranslations();
-
-    showHadith();
-
-    updateLoadMoreButton();
-
-  }
-
-  catch (error) {
-
-    console.error(error);
-
-  }
-
-  finally {
-
-    loadMoreButton.disabled =
-      false;
-
-    loadMoreButton.textContent =
-      "Load More Hadith";
-
-  }
-
-}
-
-
-/* --------------------------------------------------
-   LOAD MORE BUTTON
--------------------------------------------------- */
-
-function updateLoadMoreButton() {
-
-  if (
-    hadiths.length <
-    totalHadiths
-  ) {
-
-    loadMoreButton.style.display =
-      "block";
-
-  }
-
-  else {
-
-    loadMoreButton.style.display =
-      "none";
-
-  }
-
-}
-
-
-/* --------------------------------------------------
-   COLLECTION DROPDOWN
--------------------------------------------------- */
+/* =====================================================
+   DROPDOWN
+===================================================== */
 
 hadithBook.addEventListener(
   "change",
@@ -1562,13 +2216,17 @@ hadithBook.addEventListener(
 );
 
 
-/* --------------------------------------------------
+/* =====================================================
    START
--------------------------------------------------- */
+===================================================== */
 
-selectCollection("bukhari");
+selectCollection(
+  "bukhari"
+);
+
 
 </script>
 
 </body>
+
 </html>
