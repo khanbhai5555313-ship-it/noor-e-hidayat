@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Daily Duas & Adhkar | Noor-e-Hidayat</title>
+
+  <meta name="description"
+        content="Read daily Islamic duas and adhkar in Arabic with simple English and Hindi translations. Morning, evening, sleeping and guidance duas.">
+
+  <meta name="keywords"
+        content="Islamic Duas, Daily Duas, Morning Adhkar, Evening Adhkar, Dua Before Sleeping, Dua for Guidance, Quranic Duas">
+
+  <link rel="canonical"
+        href="https://khanbhai5555313-ship-it.github.io/noor-e-hidayat/duas.html">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f8f6;
+      color: #173b35;
+      transition: background .3s, color .3s;
+    }
+
+    header {
+      background: linear-gradient(135deg, #075b4d, #0b806d);
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .tagline {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    nav {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #075b4d;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 7px;
+    }
+
+    nav a:hover {
+      background: #e8f4f0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px 15px 50px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #075b4d;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.07);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .reading-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 15px;
+      margin: 20px 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+      position: sticky;
+      top: 55px;
+      z-index: 90;
+    }
+
+    .reading-controls button {
+      border: none;
+      background: #075b4d;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .dua-categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .category-btn {
+      border: none;
+      background: white;
+      color: #075b4d;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0,0,0,.06);
+    }
+
+    .category-btn.active,
+    .category-btn:hover {
+      background: #075b4d;
+      color: white;
+    }
+
+    .dua-card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.07);
+    }
+
+    .dua-title {
+      color: #075b4d;
+      font-size: 21px;
+      margin-top: 0;
+    }
+
+    .dua-source {
+      color: #61736f;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .label {
+      color: #075b4d;
+      font-weight: bold;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    .arabic {
+      direction: rtl;
+      text-align: right;
+      font-size: 27px;
+      line-height: 2.1;
+      margin-bottom: 20px;
+    }
+
+    .english {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .hindi {
+      font-size: 18px;
+      line-height: 1.9;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #075b4d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    body.dark-mode {
+      background: #101817;
+      color: #eeeeee;
+    }
+
+    body.dark-mode nav,
+    body.dark-mode .intro,
+    body.dark-mode .reading-controls,
+    body.dark-mode .category-btn,
+    body.dark-mode .dua-card {
+      background: #1b2725;
+      color: #eeeeee;
+    }
+
+    body.dark-mode nav a {
+      color: white;
+    }
+
+    body.dark-mode .section-title,
+    body.dark-mode .dua-title,
+    body.dark-mode .label {
+      color: white;
+    }
+
+    body.dark-mode .dua-source {
+      color: #b8c7c3;
+    }
+
+    @media (max-width: 600px) {
+
+      .logo {
+        font-size: 23px;
+      }
+
+      .container {
+        padding: 20px 10px 40px;
+      }
+
+      .dua-categories {
+        grid-template-columns: 1fr;
+      }
+
+      .arabic {
+        font-size: 24px;
+      }
+
+      .english {
+        font-size: 16px;
+      }
+
+      .hindi {
+        font-size: 17px;
+      }
+
+      .dua-card {
+        padding: 20px 16px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="logo">
+    ☪ Noor-e-Hidayat
+  </div>
+
+  <div class="tagline">
+    Quran • Hadith • Duas • Seerah • Islamic Knowledge
+  </div>
+
+</header>
+
+
+<nav>
+
+  <div class="nav-inner">
+
+    <a href="index.html">Home</a>
+
+    <a href="quran.html">Quran</a>
+
+    <a href="hadith.html">Hadith</a>
+
+    <a href="duas.html">Duas</a>
+
+    <a href="index.html#seerah">Seerah</a>
+
+    <a href="index.html#articles">Articles</a>
+
+    <a href="index.html#about">About</a>
+
+  </div>
+
+</nav>
+
+
+<main class="container">
+
+
+  <h1 class="section-title">
+    Daily Duas & Adhkar
+  </h1>
+
+
+  <div class="intro">
+
+    <h2>Daily Islamic Duas</h2>
+
+    <p>
+      Read selected daily duas and adhkar in Arabic
+      with simple English and Hindi translations.
+      These supplications cover everyday situations
+      such as waking up, sleeping, seeking guidance,
+      and remembering Allah.
+    </p>
+
+    <p>
+      Always verify the source and wording of a dua
+      before attributing it to the Prophet Muhammad ﷺ.
+    </p>
+
+  </div>
+
+
+  <div class="reading-controls">
+
+    <button id="darkModeBtn">
+      🌙 Dark Mode
+    </button>
+
+    <button id="fontMinus">
+      A−
+    </button>
+
+    <button id="fontPlus">
+      A+
+    </button>
+
+  </div>
+
+
+  <div class="dua-categories">
+
+    <button class="category-btn active"
+            onclick="showCategory('all', this)">
+      🤲 All Duas
+    </button>
+
+    <button class="category-btn"
+            onclick="showCategory('morning', this)">
+      🌅 Morning
+    </button>
+
+    <button class="category-btn"
+            onclick="showCategory('evening', this)">
+      🌇 Evening
+    </button>
+
+    <button class="category-btn"
+            onclick="showCategory('sleep', this)">
+      😴 Before Sleeping
+    </button>
+
+    <button class="category-btn"
+            onclick="showCategory('guidance', this)">
+      🧭 Guidance
+    </button>
+
+    <button class="category-btn"
+            onclick="showCategory('quran', this)">
+      📖 Quranic Duas
+    </button>
+
+  </div>
+
+
+  <div id="duaContainer"></div>
+
+
+</main>
+
+
+<footer>
+
+  © 2026 Noor-e-Hidayat — Islamic Knowledge in Simple English
+
+</footer>
+
+
+<script>
+
+
+const duas = [
+
+  {
+    category: "morning",
+
+    title: "Dua After Waking Up",
+
+    source: "Sahih al-Bukhari",
+
+    arabic:
+      "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
+
+    english:
+      "All praise is for Allah who gave us life after causing us to die, and to Him is the resurrection.",
+
+    hindi:
+      "सारी प्रशंसा अल्लाह के लिए है जिसने हमें मृत्यु जैसी नींद के बाद जीवन दिया, और उसी की ओर लौटकर जाना है।"
+
+  },
+
+
+  {
+    category: "sleep",
+
+    title: "Dua Before Sleeping",
+
+    source: "Sahih al-Bukhari",
+
+    arabic:
+      "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
+
+    english:
+      "In Your name, O Allah, I die and I live.",
+
+    hindi:
+      "ऐ अल्लाह! तेरे ही नाम के साथ मैं मरता हूँ और जीता हूँ।"
+
+  },
+
+
+  {
+    category: "guidance",
+
+    title: "Dua for Guidance",
+
+    source: "Sahih Muslim",
+
+    arabic:
+      "اللَّهُمَّ اهْدِنِي وَسَدِّدْنِي",
+
+    english:
+      "O Allah, guide me and keep me on the right path.",
+
+    hindi:
+      "ऐ अल्लाह! मुझे मार्गदर्शन दे और मुझे सीधे रास्ते पर स्थिर रख।"
+
+  },
+
+
+  {
+    category: "quran",
+
+    title: "Dua for Good in This World and the Hereafter",
+
+    source: "Qur'an 2:201",
+
+    arabic:
+      "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+
+    english:
+      "Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.",
+
+    hindi:
+      "ऐ हमारे पालनहार! हमें दुनिया में भलाई दे और आख़िरत में भी भलाई दे और हमें आग के अज़ाब से बचा।"
+
+  },
+
+
+  {
+    category: "quran",
+
+    title: "Dua for Increase in Knowledge",
+
+    source: "Qur'an 20:114",
+
+    arabic:
+      "رَبِّ زِدْنِي عِلْمًا",
+
+    english:
+      "My Lord, increase me in knowledge.",
+
+    hindi:
+      "ऐ मेरे पालनहार! मेरे ज्ञान में वृद्धि कर।"
+
+  },
+
+
+  {
+    category: "morning",
+
+    title: "Dua for Allah's Help in Worship",
+
+    source: "Sunan Abi Dawud",
+
+    arabic:
+      "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+
+    english:
+      "O Allah, help me to remember You, to thank You, and to worship You well.",
+
+    hindi:
+      "ऐ अल्लाह! अपने ज़िक्र, अपनी शुक्रगुज़ारी और अच्छी तरह अपनी इबादत करने में मेरी मदद कर।"
+
+  },
+
+
+  {
+    category: "evening",
+
+    title: "Dua for Forgiveness",
+
+    source: "Sahih al-Bukhari",
+
+    arabic:
+      "رَبِّ اغْفِرْ لِي",
+
+    english:
+      "My Lord, forgive me.",
+
+    hindi:
+      "ऐ मेरे पालनहार! मुझे क्षमा कर।"
+
+  },
+
+
+  {
+    category: "quran",
+
+    title: "Dua for Parents",
+
+    source: "Qur'an 17:24",
+
+    arabic:
+      "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+
+    english:
+      "My Lord, have mercy upon them as they raised me when I was small.",
+
+    hindi:
+      "ऐ मेरे पालनहार! उन दोनों पर दया कर, जैसे उन्होंने बचपन में मेरा पालन-पोषण किया।"
+
+  }
+
+];
+
+
+const duaContainer =
+  document.getElementById("duaContainer");
+
+
+function renderDuas(category) {
+
+  duaContainer.innerHTML = "";
+
+  const filtered =
+    category === "all"
+      ? duas
+      : duas.filter(
+          dua => dua.category === category
+        );
+
+
+  filtered.forEach(
+    function(dua) {
+
+      const card =
+        document.createElement("div");
+
+      card.className =
+        "dua-card";
+
+      card.innerHTML = `
+
+        <h2 class="dua-title">
+          ${escapeHtml(dua.title)}
+        </h2>
+
+        <div class="dua-source">
+          Source: ${escapeHtml(dua.source)}
+        </div>
+
+        <div class="label">
+          Arabic
+        </div>
+
+        <div class="arabic">
+          ${escapeHtml(dua.arabic)}
+        </div>
+
+        <div class="label">
+          English
+        </div>
+
+        <div class="english">
+          ${escapeHtml(dua.english)}
+        </div>
+
+        <div class="label">
+          Hindi
+        </div>
+
+        <div class="hindi">
+          ${escapeHtml(dua.hindi)}
+        </div>
+
+      `;
+
+      duaContainer.appendChild(card);
+
+    }
+  );
+
+}
+
+
+function showCategory(
+  category,
+  button
+) {
+
+  document
+    .querySelectorAll(".category-btn")
+    .forEach(
+      btn => btn.classList.remove("active")
+    );
+
+  button.classList.add("active");
+
+  renderDuas(category);
+
+}
+
+
+renderDuas("all");
+
+
+/* =========================
+   FONT SIZE
+========================= */
+
+let duaFontSize = 27;
+
+
+document.getElementById(
+  "fontPlus"
+).onclick = function() {
+
+  duaFontSize += 2;
+
+  document
+    .querySelectorAll(".arabic")
+    .forEach(
+      el => {
+        el.style.fontSize =
+          duaFontSize + "px";
+      }
+    );
+
+};
+
+
+document.getElementById(
+  "fontMinus"
+).onclick = function() {
+
+  if (duaFontSize > 19) {
+
+    duaFontSize -= 2;
+
+    document
+      .querySelectorAll(".arabic")
+      .forEach(
+        el => {
+          el.style.fontSize =
+            duaFontSize + "px";
+        }
+      );
+
+  }
+
+};
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+document.getElementById(
+  "darkModeBtn"
+).onclick = function() {
+
+  document.body.classList.toggle(
+    "dark-mode"
+  );
+
+  if (
+    document.body.classList.contains(
+      "dark-mode"
+    )
+  ) {
+
+    this.textContent =
+      "☀️ Light Mode";
+
+  } else {
+
+    this.textContent =
+      "🌙 Dark Mode";
+
+  }
+
+};
+
+
+/* =========================
+   SECURITY HELPER
+========================= */
+
+function escapeHtml(value) {
+
+  return String(value)
+
+    .replace(/&/g, "&amp;")
+
+    .replace(/</g, "&lt;")
+
+    .replace(/>/g, "&gt;")
+
+    .replace(/"/g, "&quot;")
+
+    .replace(/'/g, "&#039;");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
