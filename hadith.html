@@ -1653,20 +1653,11 @@ body.arabic-large .hadith-urdu {
   </p>
 
 </footer>
-
 <script>
-
-/* =====================================================
-   HADITH API
-===================================================== */
 
 const API_BASE =
   "https://api.islamic.app/v1/hadith/collections";
 
-
-/* =====================================================
-   ELEMENTS
-===================================================== */
 
 const hadithBook =
   document.getElementById("hadithBook");
@@ -1680,10 +1671,6 @@ const hadithLoading =
 const loadMoreBtn =
   document.getElementById("loadMoreBtn");
 
-
-/* =====================================================
-   STATE
-===================================================== */
 
 let currentCollection = "bukhari";
 
@@ -1724,7 +1711,7 @@ const collectionNames = {
 
 
 /* =====================================================
-   BOOK NUMBER
+   GET BOOK NUMBER
 ===================================================== */
 
 function getBookNumber(book) {
@@ -1744,17 +1731,13 @@ function getBookNumber(book) {
 
 
 /* =====================================================
-   BOOK NAME
+   GET BOOK NAME
 ===================================================== */
 
 function getBookName(book) {
 
   if (!book) {
     return "";
-  }
-
-  if (typeof book.name === "string") {
-    return book.name;
   }
 
   if (
@@ -1770,22 +1753,9 @@ function getBookName(book) {
 
   }
 
-  if (
-    book.title &&
-    typeof book.title === "object"
-  ) {
-
-    return (
-      book.title.en ||
-      book.title.ar ||
-      ""
-    );
-
-  }
-
-  return (
+  return String(
+    book.name ||
     book.title ||
-    book.bookName ||
     ""
   );
 
@@ -1862,21 +1832,18 @@ async function loadBooks(collection) {
 
   try {
 
-    const url =
+    const response = await fetch(
       API_BASE +
       "/" +
-      encodeURIComponent(collection) +
-      "/books";
-
-
-    const response =
-      await fetch(url);
+      collection +
+      "/books"
+    );
 
 
     if (!response.ok) {
 
       throw new Error(
-        "Books request failed: " +
+        "Books error " +
         response.status
       );
 
@@ -1888,31 +1855,24 @@ async function loadBooks(collection) {
 
 
     console.log(
-      "BOOKS RESPONSE:",
+      "BOOKS:",
       result
     );
 
 
-    if (Array.isArray(result.data)) {
+    /*
+       Official API:
 
-      books = result.data;
+       result.data
+       = array of books
+    */
 
-    }
-
-    else if (
-      result.data &&
-      Array.isArray(result.data.books)
+    if (
+      Array.isArray(result.data)
     ) {
 
-      books = result.data.books;
-
-    }
-
-    else if (
-      Array.isArray(result.books)
-    ) {
-
-      books = result.books;
+      books =
+        result.data;
 
     }
 
@@ -1920,7 +1880,7 @@ async function loadBooks(collection) {
     if (!books.length) {
 
       throw new Error(
-        "No books found"
+        "Books not found"
       );
 
     }
@@ -1928,7 +1888,7 @@ async function loadBooks(collection) {
 
     currentBookNumber =
       getBookNumber(
-        books[currentBookIndex]
+        books[0]
       );
 
 
@@ -1936,7 +1896,7 @@ async function loadBooks(collection) {
 
 
     await loadHadiths(
-      currentCollection,
+      collection,
       currentBookNumber,
       0
     );
@@ -1947,7 +1907,6 @@ async function loadBooks(collection) {
   catch (error) {
 
     console.error(
-      "BOOK ERROR:",
       error
     );
 
@@ -1979,71 +1938,7 @@ async function loadBooks(collection) {
 
 
 /* =====================================================
-   NORMALIZE HADITH API RESPONSE
-===================================================== */
-
-function normalizeHadithData(result) {
-
-  let rows = [];
-
-
-  /*
-     Current Islamic.app response:
-
-     data: [
-       {
-         collection,
-         bookNumber,
-         chapterId,
-         hadithNumber,
-         hadith: [
-           {
-             lang: "en",
-             body: "..."
-           },
-           {
-             lang: "ar",
-             body: "..."
-           }
-         ]
-       }
-     ]
-  */
-
-
-  if (Array.isArray(result.data)) {
-
-    rows = result.data;
-
-  }
-
-  else if (
-    result.data &&
-    Array.isArray(result.data.hadiths)
-  ) {
-
-    rows =
-      result.data.hadiths;
-
-  }
-
-  else if (
-    Array.isArray(result.hadiths)
-  ) {
-
-    rows =
-      result.hadiths;
-
-  }
-
-
-  return rows;
-
-}
-
-
-/* =====================================================
-   LOAD HADITHS
+   LOAD HADITH
 ===================================================== */
 
 async function loadHadiths(
@@ -2064,7 +1959,7 @@ async function loadHadiths(
     const url =
       API_BASE +
       "/" +
-      encodeURIComponent(collection) +
+      collection +
       "/books/" +
       encodeURIComponent(
         String(bookNumber)
@@ -2088,7 +1983,7 @@ async function loadHadiths(
     if (!response.ok) {
 
       throw new Error(
-        "Hadith request failed: " +
+        "Hadith error " +
         response.status
       );
 
@@ -2105,8 +2000,40 @@ async function loadHadiths(
     );
 
 
-    const newHadiths =
-      normalizeHadithData(result);
+    /*
+       OFFICIAL API STRUCTURE:
+
+       result.data.hadiths
+    */
+
+    let newHadiths = [];
+
+
+    if (
+      result.data &&
+      Array.isArray(
+        result.data.hadiths
+      )
+    ) {
+
+      newHadiths =
+        result.data.hadiths;
+
+    }
+
+
+    /*
+       Fallback
+    */
+
+    else if (
+      Array.isArray(result.data)
+    ) {
+
+      newHadiths =
+        result.data;
+
+    }
 
 
     if (!newHadiths.length) {
@@ -2116,8 +2043,7 @@ async function loadHadiths(
 
 
       /*
-         Automatically move to next book
-         if current book is empty.
+         Move to next book
       */
 
       if (
@@ -2138,7 +2064,7 @@ async function loadHadiths(
 
 
         await loadHadiths(
-          currentCollection,
+          collection,
           currentBookNumber,
           0
         );
@@ -2172,7 +2098,7 @@ async function loadHadiths(
 
 
     /*
-       First page
+       FIRST LOAD
     */
 
     if (offset === 0) {
@@ -2183,6 +2109,11 @@ async function loadHadiths(
       currentHadith = 0;
 
     }
+
+
+    /*
+       LOAD MORE
+    */
 
     else {
 
@@ -2206,7 +2137,29 @@ async function loadHadiths(
     showHadith();
 
 
+    /*
+       Load More button
+    */
+
+    const total =
+      result.data &&
+      typeof result.data.total ===
+      "number"
+        ? result.data.total
+        : null;
+
+
     if (
+      total !== null &&
+      currentOffset < total
+    ) {
+
+      loadMoreBtn.style.display =
+        "inline-block";
+
+    }
+
+    else if (
       newHadiths.length >=
       currentLimit
     ) {
@@ -2250,141 +2203,11 @@ async function loadHadiths(
           aur dobara try karein.
         </p>
 
-        <p style="
-          font-size:13px;
-          color:#806f5c;
-        ">
-
-          Please try again.
-
-        </p>
-
       </div>
 
     `;
 
   }
-
-}
-
-
-/* =====================================================
-   GET LANGUAGE TEXT
-===================================================== */
-
-function getLanguageText(
-  hadith,
-  language
-) {
-
-  if (!hadith) {
-    return "";
-  }
-
-
-  /*
-     Main API structure
-  */
-
-  if (
-    Array.isArray(hadith.hadith)
-  ) {
-
-    const item =
-      hadith.hadith.find(
-        x =>
-          x &&
-          String(x.lang).toLowerCase() ===
-          language
-      );
-
-
-    if (item) {
-
-      return (
-        item.body ||
-        item.text ||
-        ""
-      );
-
-    }
-
-  }
-
-
-  /*
-     Alternate structures
-  */
-
-  const possibleFields = {
-
-    ar: [
-      "body_ar",
-      "arabic",
-      "text_ar",
-      "arabicText"
-    ],
-
-    en: [
-      "body_en",
-      "english",
-      "text_en",
-      "englishText"
-    ],
-
-    ur: [
-      "body_ur",
-      "urdu",
-      "text_ur",
-      "urduText"
-    ]
-
-  };
-
-
-  const fields =
-    possibleFields[language] ||
-    [];
-
-
-  for (
-    const field of fields
-  ) {
-
-    if (
-      typeof hadith[field] ===
-      "string" &&
-      hadith[field].trim()
-    ) {
-
-      return hadith[field];
-
-    }
-
-  }
-
-
-  return "";
-
-}
-
-
-/* =====================================================
-   REMOVE UNSAFE / UNWANTED HTML
-===================================================== */
-
-function cleanHadithHTML(text) {
-
-  if (!text) {
-    return "";
-  }
-
-
-  return String(text)
-    .replace(
-      /<script[\s\S]*?<\/script>/gi,
-      ""
-    );
 
 }
 
@@ -2397,18 +2220,6 @@ function showHadith() {
 
   if (!hadiths.length) {
 
-    hadithContainer.innerHTML = `
-
-      <div class="hadith-card">
-
-        <h3>
-          Hadith available nahi hai
-        </h3>
-
-      </div>
-
-    `;
-
     return;
 
   }
@@ -2418,48 +2229,44 @@ function showHadith() {
     hadiths[currentHadith];
 
 
+  /*
+     IMPORTANT:
+
+     Official API gives:
+
+     hadith.ar.text
+     hadith.en.text
+     hadith.en.body
+     hadith.ar.body
+  */
+
+
   const arabic =
-    cleanHadithHTML(
-      getLanguageText(
-        hadith,
-        "ar"
-      )
-    );
+    hadith.ar?.text ||
+    hadith.ar?.body ||
+    "";
 
 
   const english =
-    cleanHadithHTML(
-      getLanguageText(
-        hadith,
-        "en"
-      )
-    );
-
-
-  const urdu =
-    cleanHadithHTML(
-      getLanguageText(
-        hadith,
-        "ur"
-      )
-    );
+    hadith.en?.text ||
+    hadith.en?.body ||
+    "";
 
 
   const hadithNumber =
-    hadith.hadithNumber ??
-    hadith.hadithnumber ??
-    hadith.number ??
-    hadith.id ??
+    hadith.hadithNumber ||
     (currentHadith + 1);
 
 
-  const bookTitle =
-    getBookName(
-      books[currentBookIndex]
-    );
+  const book =
+    books[currentBookIndex];
 
 
-  const chapterTitle =
+  const bookName =
+    getBookName(book);
+
+
+  const chapter =
     hadith.chapterTitle;
 
 
@@ -2467,21 +2274,40 @@ function showHadith() {
 
 
   if (
-    chapterTitle &&
-    typeof chapterTitle === "object"
+    chapter &&
+    typeof chapter === "object"
   ) {
 
     chapterName =
-      chapterTitle.en ||
-      chapterTitle.ar ||
+      chapter.en ||
+      chapter.ar ||
       "";
 
   }
 
-  else {
 
-    chapterName =
-      chapterTitle || "";
+  /*
+     Grades
+  */
+
+  let gradeHTML = "";
+
+
+  if (
+    hadith.en &&
+    Array.isArray(
+      hadith.en.grades
+    ) &&
+    hadith.en.grades.length
+  ) {
+
+    gradeHTML =
+      hadith.en.grades
+        .map(
+          g =>
+            `${g.graded_by}: ${g.grade}`
+        )
+        .join(" • ");
 
   }
 
@@ -2503,7 +2329,7 @@ function showHadith() {
         <span class="hadith-reference">
 
           Book:
-          ${bookTitle || currentBookNumber}
+          ${bookName || currentBookNumber}
 
         </span>
 
@@ -2529,7 +2355,9 @@ function showHadith() {
 
 
       <h3>
+
         Hadith ${hadithNumber}
+
       </h3>
 
 
@@ -2560,21 +2388,17 @@ function showHadith() {
       </p>
 
 
-      <div class="hadith-language-title">
+      ${
+        gradeHTML
+        ? `
+          <div class="grade">
 
-        Urdu Translation
+            ${gradeHTML}
 
-      </div>
-
-
-      <p class="hadith-urdu">
-
-        ${
-          urdu ||
-          "Urdu translation is not available in this API response yet."
-        }
-
-      </p>
+          </div>
+        `
+        : ""
+      }
 
 
     </div>
@@ -2636,7 +2460,7 @@ function showHadith() {
             class="load-more">
 
             Next Book →
-            
+
           </button>
 
         </div>
@@ -2717,7 +2541,6 @@ async function nextBook() {
 
   currentHadith = 0;
 
-
   hadiths = [];
 
 
@@ -2726,14 +2549,6 @@ async function nextBook() {
     currentBookNumber,
     0
   );
-
-
-  document
-    .getElementById("reader")
-    .scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
 
 }
 
@@ -2846,12 +2661,7 @@ selectCollection(
   "bukhari"
 );
 
-          </script>
-
-
-
-
-                  
+</script>
 
 </body>
 </html>
