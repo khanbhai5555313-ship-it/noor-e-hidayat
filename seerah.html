@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
 
@@ -9,105 +11,308 @@
 
   <meta
     name="description"
-    content="Learn about the life of Prophet Muhammad ﷺ through important events, teachings and lessons from the Seerah in simple English and Hindi."
+    content="Learn about the life of Prophet Muhammad ﷺ through important events, teachings, lessons and guidance from his Seerah."
   >
 
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3XQEKHHTP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F3XQEKHHTP');
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f4ed;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #12372a;
+      color: white;
+      padding: 18px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 5px;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: #0d2b21;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 35px 18px;
+    }
+
+    .hero {
+      text-align: center;
+      background: white;
+      padding: 35px 20px;
+      border-radius: 14px;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .hero h2 {
+      margin-top: 0;
+      color: #12372a;
+      font-size: 32px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: 10px auto;
+    }
+
+    .hindi {
+      font-size: 17px;
+      color: #555;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+      border-top: 4px solid #12372a;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #12372a;
+    }
+
+    .card p {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #12372a;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 4px 5px;
+      }
+
+      .hero h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="index.html#quran">Quran</a>
-      <a href="index.html#hadith">Hadith</a>
-      <a href="index.html#duas">Duas</a>
-      <a href="seerah.html" class="active">Seerah</a>
-      <a href="index.html#articles">Articles</a>
-      <a href="index.html#about">About</a>
-    </nav>
+    <h1>Noor-e-Hidayat</h1>
+    <p>Quran • Hadith • Duas • Seerah • Islamic Knowledge</p>
   </header>
 
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="quran.html">Quran</a>
+    <a href="hadith.html">Hadith</a>
+    <a href="duas.html">Duas</a>
+    <a href="seerah.html">Seerah</a>
+    <a href="index.html#articles">Articles</a>
+    <a href="index.html#about">About</a>
+  </nav>
 
-  <!-- SEERAH CONTENT -->
   <main>
 
-    <section class="seerah-page">
+    <section class="hero">
 
-      <h1>Seerah of Prophet Muhammad ﷺ</h1>
+      <h2>Seerah — Life of Prophet Muhammad ﷺ</h2>
 
       <p>
         Learn about the life of Prophet Muhammad ﷺ through important
-        events, teachings and lessons from his blessed Seerah.
+        events, teachings, lessons and guidance from his Seerah.
       </p>
 
-      <p>
-        पैग़म्बर मुहम्मद ﷺ के जीवन, उनकी शिक्षाओं और सीरत से मिलने वाली
-        महत्वपूर्ण सीख के बारे में जानें।
+      <p class="hindi">
+        पैग़म्बर मुहम्मद ﷺ की ज़िंदगी, उनकी शिक्षाओं और सीरत से मिलने वाली
+        महत्वपूर्ण सीख को आसान भाषा में जानें।
       </p>
 
+    </section>
 
-      <div class="seerah-card">
+    <section class="grid">
 
-        <h2>Early Life</h2>
-
-        <p>
-          Learn about the early life of Prophet Muhammad ﷺ and the
-          society of Makkah.
-        </p>
+      <div class="card">
+        <h3>Early Life</h3>
 
         <p>
-          पैग़म्बर मुहम्मद ﷺ के प्रारंभिक जीवन और मक्का के समाज के
-          बारे में जानें।
+          Learn about the early life of Prophet Muhammad ﷺ, his noble
+          character, honesty and life in Makkah before Prophethood.
         </p>
 
+        <p class="hindi">
+          पैग़म्बर मुहम्मद ﷺ के प्रारंभिक जीवन, ईमानदारी और मक्का के
+          जीवन के बारे में जानें।
+        </p>
       </div>
 
-
-      <div class="seerah-card">
-
-        <h2>Beginning of Prophethood</h2>
+      <div class="card">
+        <h3>Beginning of Prophethood</h3>
 
         <p>
-          Learn about the beginning of revelation and the message
-          of Islam.
+          Learn about the first revelation and the beginning of the
+          Prophet's ﷺ mission to call people towards the worship of Allah.
         </p>
 
-        <p>
-          पहली वही और इस्लाम के पैग़ाम की शुरुआत के बारे में जानें।
+        <p class="hindi">
+          पहली वह़ी और लोगों को अल्लाह की इबादत की ओर बुलाने के मिशन
+          की शुरुआत के बारे में जानें।
         </p>
-
       </div>
 
-
-      <div class="seerah-card">
-
-        <h2>Lessons From the Seerah</h2>
+      <div class="card">
+        <h3>Makkah Period</h3>
 
         <p>
-          Discover valuable lessons about patience, mercy,
-          character and faith.
+          Explore the challenges faced by the early Muslims in Makkah
+          and the patience, courage and faith shown during this period.
         </p>
+
+        <p class="hindi">
+          मक्का के दौर में मुसलमानों को पेश आने वाली मुश्किलों और
+          सब्र, हिम्मत और ईमान की सीख को समझें।
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Hijrah to Madinah</h3>
 
         <p>
-          सब्र, रहमत, अच्छे अख़लाक़ और ईमान की महत्वपूर्ण सीख हासिल करें।
+          Learn about the Hijrah and the journey towards Madinah,
+          an important turning point in Islamic history.
         </p>
 
+        <p class="hindi">
+          हिजरत और मदीना की ओर सफर के बारे में जानें, जो इस्लामी इतिहास
+          का एक महत्वपूर्ण मोड़ था।
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Madinah Period</h3>
+
+        <p>
+          Discover how the Muslim community developed in Madinah and
+          learn about the Prophet's ﷺ leadership, mercy and justice.
+        </p>
+
+        <p class="hindi">
+          मदीना में मुस्लिम समाज की स्थापना और नबी ﷺ की रहमत,
+          इंसाफ और नेतृत्व से सीखें।
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Conquest of Makkah</h3>
+
+        <p>
+          Learn about the peaceful victory of Makkah and the remarkable
+          example of forgiveness shown by Prophet Muhammad ﷺ.
+        </p>
+
+        <p class="hindi">
+          मक्का की फ़तह और उस मौके पर पैग़म्बर ﷺ द्वारा दिखाए गए
+          माफ़ी और रहमत के शानदार उदाहरण को जानें।
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Final Sermon</h3>
+
+        <p>
+          Explore important teachings from the Farewell Sermon,
+          including justice, equality, rights and responsibility.
+        </p>
+
+        <p class="hindi">
+          आख़िरी ख़ुतबे की महत्वपूर्ण शिक्षाओं में इंसाफ, बराबरी,
+          अधिकार और ज़िम्मेदारी को समझें।
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Lessons from the Seerah</h3>
+
+        <p>
+          The Seerah teaches us patience, mercy, honesty, forgiveness,
+          courage and trust in Allah.
+        </p>
+
+        <p class="hindi">
+          सीरत हमें सब्र, रहमत, ईमानदारी, माफ़ी, हिम्मत और
+          अल्लाह पर भरोसा करना सिखाती है।
+        </p>
       </div>
 
     </section>
 
   </main>
 
-
-  <!-- FOOTER -->
   <footer>
-    <p>
-      © 2026 Noor-e-Hidayat — All Rights Reserved.
-    </p>
+    <p><strong>Noor-e-Hidayat</strong></p>
+    <p>Learn • Reflect • Practice</p>
+    <p>© 2026 Noor-e-Hidayat</p>
   </footer>
 
 </body>
+
 </html>
