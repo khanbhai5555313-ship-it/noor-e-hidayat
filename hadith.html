@@ -7,10 +7,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hadith – Kutub al-Sittah | Noor-e-Hidayat</title>
+  <title>Hadith Collection | Kutub al-Sittah | Noor-e-Hidayat</title>
 
   <meta name="description"
-        content="Read Hadith online from the six major Hadith collections: Sahih al-Bukhari, Sahih Muslim, Sunan Abu Dawud, Jami at-Tirmidhi, Sunan an-Nasa'i and Sunan Ibn Majah.">
+        content="Read Hadith online from the six major Hadith collections including Sahih al-Bukhari, Sahih Muslim, Abu Dawud, Tirmidhi, Nasa'i and Ibn Majah.">
 
   <meta name="keywords"
         content="Hadith online, Sahih Bukhari, Sahih Muslim, Abu Dawud, Tirmidhi, Nasa'i, Ibn Majah, Kutub al-Sittah">
@@ -25,37 +25,94 @@
       box-sizing: border-box;
     }
 
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f4f8f6;
       color: #173b35;
+      transition: background .3s, color .3s;
     }
 
+
+    /* =========================
+       HEADER
+    ========================= */
+
     header {
-      background: linear-gradient(135deg, #075b4d, #0b806d);
+      background:
+        linear-gradient(
+          rgba(15, 42, 36, .82),
+          rgba(7, 91, 77, .88)
+        ),
+        radial-gradient(
+          circle at center,
+          #1b806d 0%,
+          #063d35 70%
+        );
+
       color: white;
       text-align: center;
-      padding: 25px 15px;
+      padding: 28px 15px;
+      position: relative;
+      overflow: hidden;
     }
+
+
+    header::before {
+      content: "☪";
+      position: absolute;
+      font-size: 180px;
+      opacity: .05;
+      left: -20px;
+      top: -65px;
+    }
+
+
+    header::after {
+      content: "✦";
+      position: absolute;
+      font-size: 140px;
+      opacity: .05;
+      right: 20px;
+      bottom: -65px;
+    }
+
 
     .logo {
       font-size: 28px;
       font-weight: bold;
+      position: relative;
+      z-index: 2;
     }
+
 
     .tagline {
       margin-top: 8px;
       font-size: 14px;
+      opacity: .95;
+      position: relative;
+      z-index: 2;
     }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
       background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      box-shadow: 0 2px 10px rgba(0,0,0,.09);
       position: sticky;
       top: 0;
       z-index: 100;
     }
+
 
     .nav-inner {
       max-width: 1100px;
@@ -63,156 +120,228 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 8px;
-      padding: 12px;
+      gap: 7px;
+      padding: 11px;
     }
+
 
     nav a {
       text-decoration: none;
       color: #075b4d;
       font-weight: bold;
-      padding: 8px 12px;
-      border-radius: 7px;
+      padding: 9px 13px;
+      border-radius: 8px;
+      transition: .2s;
     }
+
 
     nav a:hover {
       background: #e8f4f0;
+      transform: translateY(-1px);
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 25px 15px 50px;
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      max-width: 1100px;
+      margin: 28px auto 25px;
+      min-height: 330px;
+
+      border-radius: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      color: white;
+
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(18, 48, 42, .95),
+          rgba(7, 91, 77, .84)
+        );
+      
+      box-shadow:
+        0 12px 35px rgba(0,0,0,.18);
     }
+
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 18px,
+          rgba(255,255,255,.025) 19px,
+          rgba(255,255,255,.025) 20px
+        );
+    }
+
+
+    .hero::after {
+      content: "﷽";
+      position: absolute;
+      font-size: 170px;
+      opacity: .055;
+      right: -10px;
+      bottom: -55px;
+      font-family: serif;
+    }
+
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 40px 20px;
+      max-width: 850px;
+    }
+
+
+    .hero-icon {
+      font-size: 52px;
+      margin-bottom: 10px;
+    }
+
+
+    .hero h1 {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 7vw, 64px);
+      letter-spacing: .5px;
+    }
+
+
+    .hero-subtitle {
+      margin: 12px 0 0;
+      font-size: 18px;
+      line-height: 1.7;
+      opacity: .96;
+    }
+
+
+    .hero-badge {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 9px 17px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 30px;
+      background: rgba(255,255,255,.09);
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 15px 55px;
+    }
+
 
     .section-title {
       text-align: center;
       color: #075b4d;
-      margin-bottom: 20px;
+      margin: 35px 0 20px;
+      font-family: Georgia, serif;
+      font-size: 30px;
     }
 
-    .info {
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
       background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 3px 12px rgba(0,0,0,.07);
-      line-height: 1.7;
-    }
-
-    .hadith-reader {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,.07);
-    }
-
-    .hadith-controls {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .hadith-controls label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    #hadithBook {
-      width: 100%;
-      max-width: 550px;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
-    .book-info {
-      background: #edf7f4;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      line-height: 1.7;
-      text-align: center;
-    }
-
-    .language-note {
-      background: #edf7f4;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      line-height: 1.7;
-    }
-
-    #hadithLoading {
-      display: none;
-      text-align: center;
-      padding: 20px;
-      font-weight: bold;
-    }
-
-    .hadith-card {
-      padding: 25px 10px;
-      border-bottom: 1px solid #dfe9e6;
-    }
-
-    .hadith-number {
-      font-size: 14px;
-      font-weight: bold;
-      color: #075b4d;
-      margin-bottom: 15px;
-    }
-
-    .hadith-label {
-      font-size: 15px;
-      font-weight: bold;
-      color: #075b4d;
-      margin-bottom: 8px;
-    }
-
-    .arabic {
-      font-size: 25px;
-      line-height: 2;
-      direction: rtl;
-      text-align: right;
-      margin-bottom: 20px;
-    }
-
-    .english {
-      font-size: 17px;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.07);
       line-height: 1.8;
-      margin-bottom: 20px;
     }
 
-    .urdu {
-      font-size: 19px;
-      line-height: 2;
-      direction: rtl;
-      text-align: right;
-      margin-bottom: 20px;
+
+    .intro h2 {
+      margin-top: 0;
+      color: #075b4d;
+      font-family: Georgia, serif;
     }
 
-    .source {
-      font-size: 14px;
-      color: #61736f;
-      margin-top: 10px;
+
+    /* =========================
+       COLLECTION CARDS
+    ========================= */
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
     }
 
-    .load-more {
-      display: block;
-      margin: 25px auto 5px;
-      border: none;
-      background: #075b4d;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
+
+    .collection-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.07);
+      border: 1px solid #e2ece8;
+      transition: .25s;
       cursor: pointer;
     }
 
-    .load-more:hover {
-      opacity: .9;
+
+    .collection-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.11);
     }
+
+
+    .collection-card.active {
+      border: 2px solid #075b4d;
+      background: #f0f8f5;
+    }
+
+
+    .collection-icon {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+
+    .collection-card h3 {
+      margin: 5px 0 8px;
+      color: #075b4d;
+    }
+
+
+    .collection-card p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 14px;
+      color: #536862;
+    }
+
+
+    /* =========================
+       READING CONTROLS
+    ========================= */
 
     .reading-controls {
       display: flex;
@@ -220,15 +349,16 @@
       align-items: center;
       gap: 10px;
       flex-wrap: wrap;
-      padding: 15px;
+      padding: 14px;
       margin: 20px 0;
       background: white;
-      border-radius: 12px;
+      border-radius: 13px;
       box-shadow: 0 3px 12px rgba(0,0,0,.08);
       position: sticky;
-      top: 55px;
+      top: 57px;
       z-index: 90;
     }
+
 
     .reading-controls button {
       border: none;
@@ -238,51 +368,312 @@
       border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
+      transition: .2s;
     }
+
+
+    .reading-controls button:hover {
+      opacity: .88;
+      transform: translateY(-1px);
+    }
+
+
+    /* =========================
+       READER
+    ========================= */
+
+    .hadith-reader {
+      background: white;
+      padding: 25px;
+      border-radius: 17px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
+
+
+    .hadith-controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+
+    .hadith-controls label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 9px;
+      font-size: 17px;
+    }
+
+
+    #hadithBook {
+      width: 100%;
+      max-width: 600px;
+      padding: 13px;
+      border: 1px solid #cbd8d4;
+      border-radius: 9px;
+      font-size: 16px;
+      background: white;
+      color: #173b35;
+    }
+
+
+    .book-info {
+      background:
+        linear-gradient(
+          135deg,
+          #edf7f4,
+          #e3f2ed
+        );
+      padding: 17px;
+      border-radius: 11px;
+      margin-bottom: 20px;
+      line-height: 1.7;
+      text-align: center;
+      border: 1px solid #d5e9e2;
+    }
+
+
+    .language-note {
+      background: #f1f7f5;
+      padding: 16px;
+      border-radius: 11px;
+      margin-bottom: 20px;
+      line-height: 1.7;
+      border-left: 4px solid #075b4d;
+    }
+
+
+    #hadithLoading {
+      display: none;
+      text-align: center;
+      padding: 25px;
+      font-weight: bold;
+      color: #075b4d;
+    }
+
+
+    /* =========================
+       HADITH CARD
+    ========================= */
+
+    .hadith-card {
+      padding: 30px 15px;
+      border-bottom: 1px solid #dfe9e6;
+    }
+
+
+    .hadith-card:last-child {
+      border-bottom: none;
+    }
+
+
+    .hadith-number {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      color: #075b4d;
+      margin-bottom: 20px;
+      padding: 7px 12px;
+      background: #edf7f4;
+      border-radius: 20px;
+    }
+
+
+    .hadith-label {
+      font-size: 14px;
+      font-weight: bold;
+      color: #075b4d;
+      margin: 13px 0 9px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+
+    .arabic {
+      font-size: 25px;
+      line-height: 2.15;
+      direction: rtl;
+      text-align: right;
+      margin-bottom: 25px;
+      font-family:
+        "Noto Naskh Arabic",
+        "Amiri",
+        "Traditional Arabic",
+        serif;
+    }
+
+
+    .english {
+      font-size: 17px;
+      line-height: 1.85;
+      margin-bottom: 22px;
+    }
+
+
+    .urdu {
+      font-size: 20px;
+      line-height: 2.1;
+      direction: rtl;
+      text-align: right;
+      margin-bottom: 22px;
+      font-family:
+        "Noto Nastaliq Urdu",
+        "Noto Naskh Arabic",
+        serif;
+    }
+
+
+    .source {
+      font-size: 14px;
+      color: #61736f;
+      margin-top: 15px;
+      padding-top: 12px;
+      border-top: 1px solid #e4ece9;
+    }
+
+
+    /* =========================
+       EXPLANATION SECTION
+    ========================= */
+
+    .knowledge-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+
+    .knowledge-card {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.07);
+      line-height: 1.7;
+    }
+
+
+    .knowledge-card .icon {
+      font-size: 30px;
+    }
+
+
+    .knowledge-card h3 {
+      color: #075b4d;
+      margin-bottom: 8px;
+    }
+
+
+    .knowledge-card p {
+      color: #536862;
+      margin-bottom: 0;
+    }
+
+
+    /* =========================
+       LOAD MORE
+    ========================= */
+
+    .load-more {
+      display: block;
+      margin: 25px auto 5px;
+      border: none;
+      background: #075b4d;
+      color: white;
+      padding: 13px 22px;
+      border-radius: 9px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+
+    .load-more:hover {
+      opacity: .9;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: #075b4d;
       color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 30px;
+      padding: 25px 15px;
+      margin-top: 20px;
+      line-height: 1.7;
     }
+
+
+    /* =========================
+       DARK MODE
+    ========================= */
 
     body.dark-mode {
       background: #101817;
       color: #eeeeee;
     }
 
+
     body.dark-mode nav,
-    body.dark-mode .info,
+    body.dark-mode .intro,
+    body.dark-mode .collection-card,
+    body.dark-mode .reading-controls,
     body.dark-mode .hadith-reader,
-    body.dark-mode .reading-controls {
+    body.dark-mode .knowledge-card {
       background: #1b2725;
       color: #eeeeee;
+      border-color: #334541;
     }
+
 
     body.dark-mode nav a {
       color: white;
     }
 
+
+    body.dark-mode nav a:hover {
+      background: #263a36;
+    }
+
+
     body.dark-mode .section-title {
       color: white;
     }
 
-    body.dark-mode .language-note,
+
+    body.dark-mode .intro h2,
+    body.dark-mode .collection-card h3,
+    body.dark-mode .knowledge-card h3 {
+      color: #9dd8ca;
+    }
+
+
+    body.dark-mode .collection-card p,
+    body.dark-mode .knowledge-card p {
+      color: #c8d4d1;
+    }
+
+
+    body.dark-mode .collection-card.active {
+      background: #263a36;
+      border-color: #72bbae;
+    }
+
+
     body.dark-mode .book-info {
       background: #263a36;
-    }
-
-    body.dark-mode .arabic,
-    body.dark-mode .english,
-    body.dark-mode .urdu {
-      color: #eeeeee;
-    }
-
-    body.dark-mode .hadith-card {
       border-color: #40504d;
     }
+
+
+    body.dark-mode .language-note {
+      background: #263a36;
+      border-color: #72bbae;
+    }
+
 
     body.dark-mode #hadithBook {
       background: #1b2725;
@@ -290,26 +681,107 @@
       border-color: #536560;
     }
 
+
+    body.dark-mode .hadith-number {
+      background: #263a36;
+      color: #9dd8ca;
+    }
+
+
+    body.dark-mode .hadith-label {
+      color: #9dd8ca;
+    }
+
+
+    body.dark-mode .arabic,
+    body.dark-mode .english,
+    body.dark-mode .urdu {
+      color: #eeeeee;
+    }
+
+
+    body.dark-mode .source {
+      color: #aabbb7;
+      border-color: #40504d;
+    }
+
+
+    body.dark-mode .hadith-card {
+      border-color: #40504d;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .collection-grid,
+      .knowledge-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .hero {
+        margin: 20px 10px;
+        min-height: 290px;
+      }
+
+    }
+
+
     @media (max-width: 600px) {
 
       .logo {
         font-size: 23px;
       }
 
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+
+      .collection-grid,
+      .knowledge-grid {
+        grid-template-columns: 1fr;
+      }
+
+
       .arabic {
         font-size: 23px;
+        line-height: 2;
       }
+
 
       .english {
         font-size: 16px;
       }
 
+
       .urdu {
         font-size: 18px;
       }
 
+
       .container {
-        padding: 20px 10px 40px;
+        padding: 0 10px 40px;
+      }
+
+
+      .hadith-reader {
+        padding: 17px 12px;
+      }
+
+
+      .reading-controls {
+        top: 55px;
       }
 
     }
@@ -358,32 +830,209 @@
 </nav>
 
 
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-icon">
+      📖
+    </div>
+
+    <h1>
+      Hadith Collection
+    </h1>
+
+    <p class="hero-subtitle">
+      Explore the Prophetic traditions through
+      the major classical Hadith collections.
+    </p>
+
+    <div class="hero-badge">
+      Kutub al-Sittah • Authentic Hadith Reading
+    </div>
+
+  </div>
+
+</section>
+
+
 <main class="container">
 
 
-  <h1 class="section-title">
-    Hadith – Kutub al-Sittah
-  </h1>
+  <!-- =========================
+       INTRO
+  ========================= -->
 
+  <div class="intro">
 
-  <div class="info">
-
-    <h2>Read Hadith Online</h2>
+    <h2>
+      📚 The Six Major Hadith Collections
+    </h2>
 
     <p>
-      Explore the six major Hadith collections:
+      The Kutub al-Sittah refers to six major Hadith
+      collections widely studied in Sunni Islamic scholarship:
       Sahih al-Bukhari, Sahih Muslim, Sunan Abu Dawud,
       Jami' at-Tirmidhi, Sunan an-Nasa'i and Sunan Ibn Majah.
     </p>
 
     <p>
-      Arabic text and English translation are loaded from
-      the Hadith database. Urdu is shown only when verified
-      Urdu source data is available.
+      Select a collection below to begin reading.
+      Arabic text and available translations are loaded
+      from the Hadith database used by this website.
     </p>
 
   </div>
 
+
+  <!-- =========================
+       COLLECTION CARDS
+  ========================= -->
+
+  <h2 class="section-title">
+    Choose a Collection
+  </h2>
+
+
+  <div class="collection-grid">
+
+
+    <div
+      class="collection-card active"
+      data-book="bukhari"
+      onclick="selectCollection('bukhari')">
+
+      <div class="collection-icon">
+        📖
+      </div>
+
+      <h3>
+        Sahih al-Bukhari
+      </h3>
+
+      <p>
+        One of the most renowned Hadith collections,
+        compiled by Imam al-Bukhari.
+      </p>
+
+    </div>
+
+
+    <div
+      class="collection-card"
+      data-book="muslim"
+      onclick="selectCollection('muslim')">
+
+      <div class="collection-icon">
+        📜
+      </div>
+
+      <h3>
+        Sahih Muslim
+      </h3>
+
+      <p>
+        A major authentic Hadith collection compiled
+        by Imam Muslim.
+      </p>
+
+    </div>
+
+
+    <div
+      class="collection-card"
+      data-book="abudawud"
+      onclick="selectCollection('abudawud')">
+
+      <div class="collection-icon">
+        🕌
+      </div>
+
+      <h3>
+        Sunan Abu Dawud
+      </h3>
+
+      <p>
+        A major Sunan collection containing many
+        narrations related to Islamic rulings.
+      </p>
+
+    </div>
+
+
+    <div
+      class="collection-card"
+      data-book="tirmidhi"
+      onclick="selectCollection('tirmidhi')">
+
+      <div class="collection-icon">
+        📚
+      </div>
+
+      <h3>
+        Jami' at-Tirmidhi
+      </h3>
+
+      <p>
+        A famous Hadith collection compiled by
+        Imam at-Tirmidhi.
+      </p>
+
+    </div>
+
+
+    <div
+      class="collection-card"
+      data-book="nasai"
+      onclick="selectCollection('nasai')">
+
+      <div class="collection-icon">
+        ✨
+      </div>
+
+      <h3>
+        Sunan an-Nasa'i
+      </h3>
+
+      <p>
+        One of the six major collections,
+        compiled by Imam an-Nasa'i.
+      </p>
+
+    </div>
+
+
+    <div
+      class="collection-card"
+      data-book="ibnmajah"
+      onclick="selectCollection('ibnmajah')">
+
+      <div class="collection-icon">
+        📝
+      </div>
+
+      <h3>
+        Sunan Ibn Majah
+      </h3>
+
+      <p>
+        One of the six major Hadith collections
+        compiled by Imam Ibn Majah.
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- =========================
+       READING CONTROLS
+  ========================= -->
 
   <div class="reading-controls">
 
@@ -401,6 +1050,10 @@
 
   </div>
 
+
+  <!-- =========================
+       HADITH READER
+  ========================= -->
 
   <div class="hadith-reader">
 
@@ -450,14 +1103,18 @@
 
     <div class="language-note">
 
-      <strong>Languages:</strong>
+      <strong>
+        🌐 Available Languages:
+      </strong>
+
       Arabic • English • Urdu
 
       <br>
 
       <small>
-        Urdu translation will be displayed only when
-        verified Urdu source data is available.
+        Urdu translation is displayed only when
+        verified source data is available.
+        We do not create or guess translations.
       </small>
 
     </div>
@@ -475,9 +1132,96 @@
       id="loadMoreBtn"
       class="load-more"
       style="display:none;">
+
       Load More Hadith
+
     </button>
 
+
+  </div>
+
+
+  <!-- =========================
+       KNOWLEDGE SECTION
+  ========================= -->
+
+  <h2 class="section-title">
+    Understanding Hadith
+  </h2>
+
+
+  <div class="knowledge-grid">
+
+
+    <div class="knowledge-card">
+
+      <div class="icon">
+        📖
+      </div>
+
+      <h3>
+        Arabic Matn
+      </h3>
+
+      <p>
+        Read the original Arabic wording of the
+        narration whenever it is available in the
+        source database.
+      </p>
+
+    </div>
+
+
+    <div class="knowledge-card">
+
+      <div class="icon">
+        🌍
+      </div>
+
+      <h3>
+        Translation
+      </h3>
+
+      <p>
+        English and verified Urdu translations are
+        shown where reliable source data is available.
+      </p>
+
+    </div>
+
+
+    <div class="knowledge-card">
+
+      <div class="icon">
+        📚
+      </div>
+
+      <h3>
+        Tashreeh & Masail
+      </h3>
+
+      <p>
+        Future explanations and fiqh-related discussions
+        will be presented with references and respect for
+        legitimate differences of scholarly opinion.
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="language-note" style="margin-top:25px;">
+
+    <strong>
+      Important:
+    </strong>
+
+    Hadith explanations, translations and rulings should
+    not be invented. Where scholars differ, Noor-e-Hidayat
+    will aim to present the evidence and differing scholarly
+    positions clearly and respectfully.
 
   </div>
 
@@ -489,11 +1233,19 @@
 
   © 2026 Noor-e-Hidayat — Islamic Knowledge in Simple English
 
+  <br>
+
+  Quran • Hadith • Duas • Seerah
+
 </footer>
 
 
 <script>
 
+
+/* =========================
+   API
+========================= */
 
 const API_BASE =
   "https://api.islamic.app/v1/hadith/collections";
@@ -548,9 +1300,69 @@ const HADITH_LIMIT =
 
 
 /* =========================
-   GET COLLECTION BOOKS
+   COLLECTION CARD
 ========================= */
 
+function selectCollection(book) {
+
+  hadithBook.value =
+    book;
+
+  currentCollection =
+    book;
+
+  document
+    .querySelectorAll(
+      ".collection-card"
+    )
+    .forEach(
+      function(card) {
+
+        card.classList.remove(
+          "active"
+        );
+
+      }
+    );
+
+
+  const selected =
+    document.querySelector(
+      '.collection-card[data-book="' +
+      book +
+      '"]'
+    );
+
+
+  if (selected) {
+
+    selected.classList.add(
+      "active"
+    );
+
+  }
+
+
+  loadCollection(
+    book
+  );
+
+
+  document
+    .querySelector(
+      ".hadith-reader"
+    )
+    .scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+}
+
+
+/* =========================
+   GET COLLECTION BOOKS
+========================= */
 
 async function loadCollection(
   collection
@@ -560,19 +1372,26 @@ async function loadCollection(
     return;
   }
 
-  isLoading = true;
+
+  isLoading =
+    true;
+
 
   hadithLoading.style.display =
     "block";
 
+
   hadithContainer.innerHTML =
     "";
+
 
   loadMoreBtn.style.display =
     "none";
 
+
   bookInfo.textContent =
     "Loading collection information...";
+
 
   try {
 
@@ -584,67 +1403,65 @@ async function loadCollection(
         "/books"
       );
 
+
     if (!response.ok) {
+
       throw new Error(
         "Books request failed: " +
         response.status
       );
+
     }
+
 
     const result =
       await response.json();
 
+
     const books =
-      Array.isArray(result.data)
-        ? result.data
-        : [];
+      Array.isArray(
+        result.data
+      )
+      ? result.data
+      : [];
+
 
     if (!books.length) {
+
       throw new Error(
         "No books found"
       );
+
     }
+
 
     currentBookList =
       books;
 
+
     currentBookIndex =
       0;
+
 
     currentBookNumber =
       books[0].bookNumber;
 
+
     currentHadithOffset =
       0;
 
-    bookInfo.innerHTML =
-      `
-      <strong>
-        ${escapeHtml(
-          books[0].name &&
-          books[0].name.en
-            ? books[0].name.en
-            : "Book 1"
-        )}
-      </strong>
-      <br>
-      Book ${escapeHtml(
-        String(books[0].bookNumber)
-      )}
-      <br>
-      Hadiths in this book:
-      ${escapeHtml(
-        String(
-          books[0].hadithCount || 0
-        )
-      )}
-      `;
+
+    showBookInfo(
+      books[0]
+    );
+
 
     await loadHadiths(
       collection,
       currentBookNumber,
       0
     );
+
 
   } catch (error) {
 
@@ -653,23 +1470,31 @@ async function loadCollection(
       error
     );
 
+
     hadithContainer.innerHTML =
       `
+
       <div class="language-note">
+
         <strong>
           Hadith could not be loaded.
         </strong>
 
         <br><br>
 
-        Please refresh the page and try again.
+        Please check your internet connection
+        and refresh the page.
+
       </div>
+
       `;
 
   }
 
+
   hadithLoading.style.display =
     "none";
+
 
   isLoading =
     false;
@@ -678,9 +1503,51 @@ async function loadCollection(
 
 
 /* =========================
-   GET HADITHS FROM BOOK
+   BOOK INFORMATION
 ========================= */
 
+function showBookInfo(
+  book
+) {
+
+  bookInfo.innerHTML =
+    `
+
+    <strong>
+      ${escapeHtml(
+        book.name &&
+        book.name.en
+          ? book.name.en
+          : "Book"
+      )}
+    </strong>
+
+    <br>
+
+    Book
+    ${escapeHtml(
+      String(
+        book.bookNumber
+      )
+    )}
+
+    <br>
+
+    Hadiths in this book:
+    ${escapeHtml(
+      String(
+        book.hadithCount || 0
+      )
+    )}
+
+    `;
+
+}
+
+
+/* =========================
+   GET HADITHS
+========================= */
 
 async function loadHadiths(
   collection,
@@ -690,6 +1557,7 @@ async function loadHadiths(
 
   hadithLoading.style.display =
     "block";
+
 
   try {
 
@@ -708,7 +1576,9 @@ async function loadHadiths(
 
 
     const response =
-      await fetch(url);
+      await fetch(
+        url
+      );
 
 
     if (!response.ok) {
@@ -726,14 +1596,18 @@ async function loadHadiths(
 
 
     const hadiths =
-      Array.isArray(result.data)
-        ? result.data
-        : (
-            result.data &&
-            Array.isArray(result.data.hadiths)
-              ? result.data.hadiths
-              : []
-          );
+      Array.isArray(
+        result.data
+      )
+      ? result.data
+      : (
+          result.data &&
+          Array.isArray(
+            result.data.hadiths
+          )
+          ? result.data.hadiths
+          : []
+        );
 
 
     if (
@@ -743,6 +1617,7 @@ async function loadHadiths(
 
       hadithContainer.innerHTML =
         `
+
         <div class="language-note">
 
           <strong>
@@ -750,10 +1625,13 @@ async function loadHadiths(
           </strong>
 
         </div>
+
         `;
+
 
       loadMoreBtn.style.display =
         "none";
+
 
       return;
 
@@ -772,7 +1650,8 @@ async function loadHadiths(
 
 
     currentHadithOffset =
-      offset + hadiths.length;
+      offset +
+      hadiths.length;
 
 
     if (
@@ -785,7 +1664,7 @@ async function loadHadiths(
 
     } else {
 
-      moveToNextBookOrHideButton();
+      await moveToNextBookOrHideButton();
 
     }
 
@@ -797,10 +1676,14 @@ async function loadHadiths(
       error
     );
 
-    if (offset === 0) {
+
+    if (
+      offset === 0
+    ) {
 
       hadithContainer.innerHTML =
         `
+
         <div class="language-note">
 
           <strong>
@@ -809,12 +1692,15 @@ async function loadHadiths(
 
           <br><br>
 
-          Please refresh the page and try again.
+          Please refresh the page
+          and try again.
 
         </div>
+
         `;
 
     }
+
 
     loadMoreBtn.style.display =
       "none";
@@ -832,7 +1718,6 @@ async function loadHadiths(
    RENDER HADITH
 ========================= */
 
-
 function renderHadith(
   hadith
 ) {
@@ -841,6 +1726,7 @@ function renderHadith(
     document.createElement(
       "div"
     );
+
 
   card.className =
     "hadith-card";
@@ -901,11 +1787,14 @@ function renderHadith(
     `
 
     <div class="hadith-number">
-      Hadith ${escapeHtml(
+
+      Hadith
+      ${escapeHtml(
         String(
           hadithNumber || "—"
         )
       )}
+
     </div>
 
 
@@ -913,6 +1802,7 @@ function renderHadith(
       arabic
       ?
       `
+
       <div class="hadith-label">
         Arabic
       </div>
@@ -922,6 +1812,7 @@ function renderHadith(
           arabic
         )}
       </div>
+
       `
       :
       ""
@@ -932,8 +1823,9 @@ function renderHadith(
       english
       ?
       `
+
       <div class="hadith-label">
-        English
+        English Translation
       </div>
 
       <div class="english">
@@ -941,13 +1833,18 @@ function renderHadith(
           english
         )}
       </div>
+
       `
       :
       `
+
       <div class="english">
+
         English translation is not
         available for this Hadith.
+
       </div>
+
       `
     }
 
@@ -956,8 +1853,9 @@ function renderHadith(
       urdu
       ?
       `
+
       <div class="hadith-label">
-        اردو
+        اردو ترجمہ
       </div>
 
       <div class="urdu">
@@ -965,6 +1863,7 @@ function renderHadith(
           urdu
         )}
       </div>
+
       `
       :
       ""
@@ -975,12 +1874,16 @@ function renderHadith(
       reference
       ?
       `
+
       <div class="source">
+
         Reference:
         ${escapeHtml(
           reference
         )}
+
       </div>
+
       `
       :
       ""
@@ -1000,7 +1903,6 @@ function renderHadith(
    NEXT BOOK
 ========================= */
 
-
 async function moveToNextBookOrHideButton() {
 
   if (
@@ -1010,42 +1912,24 @@ async function moveToNextBookOrHideButton() {
 
     currentBookIndex++;
 
+
     const nextBook =
       currentBookList[
         currentBookIndex
       ];
 
+
     currentBookNumber =
       nextBook.bookNumber;
+
 
     currentHadithOffset =
       0;
 
 
-    bookInfo.innerHTML =
-      `
-      <strong>
-        ${escapeHtml(
-          nextBook.name &&
-          nextBook.name.en
-            ? nextBook.name.en
-            : "Next Book"
-        )}
-      </strong>
-      <br>
-      Book ${escapeHtml(
-        String(
-          nextBook.bookNumber
-        )
-      )}
-      <br>
-      Hadiths in this book:
-      ${escapeHtml(
-        String(
-          nextBook.hadithCount || 0
-        )
-      )}
-      `;
+    showBookInfo(
+      nextBook
+    );
 
 
     hadithContainer.innerHTML =
@@ -1073,13 +1957,45 @@ async function moveToNextBookOrHideButton() {
    COLLECTION CHANGE
 ========================= */
 
-
 hadithBook.addEventListener(
   "change",
   function() {
 
     currentCollection =
       this.value;
+
+
+    document
+      .querySelectorAll(
+        ".collection-card"
+      )
+      .forEach(
+        function(card) {
+
+          card.classList.remove(
+            "active"
+          );
+
+        }
+      );
+
+
+    const selected =
+      document.querySelector(
+        '.collection-card[data-book="' +
+        this.value +
+        '"]'
+      );
+
+
+    if (selected) {
+
+      selected.classList.add(
+        "active"
+      );
+
+    }
+
 
     loadCollection(
       currentCollection
@@ -1093,7 +2009,6 @@ hadithBook.addEventListener(
    LOAD MORE
 ========================= */
 
-
 loadMoreBtn.addEventListener(
   "click",
   async function() {
@@ -1102,17 +2017,21 @@ loadMoreBtn.addEventListener(
       return;
     }
 
+
     isLoading =
       true;
 
+
     loadMoreBtn.style.display =
       "none";
+
 
     await loadHadiths(
       currentCollection,
       currentBookNumber,
       currentHadithOffset
     );
+
 
     isLoading =
       false;
@@ -1125,7 +2044,6 @@ loadMoreBtn.addEventListener(
    INITIAL LOAD
 ========================= */
 
-
 loadCollection(
   currentCollection
 );
@@ -1134,7 +2052,6 @@ loadCollection(
 /* =========================
    FONT CONTROLS
 ========================= */
-
 
 let hadithFontSize =
   25;
@@ -1146,6 +2063,7 @@ document.getElementById(
 function() {
 
   hadithFontSize += 2;
+
 
   document
     .querySelectorAll(
@@ -1175,6 +2093,7 @@ function() {
 
     hadithFontSize -= 2;
 
+
     document
       .querySelectorAll(
         ".arabic"
@@ -1197,7 +2116,6 @@ function() {
 /* =========================
    DARK MODE
 ========================= */
-
 
 document.getElementById(
   "darkModeBtn"
@@ -1229,9 +2147,8 @@ function() {
 
 
 /* =========================
-   HELPER FUNCTIONS
+   HELPERS
 ========================= */
-
 
 function getValue(
   object,
@@ -1247,6 +2164,7 @@ function getValue(
     const key =
       keys[i];
 
+
     if (
       object &&
       object[key] !== undefined &&
@@ -1258,6 +2176,7 @@ function getValue(
     }
 
   }
+
 
   return "";
 
@@ -1278,6 +2197,7 @@ function getNestedText(
     const key =
       keys[i];
 
+
     if (
       object &&
       object[key]
@@ -1291,6 +2211,7 @@ function getNestedText(
         return object[key];
 
       }
+
 
       if (
         typeof object[key] ===
@@ -1311,6 +2232,7 @@ function getNestedText(
     }
 
   }
+
 
   return "";
 
