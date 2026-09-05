@@ -680,58 +680,7 @@ hadithBook.addEventListener("change", function () {
 
 
 loadHadith("bukhari");
-  function showDua(type) {
-    const duaDisplay = document.getElementById("duaDisplay");
-
-    const duas = {
-        morning: {
-            title: "Morning & Evening Dua",
-            arabic: "اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ",
-            translation: "O Allah, by You we enter the morning and by You we enter the evening. By You we live and by You we die, and to You is the resurrection.",
-            reference: "Sunan at-Tirmidhi"
-        },
-
-        sleep: {
-            title: "Dua Before Sleeping",
-            arabic: "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
-            translation: "In Your name, O Allah, I die and I live.",
-            reference: "Sahih al-Bukhari"
-        },
-
-        guidance: {
-            title: "Dua for Guidance",
-            arabic: "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً ۚ إِنَّكَ أَنتَ الْوَهَّابُ",
-            translation: "Our Lord, do not let our hearts deviate after You have guided us, and grant us mercy from Yourself. Indeed, You are the Bestower.",
-            reference: "Qur'an 3:8"
-        }
-    };
-
-    const dua = duas[type];
-
-    if (!dua) return;
-
-    duaDisplay.innerHTML = `
-        <span class="badge">Dua</span>
-        <h3>${dua.title}</h3>
-
-        <div class="dua-arabic" dir="rtl">
-            ${dua.arabic}
-        </div>
-
-        <p class="dua-translation">
-            ${dua.translation}
-        </p>
-
-        <small><strong>Reference:</strong> ${dua.reference}</small>
-    `;
-
-    duaDisplay.style.display = "block";
-
-    duaDisplay.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-  }
+  
 function showSeerah(type) {
   let display = document.getElementById("seerahDisplay");
 
