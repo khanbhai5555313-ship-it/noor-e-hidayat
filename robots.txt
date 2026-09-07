@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khanbhai5555313-ship-it.github.io/noor-e-hidayat/sitemap.xml
